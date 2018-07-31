@@ -1,3 +1,5 @@
+<a href="https://www.buymeacoffee.com/bcyee" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 # whathaveiread
 WHIR - What have I read? Is an iOS app that allows you to keep track of all books you've read and keep a short summary about them. 
 
