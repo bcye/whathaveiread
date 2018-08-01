@@ -13,7 +13,7 @@ WHIR - What have I read? Is an iOS app that allows you to keep track of all book
 
 Thanks, for wanting to contribute. At the moment please open an issue if you have a feature idea or foung a bug.
 
-Don't forget to `pod install
+Don't forget to `pod install`
 
 ### License
 
