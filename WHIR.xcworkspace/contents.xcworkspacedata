@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/bruce/Documents/Xcode/WHIR/WHIR/Book+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/bruce/Documents/Xcode/WHIR/WHIR/Book+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:WHIR.xcodeproj">
    </FileRef>
    <FileRef

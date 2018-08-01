@@ -81,34 +81,14 @@ class TableViewController: UITableViewController {
     
     //MARK: Barcode
     @IBAction func addByBarcode(_ sender: Any) {
-        let viewController = BarcodeScannerViewController()
-        viewController.codeDelegate = self
-        viewController.errorDelegate = self
-        viewController.dismissalDelegate = self
+        // creates the scanner view controller, sets delegates and presents it.
+        let scanner = BarcodeScannerViewController()
+        let delegate = BarcodeScannerDelegate()
+        scanner.codeDelegate = delegate
+        scanner.errorDelegate = delegate
+        scanner.dismissalDelegate = delegate
         
-        present(viewController, animated: true, completion: nil)
-    }
-    
-}
-
-extension TableViewController: BarcodeScannerCodeDelegate {
-    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        print(code)
-        controller.reset()
-    }
-    
-}
-
-extension TableViewController: BarcodeScannerErrorDelegate {
-    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-        print(error)
-    }
-    
-}
-
-extension TableViewController: BarcodeScannerDismissalDelegate {
-    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-        controller.dismiss(animated: true, completion: nil)
+        present(scanner, animated: true, completion: nil)
     }
     
 }

@@ -12,9 +12,9 @@
 		320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 320571132033B0F100FCA3B1 /* WHIR.xcdatamodeld */; };
 		320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320571162033B0F100FCA3B1 /* Assets.xcassets */; };
 		3205711A2033B0F100FCA3B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320571182033B0F100FCA3B1 /* LaunchScreen.storyboard */; };
+		3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3213C1992111E5E100D88142 /* Book+CoreDataProperties.swift */; };
+		3213C19C2111E5E100D88142 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3213C19A2111E5E100D88142 /* Book+CoreDataClass.swift */; };
 		324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324F2DCE2075877A006EFF74 /* CoreData.framework */; };
-		326102B22074FE7100AB0BE8 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326102B02074FE7100AB0BE8 /* Book+CoreDataClass.swift */; };
-		326102B32074FE7100AB0BE8 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326102B12074FE7100AB0BE8 /* Book+CoreDataProperties.swift */; };
 		326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326102B420751D8D00AB0BE8 /* DetailViewController.swift */; };
 		3262142B203737A200EA8A83 /* AlertableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3262142A203737A200EA8A83 /* AlertableError.swift */; };
 		327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327A11EF20BDCBDF008B635F /* StoreKit.framework */; };
@@ -25,6 +25,7 @@
 		32BDE545203425C400247FC0 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDE544203425C400247FC0 /* AddViewController.swift */; };
 		32CB0E562075728600B1215C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB0E552075728600B1215C /* InfoViewController.swift */; };
 		32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */; };
+		32F0D58D2111EA77005CB3C7 /* BarcodeScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F0D58C2111EA77005CB3C7 /* BarcodeScannerDelegate.swift */; };
 		E94A583EFAA7D599ECD7223A /* Pods_WHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18DA2E6E537F92B1E08B8B5 /* Pods_WHIR.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,11 +37,11 @@
 		320571162033B0F100FCA3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		320571192033B0F100FCA3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3205711B2033B0F100FCA3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3213C1992111E5E100D88142 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataProperties.swift"; path = "WHIR/Book+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		3213C19A2111E5E100D88142 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataClass.swift"; path = "WHIR/Book+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		32214C5C20BE600400C4ECEF /* KMPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KMPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32214C5E20BE600400C4ECEF /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		324F2DCE2075877A006EFF74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		326102B02074FE7100AB0BE8 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataClass.swift"; path = "/Users/bruce/Documents/Xcode/WHIR/WHIR/Book+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		326102B12074FE7100AB0BE8 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataProperties.swift"; path = "/Users/bruce/Documents/Xcode/WHIR/WHIR/Book+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		326102B420751D8D00AB0BE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3262142A203737A200EA8A83 /* AlertableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertableError.swift; sourceTree = "<group>"; };
 		327A11EF20BDCBDF008B635F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -51,6 +52,7 @@
 		32BDE544203425C400247FC0 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		32CB0E552075728600B1215C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingAlertHelper.swift; sourceTree = "<group>"; };
+		32F0D58C2111EA77005CB3C7 /* BarcodeScannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerDelegate.swift; sourceTree = "<group>"; };
 		54A4F7DAA6BFA87F55318362 /* Pods-WHIR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.debug.xcconfig"; sourceTree = "<group>"; };
 		E18DA2E6E537F92B1E08B8B5 /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7161DBCBA732AF467F712FC /* Pods-WHIR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.release.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				3262142A203737A200EA8A83 /* AlertableError.swift */,
 				328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */,
 				32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */,
+				32F0D58C2111EA77005CB3C7 /* BarcodeScannerDelegate.swift */,
 			);
 			path = WHIR;
 			sourceTree = "<group>";
@@ -130,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				320571132033B0F100FCA3B1 /* WHIR.xcdatamodeld */,
-				326102B02074FE7100AB0BE8 /* Book+CoreDataClass.swift */,
-				326102B12074FE7100AB0BE8 /* Book+CoreDataProperties.swift */,
+				3213C19A2111E5E100D88142 /* Book+CoreDataClass.swift */,
+				3213C1992111E5E100D88142 /* Book+CoreDataProperties.swift */,
 				32BDE54020341FEF00247FC0 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
@@ -271,15 +274,16 @@
 			files = (
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
+				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
 				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
-				326102B32074FE7100AB0BE8 /* Book+CoreDataProperties.swift in Sources */,
-				326102B22074FE7100AB0BE8 /* Book+CoreDataClass.swift in Sources */,
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
+				32F0D58D2111EA77005CB3C7 /* BarcodeScannerDelegate.swift in Sources */,
 				32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */,
 				32BDE543203421E300247FC0 /* TableViewController.swift in Sources */,
 				328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */,
 				326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */,
+				3213C19C2111E5E100D88142 /* Book+CoreDataClass.swift in Sources */,
 				3262142B203737A200EA8A83 /* AlertableError.swift in Sources */,
 				32BDE54120341FEF00247FC0 /* CoreDataStack.swift in Sources */,
 			);
@@ -424,7 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -441,7 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
