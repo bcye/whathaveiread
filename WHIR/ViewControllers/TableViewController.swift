@@ -22,6 +22,8 @@ class TableViewController: UITableViewController {
     //Shows count of books in the nav bar
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 
     //passes moc through to addviewcontroller
@@ -83,12 +85,49 @@ class TableViewController: UITableViewController {
     @IBAction func addByBarcode(_ sender: Any) {
         // creates the scanner view controller, sets delegates and presents it.
         let scanner = BarcodeScannerViewController()
-        let delegate = BarcodeScannerDelegate()
-        scanner.codeDelegate = delegate
-        scanner.errorDelegate = delegate
-        scanner.dismissalDelegate = delegate
+        scanner.dismissalDelegate = self
+        scanner.codeDelegate = self
+        scanner.errorDelegate = self
         
         present(scanner, animated: true, completion: nil)
+    }
+    
+}
+
+extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+    
+    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+        DispatchQueue.main.async {
+            // add the book to core data
+            let searcher = ISBNSearcher(alertErrorWith: self)
+            searcher.searchFor(isbn: code) { book in
+                
+                // create item
+                guard let book = book else { return }
+                let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: self.managedObjectContext) as? Book
+                item?.title = book.title
+                item?.summary = book.description
+                item?.date = NSDate()
+                
+                // save to core data
+                self.managedObjectContext.saveChanges(viewController: self)
+                
+                // try to display review prompt
+                MarketingAlertHelper().tryToDisplayPrompts(with: self)
+            }
+            
+            // return to the previous ViewController
+            controller.reset()
+            controller.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
+        print(error)
     }
     
 }
