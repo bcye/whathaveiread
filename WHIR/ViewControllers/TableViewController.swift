@@ -22,6 +22,8 @@ class TableViewController: UITableViewController {
     //Shows count of books in the nav bar
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 
     //passes moc through to addviewcontroller
@@ -81,34 +83,51 @@ class TableViewController: UITableViewController {
     
     //MARK: Barcode
     @IBAction func addByBarcode(_ sender: Any) {
-        let viewController = BarcodeScannerViewController()
-        viewController.codeDelegate = self
-        viewController.errorDelegate = self
-        viewController.dismissalDelegate = self
+        // creates the scanner view controller, sets delegates and presents it.
+        let scanner = BarcodeScannerViewController()
+        scanner.dismissalDelegate = self
+        scanner.codeDelegate = self
+        scanner.errorDelegate = self
         
-        present(viewController, animated: true, completion: nil)
+        present(scanner, animated: true, completion: nil)
     }
     
 }
 
-extension TableViewController: BarcodeScannerCodeDelegate {
+extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+    
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        print(code)
-        controller.reset()
+        DispatchQueue.main.async {
+            // add the book to core data
+            let searcher = ISBNSearcher(alertErrorWith: self)
+            searcher.searchFor(isbn: code) { book in
+                
+                // create item
+                guard let book = book else { return }
+                let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: self.managedObjectContext) as? Book
+                item?.title = book.title
+                item?.summary = book.description
+                item?.date = NSDate()
+                
+                // save to core data
+                self.managedObjectContext.saveChanges(viewController: self)
+                
+                // try to display review prompt
+                MarketingAlertHelper().tryToDisplayPrompts(with: self)
+            }
+            
+            // return to the previous ViewController
+            controller.reset()
+            controller.dismiss(animated: true, completion: nil)
+        }
     }
     
-}
-
-extension TableViewController: BarcodeScannerErrorDelegate {
-    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-        print(error)
-    }
-    
-}
-
-extension TableViewController: BarcodeScannerDismissalDelegate {
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
+        print(error)
     }
     
 }

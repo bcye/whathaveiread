@@ -28,7 +28,9 @@ enum ErrorCases: CustomStringConvertible {
     //frc = fetchedResultsController
     case frcFetchFailed
     case falseInput
+    case dataTaskFailed
     case other
+    case parseFailed
     
     var description: String {
         switch self {
@@ -36,6 +38,8 @@ enum ErrorCases: CustomStringConvertible {
         case .loadingPersistentStoresFailed: return "Error while loading necessary objects for data handling"
         case .saveFailed: return "Error while saving the transaction"
         case .falseInput: return "Given input is not valid"
+        case .dataTaskFailed: return "We were unable to retrieve information on the book from Google Books"
+        case .parseFailed: return "We were unable to parse the response from Google Books"
         case .other: return "An unknown error happened"
         }
     }

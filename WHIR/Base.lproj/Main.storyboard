@@ -121,9 +121,9 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="barcode" id="AfO-mg-dmh">
+                            <barButtonItem title="Scan" image="barcode" id="AfO-mg-dmh">
                                 <connections>
-                                    <action selector="addByBarcode:" destination="eR0-JD-562" id="lo8-sz-i4a"/>
+                                    <action selector="addByBarcode:" destination="eR0-JD-562" id="lPE-hx-axA"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="compose" id="EAs-WI-FDF">
@@ -329,7 +329,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-Ku-zCI">
                                 <rect key="frame" x="16" y="80" width="343" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Handcrafted by © 2018 Bruce Röttgers
+                                <string key="text">Handcrafted by © 2018 Bruce Röttgers
 
 Logo by Zlatko Najdenovski on Flaticon. Licensed under the Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).
  Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). 
@@ -337,7 +337,7 @@ Using CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KM
 
 Thanks for reading and using this App ❤.
 
-Feel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) </mutableString>
+Feel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
