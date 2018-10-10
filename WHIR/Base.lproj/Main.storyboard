@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZGZ-4q-41f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZGZ-4q-41f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -249,7 +249,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-j9-htV">
-                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="611" width="187.5" height="56"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.0078431372549019607" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="KUN-2c-284"/>
@@ -262,6 +262,20 @@
                                     <action selector="deleteBook:" destination="17i-zH-PD6" eventType="touchUpInside" id="dd0-Ck-aEg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSp-OA-Put">
+                                <rect key="frame" x="187.5" y="611" width="187.5" height="56"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.4824829397" blue="0.058823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="U2U-EU-1bB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBook:" destination="17i-zH-PD6" eventType="touchUpInside" id="pDj-FQ-s0J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -270,10 +284,13 @@
                             <constraint firstItem="Jkj-j9-htV" firstAttribute="bottom" secondItem="eU0-An-hPU" secondAttribute="bottom" id="NAO-Ru-yld"/>
                             <constraint firstItem="gaR-yq-ps8" firstAttribute="top" secondItem="eU0-An-hPU" secondAttribute="top" constant="16" id="Q7Z-45-fRF"/>
                             <constraint firstItem="sQY-mI-tD9" firstAttribute="top" secondItem="gaR-yq-ps8" secondAttribute="bottom" constant="16" id="Sao-Be-Slu"/>
-                            <constraint firstItem="Jkj-j9-htV" firstAttribute="trailing" secondItem="eU0-An-hPU" secondAttribute="trailing" id="bNr-Vf-b3q"/>
+                            <constraint firstItem="xSp-OA-Put" firstAttribute="trailing" secondItem="eU0-An-hPU" secondAttribute="trailing" id="aEU-18-ACD"/>
+                            <constraint firstItem="Jkj-j9-htV" firstAttribute="trailing" secondItem="eU0-An-hPU" secondAttribute="trailing" multiplier="1/2" id="bNr-Vf-b3q"/>
                             <constraint firstItem="Jkj-j9-htV" firstAttribute="top" secondItem="sQY-mI-tD9" secondAttribute="bottom" constant="16" id="jof-OC-ZhF"/>
                             <constraint firstItem="eU0-An-hPU" firstAttribute="trailing" secondItem="sQY-mI-tD9" secondAttribute="trailing" constant="16" id="lMO-QG-kj9"/>
+                            <constraint firstItem="xSp-OA-Put" firstAttribute="leading" secondItem="Jkj-j9-htV" secondAttribute="trailing" id="qrH-4m-YbU"/>
                             <constraint firstItem="Jkj-j9-htV" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" id="svK-KR-8YO"/>
+                            <constraint firstItem="xSp-OA-Put" firstAttribute="baseline" secondItem="Jkj-j9-htV" secondAttribute="baseline" id="tA5-QC-Ohn"/>
                             <constraint firstItem="sQY-mI-tD9" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" constant="16" id="uIH-0T-N2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eU0-An-hPU"/>
@@ -438,7 +455,7 @@ Feel free to contact me on my support email (can be found on the App Store page)
         </scene>
     </scenes>
     <resources>
-        <image name="barcode" width="32" height="32"/>
+        <image name="barcode" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vJj-oE-g8T"/>
