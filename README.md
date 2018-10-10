@@ -7,13 +7,9 @@ WHIR - What have I read? Is an iOS app that allows you to keep track of all book
 
 First, do the `pod install`.
 
-You also need to add a keys.plist file and add the following pair:
+You also need to add a keys.plist file and add the following pair (and create your own Google Books API key):
 key: google_books_api_key
 val: YOUR_API_KEY
-
-### Currently working on:
-
-_Everything finished_
 
 ### Contributing
 
