@@ -52,7 +52,7 @@ class DetailViewController: UIViewController, ManagedObjectContextSettable {
         if let summary = book.summary {
             objectsToShare.append(summary + " \n")
         }
-        objectsToShare.append("P.S:You can write down summaries for your books too with this app: https://itunes.apple.com/us/app/whir/id1368037703?ls=1&mt=8")
+        objectsToShare.append("P.S:You can write down summaries for your books too with this app: http://bit.ly/whirshare")
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
     }
