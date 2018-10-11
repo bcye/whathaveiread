@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZGZ-4q-41f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZGZ-4q-41f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -243,37 +243,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here goes the summary" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sQY-mI-tD9">
-                                <rect key="frame" x="16" y="125" width="343" height="470"/>
+                                <rect key="frame" x="16" y="125" width="343" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-j9-htV">
-                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.0078431372549019607" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="KUN-2c-284"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteBook:" destination="17i-zH-PD6" eventType="touchUpInside" id="dd0-Ck-aEg"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="WJL-Ws-VXv">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Delete" id="8vK-r8-z5y">
+                                        <connections>
+                                            <action selector="deleteBook:" destination="17i-zH-PD6" id="or7-hf-xTE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="90r-Lo-BGE"/>
+                                    <barButtonItem systemItem="action" id="YWI-T6-pdW">
+                                        <connections>
+                                            <action selector="shareBook:" destination="17i-zH-PD6" id="9dB-VW-7IZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gaR-yq-ps8" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" constant="16" id="7FA-cV-mG3"/>
                             <constraint firstItem="eU0-An-hPU" firstAttribute="trailing" secondItem="gaR-yq-ps8" secondAttribute="trailing" constant="16" id="APe-hj-m1a"/>
-                            <constraint firstItem="Jkj-j9-htV" firstAttribute="bottom" secondItem="eU0-An-hPU" secondAttribute="bottom" id="NAO-Ru-yld"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="trailing" secondItem="eU0-An-hPU" secondAttribute="trailing" id="EgT-Jr-AYx"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="top" secondItem="sQY-mI-tD9" secondAttribute="bottom" constant="16" id="ErM-gx-qOf"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="bottom" secondItem="eU0-An-hPU" secondAttribute="bottom" id="J1V-7I-4xd"/>
                             <constraint firstItem="gaR-yq-ps8" firstAttribute="top" secondItem="eU0-An-hPU" secondAttribute="top" constant="16" id="Q7Z-45-fRF"/>
                             <constraint firstItem="sQY-mI-tD9" firstAttribute="top" secondItem="gaR-yq-ps8" secondAttribute="bottom" constant="16" id="Sao-Be-Slu"/>
-                            <constraint firstItem="Jkj-j9-htV" firstAttribute="trailing" secondItem="eU0-An-hPU" secondAttribute="trailing" id="bNr-Vf-b3q"/>
-                            <constraint firstItem="Jkj-j9-htV" firstAttribute="top" secondItem="sQY-mI-tD9" secondAttribute="bottom" constant="16" id="jof-OC-ZhF"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" id="Z4H-Uv-r8U"/>
                             <constraint firstItem="eU0-An-hPU" firstAttribute="trailing" secondItem="sQY-mI-tD9" secondAttribute="trailing" constant="16" id="lMO-QG-kj9"/>
-                            <constraint firstItem="Jkj-j9-htV" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" id="svK-KR-8YO"/>
                             <constraint firstItem="sQY-mI-tD9" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" constant="16" id="uIH-0T-N2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eU0-An-hPU"/>
@@ -298,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOA-is-Dfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="1412"/>
+            <point key="canvasLocation" x="848.79999999999995" y="1411.8440779610196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nBW-6i-Bf4">
@@ -438,7 +440,7 @@ Feel free to contact me on my support email (can be found on the App Store page)
         </scene>
     </scenes>
     <resources>
-        <image name="barcode" width="32" height="32"/>
+        <image name="barcode" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vJj-oE-g8T"/>

@@ -27,10 +27,12 @@
 		32BDE545203425C400247FC0 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDE544203425C400247FC0 /* AddViewController.swift */; };
 		32CB0E562075728600B1215C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB0E552075728600B1215C /* InfoViewController.swift */; };
 		32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */; };
-		E94A583EFAA7D599ECD7223A /* Pods_WHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18DA2E6E537F92B1E08B8B5 /* Pods_WHIR.framework */; };
+		4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.debug.xcconfig"; sourceTree = "<group>"; };
+		2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.release.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.release.xcconfig"; sourceTree = "<group>"; };
 		320571092033B0F100FCA3B1 /* WHIR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHIR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3205710C2033B0F100FCA3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		320571112033B0F100FCA3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,9 +57,7 @@
 		32BDE544203425C400247FC0 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		32CB0E552075728600B1215C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingAlertHelper.swift; sourceTree = "<group>"; };
-		54A4F7DAA6BFA87F55318362 /* Pods-WHIR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.debug.xcconfig"; sourceTree = "<group>"; };
-		E18DA2E6E537F92B1E08B8B5 /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7161DBCBA732AF467F712FC /* Pods-WHIR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.release.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.release.xcconfig"; sourceTree = "<group>"; };
+		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,18 +67,18 @@
 			files = (
 				327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */,
 				324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */,
-				E94A583EFAA7D599ECD7223A /* Pods_WHIR.framework in Frameworks */,
+				4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11163B6AAF4422A29CCF0E43 /* Pods */ = {
+		2E56D24BE9E3B9B4B7FF4C52 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				54A4F7DAA6BFA87F55318362 /* Pods-WHIR.debug.xcconfig */,
-				E7161DBCBA732AF467F712FC /* Pods-WHIR.release.xcconfig */,
+				2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */,
+				2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -88,8 +88,8 @@
 			children = (
 				3205710B2033B0F100FCA3B1 /* WHIR */,
 				3205710A2033B0F100FCA3B1 /* Products */,
-				11163B6AAF4422A29CCF0E43 /* Pods */,
 				A17471A2A88C6493E11E4E2F /* Frameworks */,
+				2E56D24BE9E3B9B4B7FF4C52 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,7 +150,7 @@
 				32214C5E20BE600400C4ECEF /* SwiftyStoreKit.framework */,
 				327A11EF20BDCBDF008B635F /* StoreKit.framework */,
 				324F2DCE2075877A006EFF74 /* CoreData.framework */,
-				E18DA2E6E537F92B1E08B8B5 /* Pods_WHIR.framework */,
+				F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,11 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3205711E2033B0F100FCA3B1 /* Build configuration list for PBXNativeTarget "WHIR" */;
 			buildPhases = (
-				F3A5409739080BE66C6BCD83 /* [CP] Check Pods Manifest.lock */,
+				9910D891BE610AB577281405 /* [CP] Check Pods Manifest.lock */,
 				320571052033B0F100FCA3B1 /* Sources */,
 				320571062033B0F100FCA3B1 /* Frameworks */,
 				320571072033B0F100FCA3B1 /* Resources */,
-				66CAB662C20E8EBB7F0F954C /* [CP] Embed Pods Frameworks */,
+				4C949E8E7942394015C37C5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,7 +231,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		66CAB662C20E8EBB7F0F954C /* [CP] Embed Pods Frameworks */ = {
+		4C949E8E7942394015C37C5E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,7 +251,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3A5409739080BE66C6BCD83 /* [CP] Check Pods Manifest.lock */ = {
+		9910D891BE610AB577281405 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,7 +428,7 @@
 		};
 		3205711F2033B0F100FCA3B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54A4F7DAA6BFA87F55318362 /* Pods-WHIR.debug.xcconfig */;
+			baseConfigurationReference = 2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,7 +445,7 @@
 		};
 		320571202033B0F100FCA3B1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7161DBCBA732AF467F712FC /* Pods-WHIR.release.xcconfig */;
+			baseConfigurationReference = 2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

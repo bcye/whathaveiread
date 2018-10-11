@@ -43,6 +43,20 @@ class DetailViewController: UIViewController, ManagedObjectContextSettable {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func shareBook(_ sender: Any) {
+        var objectsToShare = [Any]()
+        objectsToShare.append("I just read this book and wanted to share it with you. \n")
+        if let title = book.title {
+            objectsToShare.append(title + " \n")
+        }
+        if let summary = book.summary {
+            objectsToShare.append(summary + " \n")
+        }
+        objectsToShare.append("P.S:You can write down summaries for your books too with this app: http://bit.ly/whirshare")
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     //check wether user edited the text, if so save the changes and dismiss
     @IBAction func saveChanges(_ sender: Any) {
         
