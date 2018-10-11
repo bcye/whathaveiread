@@ -35,6 +35,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if #available(iOS 12.0, *) {
+            if let intent = userActivity.interaction?.intent as? AddBookIntent {
+                
+                let navVC : UINavigationController = window?.rootViewController as! UINavigationController
+                let viewController : TableViewController = navVC.topViewController as! TableViewController
+                viewController.addBook(title: intent.title, summary: intent.summary)
+                return true
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        return true
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

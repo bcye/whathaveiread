@@ -25,6 +25,15 @@ class TableViewController: UITableViewController {
         
         
     }
+    
+    public func addBook(title : String?, summary: String?) {
+        self.performSegue(withIdentifier: "addItem", sender: self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            NotificationCenter.default.post(name: Notification.Name("AddBook"), object: nil, userInfo: ["title":title ?? "", "summary": summary ?? ""])
+        }
+
+    }
+
 
     //passes moc through to addviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
