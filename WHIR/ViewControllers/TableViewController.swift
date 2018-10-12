@@ -22,16 +22,30 @@ class TableViewController: UITableViewController {
     //Shows count of books in the nav bar
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupIntents()
+
         
     }
     
-    public func addBook(title : String?, summary: String?) {
-        self.performSegue(withIdentifier: "addItem", sender: self)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            NotificationCenter.default.post(name: Notification.Name("AddBook"), object: nil, userInfo: ["title":title ?? "", "summary": summary ?? ""])
+    
+    func setupIntents() {
+        
+        let activity = NSUserActivity(activityType: "dirkhulverscheidt.WHIR.addBook")
+        activity.title = "Add Book"
+        activity.userInfo = [ : ]
+        activity.isEligibleForSearch = true
+        if #available(iOS 12.0, *) {
+            activity.isEligibleForPrediction = true
+        } else {
+            // Fallback on earlier versions
         }
-
+        view.userActivity = activity
+        activity.becomeCurrent()
+        
+    }
+    
+    public func addBook() {
+        self.performSegue(withIdentifier: "addItem", sender: self)
     }
 
 

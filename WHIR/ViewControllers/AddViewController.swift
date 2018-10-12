@@ -20,21 +20,9 @@ class AddViewController: UIViewController, ManagedObjectContextSettable {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(getBookInfo),
-            name: NSNotification.Name("AddBook"),
-            object: nil)
+        
     }
     
-    @objc func getBookInfo(notification: NSNotification){
-        
-        let userInfo = notification.userInfo
-        titleTextField.text = userInfo?["title"] as? String
-        summarizeTextView.text = userInfo?["summary"] as? String
-        
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,7 +39,6 @@ class AddViewController: UIViewController, ManagedObjectContextSettable {
         //text fields cant be nil
         guard let title = titleTextField.text, let summary = summarizeTextView.text else { return }
         
-        setupIntents()
         //save item
         let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: managedObjectContext) as? Book
         item?.title = title
@@ -67,24 +54,6 @@ class AddViewController: UIViewController, ManagedObjectContextSettable {
         dismiss(animated: true, completion: nil)
     }
     
-    func setupIntents() {
-        
-        if #available(iOS 12.0, *) {
-            let addBookIntent = AddBookIntent()
-            addBookIntent.title  = titleTextField.text
-            addBookIntent.summary  = summarizeTextView.text
-            let interaction = INInteraction(intent: addBookIntent, response: nil)
-            interaction.donate { error in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
-            
-        } else {
-            // Fallback on earlier versions
-        }
-        
-    }
+
 
 }

@@ -37,18 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        if #available(iOS 12.0, *) {
-            if let intent = userActivity.interaction?.intent as? AddBookIntent {
-                
-                let navVC : UINavigationController = window?.rootViewController as! UINavigationController
-                let viewController : TableViewController = navVC.topViewController as! TableViewController
-                viewController.addBook(title: intent.title, summary: intent.summary)
-                return true
-            }
-        } else {
-            // Fallback on earlier versions
-        }
+        let navVC : UINavigationController = window?.rootViewController as! UINavigationController
+        let viewController : TableViewController = navVC.topViewController as! TableViewController
+        viewController.addBook()
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
