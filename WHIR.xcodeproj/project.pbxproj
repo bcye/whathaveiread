@@ -19,7 +19,6 @@
 		324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324F2DCE2075877A006EFF74 /* CoreData.framework */; };
 		326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326102B420751D8D00AB0BE8 /* DetailViewController.swift */; };
 		3262142B203737A200EA8A83 /* AlertableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3262142A203737A200EA8A83 /* AlertableError.swift */; };
-		327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327A11EF20BDCBDF008B635F /* StoreKit.framework */; };
 		328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */; };
 		32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B06B20763A870048E8DD /* SearchViewController.swift */; };
 		32BDE54120341FEF00247FC0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDE54020341FEF00247FC0 /* CoreDataStack.swift */; };
@@ -28,6 +27,8 @@
 		32CB0E562075728600B1215C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB0E552075728600B1215C /* InfoViewController.swift */; };
 		32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */; };
 		4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */; };
+		EDA099D421701FF4009B1568 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA099D321701FF3009B1568 /* Intents.framework */; };
+		EDA099D62170225E009B1568 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EDA099D52170225D009B1568 /* Intents.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,6 @@
 		324F2DCE2075877A006EFF74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		326102B420751D8D00AB0BE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3262142A203737A200EA8A83 /* AlertableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertableError.swift; sourceTree = "<group>"; };
-		327A11EF20BDCBDF008B635F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookFetchedResultsController.swift; sourceTree = "<group>"; };
 		32B0B06B20763A870048E8DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		32BDE54020341FEF00247FC0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -57,6 +57,9 @@
 		32BDE544203425C400247FC0 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		32CB0E552075728600B1215C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingAlertHelper.swift; sourceTree = "<group>"; };
+		EDA099D221701FE2009B1568 /* WHIR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WHIR.entitlements; sourceTree = "<group>"; };
+		EDA099D321701FF3009B1568 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		EDA099D52170225D009B1568 /* Intents.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */,
+				EDA099D421701FF4009B1568 /* Intents.framework in Frameworks */,
 				324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */,
 				4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */,
 			);
@@ -111,6 +114,8 @@
 				320571162033B0F100FCA3B1 /* Assets.xcassets */,
 				320571182033B0F100FCA3B1 /* LaunchScreen.storyboard */,
 				3205711B2033B0F100FCA3B1 /* Info.plist */,
+				EDA099D221701FE2009B1568 /* WHIR.entitlements */,
+				EDA099D52170225D009B1568 /* Intents.intentdefinition */,
 				321EC1D9211DF18B0043DE33 /* keys.plist */,
 				3262142A203737A200EA8A83 /* AlertableError.swift */,
 				328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */,
@@ -146,9 +151,9 @@
 		A17471A2A88C6493E11E4E2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDA099D321701FF3009B1568 /* Intents.framework */,
 				32214C5C20BE600400C4ECEF /* KMPlaceholderTextView.framework */,
 				32214C5E20BE600400C4ECEF /* SwiftyStoreKit.framework */,
-				327A11EF20BDCBDF008B635F /* StoreKit.framework */,
 				324F2DCE2075877A006EFF74 /* CoreData.framework */,
 				F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */,
 			);
@@ -192,6 +197,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Siri = {
 								enabled = 1;
 							};
 						};
@@ -279,6 +287,7 @@
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
 				321EC1DC211DF29E0043DE33 /* ISBNSearcher.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
+				EDA099D62170225E009B1568 /* Intents.intentdefinition in Sources */,
 				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
 				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
@@ -431,6 +440,7 @@
 			baseConfigurationReference = 2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WHIR/WHIR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
@@ -448,6 +458,7 @@
 			baseConfigurationReference = 2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WHIR/WHIR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
