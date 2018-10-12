@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Intents
 
 class AddViewController: UIViewController, ManagedObjectContextSettable {
 
@@ -19,7 +20,9 @@ class AddViewController: UIViewController, ManagedObjectContextSettable {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,5 +53,7 @@ class AddViewController: UIViewController, ManagedObjectContextSettable {
         //dismiss view
         dismiss(animated: true, completion: nil)
     }
+    
+
 
 }
