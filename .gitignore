@@ -69,3 +69,5 @@ fastlane/test_output
 
 # Exclude API Key
 WHIR/keys.plist
+
+.DS_Store
