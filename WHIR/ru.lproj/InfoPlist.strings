@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "$(PRODUCT_NAME)";
+
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Камера необходима только для сканирования штрихкодов.";
+
