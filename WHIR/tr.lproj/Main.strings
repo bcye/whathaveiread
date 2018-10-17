@@ -1,0 +1,57 @@
+
+/* Class = "UITextField"; placeholder = "What's the title of the book?"; ObjectID = "3ho-zi-bO4"; */
+"3ho-zi-bO4.placeholder" = "Kitabın başlığı nedir?";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "6Sa-Cs-oqa"; */
+"6Sa-Cs-oqa.text" = "Başlık";
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "8vK-r8-z5y"; */
+"8vK-r8-z5y.title" = "Sil";
+
+/* Class = "UIBarButtonItem"; title = "Scan"; ObjectID = "AfO-mg-dmh"; */
+"AfO-mg-dmh.title" = "Tara";
+
+/* Class = "UINavigationItem"; title = "Add a book"; ObjectID = "D6v-7n-ahZ"; */
+"D6v-7n-ahZ.title" = "Kitap ekle";
+
+/* Class = "UILabel"; text = "Summary of the book:"; ObjectID = "J2A-Yq-lX1"; */
+"J2A-Yq-lX1.text" = "Kitap özeti:";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Lsi-RK-ScU"; */
+"Lsi-RK-ScU.title" = "Geri";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "RwD-W3-TVP"; */
+"RwD-W3-TVP.title" = "Hakkında";
+
+/* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "Sz4-8d-wza"; */
+"Sz4-8d-wza.title" = "Bilgi";
+
+/* Class = "UITextField"; placeholder = "What's the title of the book?"; ObjectID = "XN3-ga-Vwf"; */
+"XN3-ga-Vwf.placeholder" = "Kitabın başlığı nedir?";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "dsh-Zs-OfS"; */
+"dsh-Zs-OfS.title" = "Ara";
+
+/* Class = "UILabel"; text = "Book Title"; ObjectID = "gaR-yq-ps8"; */
+"gaR-yq-ps8.text" = "Kitabın Başlığı";
+
+/* Class = "UINavigationItem"; title = "Books"; ObjectID = "hmL-qq-v7y"; */
+"hmL-qq-v7y.title" = "Kitaplar";
+
+/* Class = "UITextView"; text = "Handcrafted by © 2018 Bruce Röttgers\n\nLogo by Zlatko Najdenovski on Flaticon. Licensed under the Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).\n Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). \nUsing CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensed under the MIT license.\n\nThanks for reading and using this App ❤.\n\nFeel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) "; ObjectID = "lpw-Ku-zCI"; */
+"lpw-Ku-zCI.text" = "Handcrafted by © 2018 Bruce Röttgers\n\nLogo by Zlatko Najdenovski on Flaticon. Licensed under the Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).\n Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). \nUsing CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensed under the MIT license.\n\nThanks for reading and using this App ❤.\n\nFeel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) ";
+
+/* Class = "UILabel"; text = "Book Title:"; ObjectID = "oHN-En-f1E"; */
+"oHN-En-f1E.text" = "Kitabın Başlığı:";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "qP8-q0-al5"; */
+"qP8-q0-al5.title" = "Geri";
+
+/* Class = "UITextView"; text = "Here goes the summary"; ObjectID = "sQY-mI-tD9"; */
+"sQY-mI-tD9.text" = "Kitap özeti buraya gelecek";
+
+/* Class = "UITextField"; placeholder = "Enter your search phrase here and hit search"; ObjectID = "seL-QA-H5T"; */
+"seL-QA-H5T.placeholder" = "Aramak istediğinizi yazın ve Ara'ya basın";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xCu-Jc-NWA"; */
+"xCu-Jc-NWA.text" = "Başlık";
