@@ -1,0 +1,13 @@
+
+/* TableViewController.swift */
+"addBook" = "Add Book";
+
+/* DetailViewController.swift */
+"shareBookMessage" = "I just read this book and wanted to share it with you. \n";
+"sharePostScriptum" = "P.S:You can write down summaries for your books too with this app: http://bit.ly/whirshare";
+"noChangesAlertTitle" = "There are no changes!";
+"noChangesAlertMessage" = "Whoops! Looks like you tried to save without making changes. Go back or change text by clicking it before saving!";
+
+/* AddViewController.swift*/
+/* Class = "KMPlaceholderTextView"; placeholder = "You have plenty of space to summarize the book here. Use it!"; */
+"summarizeBookPlaceholder" = "You have plenty of space to summarize the book here. Use it!";

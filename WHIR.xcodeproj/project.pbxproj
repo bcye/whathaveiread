@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC5402177847D00D35604 /* InfoPlist.strings */; };
+		04CBC5452177878800D35604 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC5472177878800D35604 /* Localizable.strings */; };
 		3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3205710C2033B0F100FCA3B1 /* AppDelegate.swift */; };
 		320571122033B0F100FCA3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320571102033B0F100FCA3B1 /* Main.storyboard */; };
 		320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 320571132033B0F100FCA3B1 /* WHIR.xcdatamodeld */; };
@@ -31,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CBC5372177761100D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		04CBC5382177761100D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		04CBC5412177847F00D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04CBC5422177858A00D35604 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04CBC5462177878800D35604 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04CBC5482177878900D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.debug.xcconfig"; sourceTree = "<group>"; };
 		2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.release.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.release.xcconfig"; sourceTree = "<group>"; };
 		320571092033B0F100FCA3B1 /* WHIR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHIR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +124,8 @@
 				328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */,
 				32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */,
 				321EC1DB211DF29E0043DE33 /* ISBNSearcher.swift */,
+				04CBC5402177847D00D35604 /* InfoPlist.strings */,
+				04CBC5472177878800D35604 /* Localizable.strings */,
 			);
 			path = WHIR;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 320571002033B0F100FCA3B1;
 			productRefGroup = 3205710A2033B0F100FCA3B1 /* Products */;
@@ -222,9 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				321EC1DA211DF18B0043DE33 /* keys.plist in Resources */,
+				04CBC5452177878800D35604 /* Localizable.strings in Resources */,
 				3205711A2033B0F100FCA3B1 /* LaunchScreen.storyboard in Resources */,
 				320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */,
 				320571122033B0F100FCA3B1 /* Main.storyboard in Resources */,
+				04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,10 +309,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		04CBC5402177847D00D35604 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04CBC5412177847F00D35604 /* de */,
+				04CBC5422177858A00D35604 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04CBC5472177878800D35604 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04CBC5462177878800D35604 /* en */,
+				04CBC5482177878900D35604 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		320571102033B0F100FCA3B1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				320571112033B0F100FCA3B1 /* Base */,
+				04CBC5372177761100D35604 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -308,6 +340,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				320571192033B0F100FCA3B1 /* Base */,
+				04CBC5382177761100D35604 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -319,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -378,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

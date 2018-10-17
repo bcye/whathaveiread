@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
     func setupIntents() {
         
         let activity = NSUserActivity(activityType: "dirkhulverscheidt.WHIR.addBook")
-        activity.title = "Add Book"
+        activity.title = NSLocalizedString("addBook", comment: "Add Book")
         activity.userInfo = [ : ]
         activity.isEligibleForSearch = true
         if #available(iOS 12.0, *) {

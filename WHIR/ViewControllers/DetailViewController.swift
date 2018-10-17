@@ -45,14 +45,17 @@ class DetailViewController: UIViewController, ManagedObjectContextSettable {
     
     @IBAction func shareBook(_ sender: Any) {
         var objectsToShare = [Any]()
-        objectsToShare.append("I just read this book and wanted to share it with you. \n")
+        let message = NSLocalizedString("shareBookMessage", comment: "I just read this book and wanted to share it with you. \n")
+        let postScriptum = NSLocalizedString("sharePostScriptum", comment: "P.S:You can write down summaries for your books too with this app: http://bit.ly/whirshare")
+        objectsToShare.append(message)
         if let title = book.title {
             objectsToShare.append(title + " \n")
         }
         if let summary = book.summary {
             objectsToShare.append(summary + " \n")
         }
-        objectsToShare.append("P.S:You can write down summaries for your books too with this app: http://bit.ly/whirshare")
+
+        objectsToShare.append(postScriptum)
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
     }
@@ -72,7 +75,9 @@ class DetailViewController: UIViewController, ManagedObjectContextSettable {
         } else {
             
             // alert the user they haven't changed anything
-            let alert = UIAlertController(title: "There are no changes!", message: "Whoops! Looks like you tried to save without making changes. Go back or change text by clicking it before saving!", preferredStyle: .alert)
+            let title = NSLocalizedString("noChangesAlertTitle", comment: "There are no changes!")
+            let message = NSLocalizedString("noChangesAlertMessage", comment: "Whoops! Looks like you tried to save without making changes. Go back or change text by clicking it before saving!")
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
                 alert.dismiss(animated: true, completion: nil)
             }))

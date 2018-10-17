@@ -220,7 +220,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="summarizeTextView" destination="4cd-EC-sfb" id="rZ0-NB-Obp"/>
+                        <outlet property="summarizeTextView" destination="4cd-EC-sfb" id="3s4-ok-VuP"/>
                         <outlet property="titleTextField" destination="XN3-ga-Vwf" id="zNr-6t-olY"/>
                     </connections>
                 </viewController>
