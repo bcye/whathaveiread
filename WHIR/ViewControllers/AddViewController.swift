@@ -9,18 +9,20 @@
 import UIKit
 import CoreData
 import Intents
+import KMPlaceholderTextView
 
 class AddViewController: UIViewController, ManagedObjectContextSettable {
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var summarizeTextView: UITextView!
+    @IBOutlet weak var summarizeTextView: KMPlaceholderTextView!
+
     var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        summarizeTextView.placeholder = NSLocalizedString("summarizeBookPlaceholder", comment: "You have plenty of space to summarize the book here. Use it!")
     }
     
 
