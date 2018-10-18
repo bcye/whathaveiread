@@ -172,9 +172,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's the title of the book?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XN3-ga-Vwf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's the title of the book?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XN3-ga-Vwf">
                                 <rect key="frame" x="16" y="109" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -196,7 +195,10 @@
                             <constraint firstItem="K9i-5C-hRP" firstAttribute="trailing" secondItem="oHN-En-f1E" secondAttribute="trailing" constant="16" id="4DZ-6K-GQz"/>
                             <constraint firstItem="oHN-En-f1E" firstAttribute="leading" secondItem="K9i-5C-hRP" secondAttribute="leading" constant="16" id="Ajb-my-H0A"/>
                             <constraint firstItem="K9i-5C-hRP" firstAttribute="trailing" secondItem="J2A-Yq-lX1" secondAttribute="trailing" constant="16" id="HGw-K1-uRK"/>
+                            <constraint firstItem="XN3-ga-Vwf" firstAttribute="trailing" secondItem="3ho-zi-bO4" secondAttribute="trailing" id="QL1-OV-shY"/>
                             <constraint firstItem="4cd-EC-sfb" firstAttribute="top" secondItem="J2A-Yq-lX1" secondAttribute="bottom" constant="8" id="YqO-mq-EKu"/>
+                            <constraint firstItem="XN3-ga-Vwf" firstAttribute="leading" secondItem="3ho-zi-bO4" secondAttribute="leading" id="aH6-L8-JrS"/>
+                            <constraint firstItem="XN3-ga-Vwf" firstAttribute="baseline" secondItem="3ho-zi-bO4" secondAttribute="baseline" id="aZ9-rM-FIY"/>
                             <constraint firstItem="3ho-zi-bO4" firstAttribute="leading" secondItem="K9i-5C-hRP" secondAttribute="leading" constant="16" id="g1s-qI-kJa"/>
                             <constraint firstItem="4cd-EC-sfb" firstAttribute="bottom" secondItem="K9i-5C-hRP" secondAttribute="bottom" constant="-20" id="gpe-hL-3R4"/>
                             <constraint firstItem="3ho-zi-bO4" firstAttribute="top" secondItem="oHN-En-f1E" secondAttribute="bottom" constant="8" id="i0O-6x-9A4"/>
