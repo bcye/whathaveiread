@@ -30,6 +30,7 @@
 		32CB0E562075728600B1215C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB0E552075728600B1215C /* InfoViewController.swift */; };
 		32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */; };
 		4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */; };
+		A8AF2004217317E8000A6B03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8AF2002217317E8000A6B03 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,10 @@
 		32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingAlertHelper.swift; sourceTree = "<group>"; };
 		84472E42217767D50002669E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		84472E43217767D50002669E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A8AF2003217317E8000A6B03 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +132,7 @@
 				32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */,
 				321EC1DB211DF29E0043DE33 /* ISBNSearcher.swift */,
 				04CBC5402177847D00D35604 /* InfoPlist.strings */,
+				A8AF2002217317E8000A6B03 /* InfoPlist.strings */,
 				04CBC5472177878800D35604 /* Localizable.strings */,
 			);
 			path = WHIR;
@@ -218,6 +224,7 @@
 				en,
 				Base,
 				de,
+				ru,
 			);
 			mainGroup = 320571002033B0F100FCA3B1;
 			productRefGroup = 3205710A2033B0F100FCA3B1 /* Products */;
@@ -240,6 +247,7 @@
 				320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */,
 				320571122033B0F100FCA3B1 /* Main.storyboard in Resources */,
 				04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */,
+				A8AF2004217317E8000A6B03 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +260,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 			);
@@ -263,7 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9910D891BE610AB577281405 /* [CP] Check Pods Manifest.lock */ = {
@@ -316,6 +324,7 @@
 			children = (
 				04CBC5412177847F00D35604 /* de */,
 				04CBC5422177858A00D35604 /* en */,
+				ED11A4A821783DAE00D34ABB /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -335,6 +344,7 @@
 				320571112033B0F100FCA3B1 /* Base */,
 				84472E42217767D50002669E /* tr */,
 				04CBC5372177761100D35604 /* de */,
+				A8E3A4EC217306790069EC24 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -345,8 +355,17 @@
 				320571192033B0F100FCA3B1 /* Base */,
 				84472E43217767D50002669E /* tr */,
 				04CBC5382177761100D35604 /* de */,
+				A8E3A4ED2173067A0069EC24 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A8AF2002217317E8000A6B03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8AF2003217317E8000A6B03 /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
