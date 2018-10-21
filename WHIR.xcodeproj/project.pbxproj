@@ -42,6 +42,10 @@
 		04CBC5482177878900D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.debug.xcconfig"; sourceTree = "<group>"; };
 		2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHIR.release.xcconfig"; path = "Pods/Target Support Files/Pods-WHIR/Pods-WHIR.release.xcconfig"; sourceTree = "<group>"; };
+		2CB55266217D1511003C5C74 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		2CB55267217D1511003C5C74 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2CB55268217D1511003C5C74 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2CB55269217D1511003C5C74 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		320571092033B0F100FCA3B1 /* WHIR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHIR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3205710C2033B0F100FCA3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		320571112033B0F100FCA3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				Base,
 				de,
 				ru,
+				"pt-BR",
 			);
 			mainGroup = 320571002033B0F100FCA3B1;
 			productRefGroup = 3205710A2033B0F100FCA3B1 /* Products */;
@@ -325,6 +330,7 @@
 				04CBC5412177847F00D35604 /* de */,
 				04CBC5422177858A00D35604 /* en */,
 				ED11A4A821783DAE00D34ABB /* ru */,
+				2CB55268217D1511003C5C74 /* pt-BR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			children = (
 				04CBC5462177878800D35604 /* en */,
 				04CBC5482177878900D35604 /* de */,
+				2CB55269217D1511003C5C74 /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -345,6 +352,7 @@
 				84472E42217767D50002669E /* tr */,
 				04CBC5372177761100D35604 /* de */,
 				A8E3A4EC217306790069EC24 /* ru */,
+				2CB55266217D1511003C5C74 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -356,6 +364,7 @@
 				84472E43217767D50002669E /* tr */,
 				04CBC5382177761100D35604 /* de */,
 				A8E3A4ED2173067A0069EC24 /* ru */,
+				2CB55267217D1511003C5C74 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
