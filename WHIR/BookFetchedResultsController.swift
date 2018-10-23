@@ -15,15 +15,15 @@ class BookFetchedResultsController: NSFetchedResultsController<Book>, NSFetchedR
     private let tableVC: UITableViewController
     private var tableView: UITableView
     var changedContent = false
-    
+
     //takes tableView (to update) and fetches
     init(moc: NSManagedObjectContext, tableViewController: UITableViewController) {
         self.tableVC = tableViewController
         tableView = tableVC.tableView
         super.init(fetchRequest: Book.fetchRequest(), managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-        
+
         self.delegate = self
-        
+
         tryFetch()
     }
 
@@ -36,13 +36,10 @@ class BookFetchedResultsController: NSFetchedResultsController<Book>, NSFetchedR
             print("Error: \(error)")
         }
     }
-    
-    //MARK: Fetched Results Controller Delegate
+
+    // MARK: Fetched Results Controller Delegate
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
         changedContent = true
     }
-
-
 }
-

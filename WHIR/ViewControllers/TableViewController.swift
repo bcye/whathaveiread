@@ -12,24 +12,21 @@ import BarcodeScanner
 
 class TableViewController: UITableViewController {
 
-    //MARK: Variables, IBOutlets, etc.
+    // MARK: Variables, IBOutlets, etc.
     @IBOutlet weak var navBar: UINavigationItem!
     let managedObjectContext = CoreDataStack().managedObjectContext
     lazy var fetchedResultsController: BookFetchedResultsController = {
          return BookFetchedResultsController(moc: self.managedObjectContext, tableViewController: self)
     }()
-    
+
     //Shows count of books in the nav bar
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupIntents()
 
-        
+        setupIntents()
     }
-    
-    
+
     func setupIntents() {
-        
         let activity = NSUserActivity(activityType: "dirkhulverscheidt.WHIR.addBook")
         activity.title = NSLocalizedString("addBook", comment: "Add Book")
         activity.userInfo = [ : ]
@@ -41,33 +38,39 @@ class TableViewController: UITableViewController {
         }
         view.userActivity = activity
         activity.becomeCurrent()
-        
     }
-    
+
     public func addBook() {
         self.performSegue(withIdentifier: "addItem", sender: self)
     }
-
 
     //passes moc through to addviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "addItem", "showSummary", "showSearch":
-            let navigationController = segue.destination as! UINavigationController
-            var addTransactionController = navigationController.topViewController as! ManagedObjectContextSettable
+            guard
+                let navigationController = segue.destination as? UINavigationController,
+                var addTransactionController = navigationController.topViewController as? ManagedObjectContextSettable else {
+                    return
+            }
+
             addTransactionController.managedObjectContext = self.managedObjectContext
         default:
             print("Another identifier was used: \(String(describing: segue.identifier))")
         }
+
         if segue.identifier == "showSummary" {
-            guard let detailVC = (segue.destination as! UINavigationController).topViewController as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard
+                let navViewController = segue.destination as? UINavigationController,
+                let detailVC = navViewController.topViewController as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow
+                else {
+                    return
+            }
+
             let book = fetchedResultsController.object(at: indexPath)
             detailVC.book = book
         }
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -80,77 +83,88 @@ class TableViewController: UITableViewController {
         guard let section = fetchedResultsController.sections?[section] else { return 0 }
         return section.numberOfObjects
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         return configureCell(cell, at: indexPath)
     }
-    
+
     // to configure cell, is called in tableView cellForRowAt
     private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
         let book = fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = book.title
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let book = fetchedResultsController.object(at: indexPath)
         managedObjectContext.delete(book)
         managedObjectContext.saveChanges(viewController: self)
     }
 
-    //MARK: UITableViewDelegate
+    // MARK: UITableViewDelegate
+    
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
     }
-    
-    //MARK: Barcode
+
+    // MARK: Barcode
     @IBAction func addByBarcode(_ sender: Any) {
         // creates the scanner view controller, sets delegates and presents it.
         let scanner = BarcodeScannerViewController()
         scanner.dismissalDelegate = self
         scanner.codeDelegate = self
         scanner.errorDelegate = self
-        
+
         present(scanner, animated: true, completion: nil)
     }
-    
-}
 
-extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-    
-    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+    func searchBookForCode(code: String) {
         DispatchQueue.main.async {
-            // add the book to core data
-            let searcher = ISBNSearcher(alertErrorWith: self)
-            searcher.searchFor(isbn: code) { book in
-                
+            OpenLibraryService.search(ISBN: code) { [weak self] (openLibraryBook, error) in
+                guard let strongSelf = self else { return }
+
+                // Manage error
+                if let error = error {
+                    error.alert(with: strongSelf, error: .dataTaskFailed)
+                    return
+                }
+
                 // create item
-                guard let book = book else { return }
-                let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: self.managedObjectContext) as? Book
-                item?.title = book.title
-                item?.summary = book.description
+                guard let book = openLibraryBook else { return }
+
+                let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
+                item?.title = book.details.title
+                item?.summary = book.details.desc
                 item?.date = NSDate()
-                
+
                 // save to core data
-                self.managedObjectContext.saveChanges(viewController: self)
-                
+                strongSelf.managedObjectContext.saveChanges(viewController: strongSelf)
+
                 // try to display review prompt
-                MarketingAlertHelper().tryToDisplayPrompts(with: self)
+                MarketingAlertHelper().tryToDisplayPrompts(with: strongSelf)
             }
-            
-            // return to the previous ViewController
-            controller.reset()
-            controller.dismiss(animated: true, completion: nil)
         }
     }
-    
+}
+
+// MARK: - BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate
+
+extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+
+    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+        searchBookForCode(code: code)
+
+        // return to the previous ViewController
+        controller.reset()
+        controller.dismiss(animated: true, completion: nil)
+    }
+
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
+
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
         print(error)
     }
-    
 }
