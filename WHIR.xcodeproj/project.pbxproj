@@ -76,6 +76,9 @@
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDE2E908217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		EDE2E90A217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDE2E90B217F0DC200306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -230,6 +233,7 @@
 				de,
 				ru,
 				"pt-BR",
+				fr,
 			);
 			mainGroup = 320571002033B0F100FCA3B1;
 			productRefGroup = 3205710A2033B0F100FCA3B1 /* Products */;
@@ -331,6 +335,7 @@
 				04CBC5422177858A00D35604 /* en */,
 				ED11A4A821783DAE00D34ABB /* ru */,
 				2CB55268217D1511003C5C74 /* pt-BR */,
+				EDE2E90A217F0DBE00306C53 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				04CBC5462177878800D35604 /* en */,
 				04CBC5482177878900D35604 /* de */,
 				2CB55269217D1511003C5C74 /* pt-BR */,
+				EDE2E90B217F0DC200306C53 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				04CBC5372177761100D35604 /* de */,
 				A8E3A4EC217306790069EC24 /* ru */,
 				2CB55266217D1511003C5C74 /* pt-BR */,
+				EDE2E908217F0DBE00306C53 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
