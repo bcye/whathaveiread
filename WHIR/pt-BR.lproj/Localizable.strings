@@ -6,7 +6,7 @@
 "shareBookMessage" = "Eu acabei de ler este livro e gostaria de compartilhá-lo com você.\n";
 "sharePostScriptum" = "P.S:Você também pode escrever resumos para seus livros com este app: http://bit.ly/whirshare";
 "noChangesAlertTitle" = "Não há nenhuma mudança!";
-"noChangesAlertMessage" = "Oops! Parece que você tentou salvar sem fazer mudanças. Volte ou mude altere o texto clicando no mesmo antes de salvar!";
+"noChangesAlertMessage" = "Oops! Parece que você tentou salvar sem fazer mudanças. Volte ou altere o texto clicando no mesmo antes de salvar!";
 
 /* AddViewController.swift*/
 /* Class = "KMPlaceholderTextView"; placeholder = "You have plenty of space to summarize the book here. Use it!"; */
