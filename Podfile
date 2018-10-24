@@ -7,6 +7,7 @@ target 'WHIR' do
   # Vendors
   pod 'KMPlaceholderTextView', '~> 1.3.0'
   pod 'BarcodeScanner'
+  pod 'SwiftLint'
 
 post_install do |installer|
    installer.pods_project.build_configurations.each do |config|
