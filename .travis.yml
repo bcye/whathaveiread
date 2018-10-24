@@ -1,0 +1,18 @@
+os: osx
+language: objective-c
+osx_image: xcode10
+
+env:
+  global:
+    - WORKSPACE="WHIR.xcworkspace"
+  matrix:
+    - PLATFORM="iOS" SCHEME="WHIR" DESTINATION='platform=iOS Simulator,name=iPhone 8'
+
+before_install:
+  - gem install xcpretty
+
+before_script:
+  - pod install
+
+script:
+  - set -o pipefail && xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" | xcpretty

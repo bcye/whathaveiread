@@ -20,12 +20,12 @@ class SearchViewController: UIViewController, ManagedObjectContextSettable, UITe
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         return NSFetchedResultsController<Book>(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
     }()
-    
+
     private func search() {
         guard let searchPhrase = searchField.text else { return }
-    
+
         fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "title contains[cd] %@", searchPhrase)
-        
+
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -33,19 +33,27 @@ class SearchViewController: UIViewController, ManagedObjectContextSettable, UITe
         }
         tableView.reloadData()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSummary" {
-            guard let detailVC = (segue.destination as! UINavigationController).topViewController as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard
+                let navViewController = segue.destination as? UINavigationController,
+                let detailVC = navViewController.topViewController as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow
+                else {
+                    return
+            }
+
             let book = fetchedResultsController.object(at: indexPath)
             detailVC.book = book
         }
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,34 +62,29 @@ class SearchViewController: UIViewController, ManagedObjectContextSettable, UITe
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+
     @objc func keyboardWillDisappear() {
         print("will disappear")
         search()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = fetchedResultsController.sections?[section] else { return 0 }
         return section.numberOfObjects
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
         let book = fetchedResultsController.object(at: indexPath)

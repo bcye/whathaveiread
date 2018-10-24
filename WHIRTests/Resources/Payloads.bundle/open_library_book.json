@@ -1,0 +1,62 @@
+{
+  "info_url": "https://openlibrary.org/books/OL26331930M/Harry_Potter_and_the_sorcerer's_stone",
+  "bib_key": "ISBN:9780439708180",
+  "preview_url": "https://archive.org/details/harrypottersorce00jkro_0",
+  "thumbnail_url": "https://covers.openlibrary.org/b/id/-1-S.jpg",
+  "details": {
+    "covers": [-1],
+    "latest_revision": 2,
+    "ocaid": "harrypottersorce00jkro_0",
+    "contributions": ["GrandPre , Mary"],
+    "source_records": ["ia:harrypottersorce00jkro_0"],
+    "title": "Harry Potter and the sorcerer's stone",
+    "work_titles": ["Harry Potter and the philosopher's stone"],
+    "languages": [{ "key": "/languages/eng" }],
+    "subjects": [
+      "Magic",
+      "Juvenile fiction",
+      "Fiction",
+      "Fantasy",
+      "Wizards",
+      "Witches",
+      "Schools",
+      "England",
+      "Hogwarts School of Witchcraft and Wizardry (Imaginary organization)"
+    ],
+    "publish_country": "nyu",
+    "by_statement": "by J.K. Rowling ; illustrations by Mary GrandPre .",
+    "oclc_numbers": ["794451314"],
+    "type": { "key": "/type/edition" },
+    "revision": 2,
+    "publishers": ["Scholastic"],
+    "description": {
+      "type": "/type/text",
+      "value": "Rescued from the outrageous neglect of his aunt and uncle, a young boy with a great destiny proves his worth while attending Hogwarts School for Witchcraft and Wizardry."
+    },
+    "full_title": "Harry Potter and the sorcerer's stone",
+    "last_modified": {
+      "type": "/type/datetime",
+      "value": "2018-08-08T13:19:54.218373"
+    },
+    "key": "/books/OL26331930M",
+    "authors": [{ "name": "J. K. Rowling", "key": "/authors/OL23919A" }],
+    "publish_places": ["New York"],
+    "pagination": "309 pages :",
+    "created": {
+      "type": "/type/datetime",
+      "value": "2017-06-24T04:15:17.639055"
+    },
+    "dewey_decimal_class": ["[Fic]"],
+    "notes": {
+      "type": "/type/text",
+      "value": "Sequel: Harry Potter and the Chamber of Secrets.\n\n\"This edition is only available for distribution through the school market\"--Page 4 of cover."
+    },
+    "number_of_pages": 309,
+    "isbn_13": ["9780439708180", "9780590353403"],
+    "subject_places": ["England"],
+    "isbn_10": ["0439708184", "0590353403"],
+    "publish_date": "1997",
+    "works": [{ "key": "/works/OL17731597W" }]
+  },
+  "preview": "borrow"
+}

@@ -11,7 +11,7 @@ import UIKit
 
 //extending error to make it alertible
 extension Error {
-    
+
     //displays alert from given controller with option to crash or not
     func alert(with controller: UIViewController, error: ErrorCases) {
         let alertController = UIAlertController(title: "Oops", message: error.description, preferredStyle: .alert)
@@ -21,7 +21,10 @@ extension Error {
     }
 }
 
-enum ErrorCases: CustomStringConvertible {
+enum ErrorCases: Error, CustomStringConvertible {
+
+    // MARK: - Constants
+
     case fetchFailed
     case loadingPersistentStoresFailed
     case saveFailed
@@ -31,14 +34,16 @@ enum ErrorCases: CustomStringConvertible {
     case dataTaskFailed
     case other
     case parseFailed
-    
+
+    // MARK: - Properties
+
     var description: String {
         switch self {
         case .fetchFailed, .frcFetchFailed: return "Error while fetching data"
         case .loadingPersistentStoresFailed: return "Error while loading necessary objects for data handling"
         case .saveFailed: return "Error while saving the transaction"
         case .falseInput: return "Given input is not valid"
-        case .dataTaskFailed: return "We were unable to retrieve information on the book from Google Books"
+        case .dataTaskFailed: return "We were unable to retrieve information on the book from OpenLibrary"
         case .parseFailed: return "We were unable to parse the response from Google Books"
         case .other: return "An unknown error happened"
         }
