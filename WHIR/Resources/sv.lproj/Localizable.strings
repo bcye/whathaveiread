@@ -1,0 +1,13 @@
+
+/* TableViewController.swift */
+"addBook" = "Lägg Till en Bok";
+
+/* DetailViewController.swift */
+"shareBookMessage" = "Jag har just läst den här boken och ville att dela den med dig. \n";
+"sharePostScriptum" = "Du kan också skriva ner sammanfattnignar för dina böcker med den här appen: http://bit.ly/whirshare";
+"noChangesAlertTitle" = "Det finns inga förändrigar!";
+"noChangesAlertMessage" = "Oj då! Det ser ut som att du har försökt att spara utan att göra ändringar. Gå tillbaka eller ändra text genom att klicka på den innan du sparar!";
+
+/* AddViewController.swift*/
+/* Class = "KMPlaceholderTextView"; placeholder = "You have plenty of space to summarize the book here. Use it!"; */
+"summarizeBookPlaceholder" = "Du har gott om plats att sammanfatta boken här. Använda den!";

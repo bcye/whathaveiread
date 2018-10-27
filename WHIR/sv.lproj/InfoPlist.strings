@@ -1,0 +1,3 @@
+
+/* Privacy - Camera Usage Description: The camera is used to scan barcodes. Nothing more. */
+"NSCameraUsageDescription" = "Kameran användas att scanna strekkoder. Inga mer.";
