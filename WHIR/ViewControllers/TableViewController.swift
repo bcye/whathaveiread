@@ -103,7 +103,7 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: UITableViewDelegate
-    
+
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
     }

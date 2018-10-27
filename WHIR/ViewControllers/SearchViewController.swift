@@ -68,7 +68,7 @@ class SearchViewController: UIViewController, ManagedObjectContextSettable, UITe
         search()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+    deinit {
         NotificationCenter.default.removeObserver(self)
     }
 
