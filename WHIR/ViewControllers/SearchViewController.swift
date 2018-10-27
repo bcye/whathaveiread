@@ -57,7 +57,7 @@ class SearchViewController: UIViewController, ManagedObjectContextSettable, UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
         searchField.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
