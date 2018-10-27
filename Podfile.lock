@@ -5,20 +5,28 @@ PODS:
 
 DEPENDENCIES:
   - BarcodeScanner
-  - KMPlaceholderTextView (~> 1.3.0)
+  - KMPlaceholderTextView (from `https://github.com/MoZhouqi/KMPlaceholderTextView.git`)
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BarcodeScanner
-    - KMPlaceholderTextView
     - SwiftLint
+
+EXTERNAL SOURCES:
+  KMPlaceholderTextView:
+    :git: https://github.com/MoZhouqi/KMPlaceholderTextView.git
+
+CHECKOUT OPTIONS:
+  KMPlaceholderTextView:
+    :commit: 25f94dd909eea4949413df5b7b4b0892bf3bc163
+    :git: https://github.com/MoZhouqi/KMPlaceholderTextView.git
 
 SPEC CHECKSUMS:
   BarcodeScanner: fce1ad2b3f28286b1ab5091fe0979789618bee27
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 23604292a83638a00cd2f3ac6452bea667fe8559
+PODFILE CHECKSUM: 0a2f028d8da0f684097c5648fac30a363ff4855f
 
 COCOAPODS: 1.5.3
