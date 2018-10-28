@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "6Sa-Cs-oqa"; */
+"6Sa-Cs-oqa.text" = "Título";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "dsh-Zs-OfS"; */
+"dsh-Zs-OfS.title" = "Buscar";
+
+/* Class = "UITextField"; placeholder = "Enter your search phrase here and hit search"; ObjectID = "seL-QA-H5T"; */
+"seL-QA-H5T.placeholder" = "Insira a frase a ser buscada e clique em buscar";

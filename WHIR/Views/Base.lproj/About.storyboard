@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O75-Ci-ib5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About-->
+        <scene sceneID="WjU-m7-gj6">
+            <objects>
+                <viewController id="xdr-TJ-SHa" customClass="InfoViewController" customModule="WHIR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O99-qB-BRU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-Ku-zCI">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Handcrafted by © 2018 Bruce Röttgers
+
+Logo by Zlatko Najdenovski on Flaticon. Licensed under the Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).
+ Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). 
+Using CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensed under the MIT license.
+
+Thanks for reading and using this App ❤.
+
+Feel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A1B-q2-frL" firstAttribute="bottom" secondItem="lpw-Ku-zCI" secondAttribute="bottom" constant="16" id="EJW-LQ-oeR"/>
+                            <constraint firstItem="lpw-Ku-zCI" firstAttribute="leading" secondItem="A1B-q2-frL" secondAttribute="leading" constant="16" id="dTO-mi-0ak"/>
+                            <constraint firstItem="A1B-q2-frL" firstAttribute="trailing" secondItem="lpw-Ku-zCI" secondAttribute="trailing" constant="16" id="k8O-2b-Bn7"/>
+                            <constraint firstItem="lpw-Ku-zCI" firstAttribute="top" secondItem="A1B-q2-frL" secondAttribute="top" constant="16" id="vhP-23-Y5P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A1B-q2-frL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" largeTitleDisplayMode="always" id="RwD-W3-TVP">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="BRQ-Yv-Yle">
+                            <connections>
+                                <action selector="okDismiss:" destination="xdr-TJ-SHa" id="Lo1-Sa-tVS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoTextView" destination="lpw-Ku-zCI" id="6ah-2I-0gy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1z8-6g-CzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2336.8000000000002" y="1411.8440779610196"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2eR-ex-w9d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O75-Ci-ib5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mfF-QL-46O">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xdr-TJ-SHa" kind="relationship" relationship="rootViewController" id="TqB-fB-x9k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCa-iK-jtM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="1412"/>
+        </scene>
+    </scenes>
+</document>

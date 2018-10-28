@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kYo-Vi-1xM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="Vlv-w8-RD8">
+            <objects>
+                <viewController id="17i-zH-PD6" customClass="DetailViewController" customModule="WHIR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m70-pq-5JO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-yq-ps8">
+                                <rect key="frame" x="16" y="80" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here goes the summary" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sQY-mI-tD9">
+                                <rect key="frame" x="16" y="125" width="343" height="482"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="WJL-Ws-VXv">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Delete" id="8vK-r8-z5y">
+                                        <connections>
+                                            <action selector="deleteBook:" destination="17i-zH-PD6" id="or7-hf-xTE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="90r-Lo-BGE"/>
+                                    <barButtonItem systemItem="action" id="YWI-T6-pdW">
+                                        <connections>
+                                            <action selector="shareBook:" destination="17i-zH-PD6" id="9dB-VW-7IZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gaR-yq-ps8" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" constant="16" id="7FA-cV-mG3"/>
+                            <constraint firstItem="eU0-An-hPU" firstAttribute="trailing" secondItem="gaR-yq-ps8" secondAttribute="trailing" constant="16" id="APe-hj-m1a"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="trailing" secondItem="eU0-An-hPU" secondAttribute="trailing" id="EgT-Jr-AYx"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="top" secondItem="sQY-mI-tD9" secondAttribute="bottom" constant="16" id="ErM-gx-qOf"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="bottom" secondItem="eU0-An-hPU" secondAttribute="bottom" id="J1V-7I-4xd"/>
+                            <constraint firstItem="gaR-yq-ps8" firstAttribute="top" secondItem="eU0-An-hPU" secondAttribute="top" constant="16" id="Q7Z-45-fRF"/>
+                            <constraint firstItem="sQY-mI-tD9" firstAttribute="top" secondItem="gaR-yq-ps8" secondAttribute="bottom" constant="16" id="Sao-Be-Slu"/>
+                            <constraint firstItem="WJL-Ws-VXv" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" id="Z4H-Uv-r8U"/>
+                            <constraint firstItem="eU0-An-hPU" firstAttribute="trailing" secondItem="sQY-mI-tD9" secondAttribute="trailing" constant="16" id="lMO-QG-kj9"/>
+                            <constraint firstItem="sQY-mI-tD9" firstAttribute="leading" secondItem="eU0-An-hPU" secondAttribute="leading" constant="16" id="uIH-0T-N2h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eU0-An-hPU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tbA-Th-o9V">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Lsi-RK-ScU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="qP8-q0-al5">
+                            <connections>
+                                <action selector="goBack:" destination="17i-zH-PD6" id="68h-RU-v5g"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SUS-28-ygs">
+                            <connections>
+                                <action selector="saveChanges:" destination="17i-zH-PD6" id="COc-Et-98b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="summaryView" destination="sQY-mI-tD9" id="wAV-8o-WXl"/>
+                        <outlet property="titleLabel" destination="gaR-yq-ps8" id="Pww-ar-O53"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOA-is-Dfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848.79999999999995" y="1411.8440779610196"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h0i-E4-7aT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYo-Vi-1xM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ONo-Xz-kbo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="17i-zH-PD6" kind="relationship" relationship="rootViewController" id="vpL-vT-1Vn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cnr-nu-Sgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="1412"/>
+        </scene>
+    </scenes>
+</document>

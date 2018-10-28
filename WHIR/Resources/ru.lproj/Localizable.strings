@@ -1,0 +1,16 @@
+
+/* TableViewController.swift */
+"addBook" = "Add Book";
+
+/* DetailViewController.swift */
+"shareBookMessage" = "I just read this book and wanted to share it with you. \n";
+"sharePostScriptum" = "P.S:You can write down summaries for your books too with this app: http://bit.ly/whirshare";
+"noChangesAlertTitle" = "There are no changes!";
+"noChangesAlertMessage" = "Whoops! Looks like you tried to save without making changes. Go back or change text by clicking it before saving!";
+
+/* AddViewController.swift*/
+/* Class = "KMPlaceholderTextView"; placeholder = "You have plenty of space to summarize the book here. Use it!"; */
+"summarizeBookPlaceholder" = "You have plenty of space to summarize the book here. Use it!";
+
+/* InfoViewController.swift */
+"attributionText" = "Приложение создано © 2018 Bruce Röttgers\n\nЛоготип принадлежит Zlatko Najdenovski из Flaticon. Находится под базовой лицензией Flaticon (https://www.flaticon.com/authors/zlatko-najdenovski).\n\nАвтор иконки штрихкода - Pixel perfect с ресурса Flaticon (https://www.flaticon.com/free-icon/barcode_726558).\n\nДополнительные библиотеки: CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Находится под лицензией MIT.\n\nСпасибо за чтение и использование приложения ❤.\n\nС радостью жду письма на адрес техподдержки (можно найти на странице приложения в App Store) с багами, пожеланиями или просто впечатлениями о приложении. (br.apps@icloud.com)";

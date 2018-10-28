@@ -1,0 +1,15 @@
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "8vK-r8-z5y"; */
+"8vK-r8-z5y.title" = "Remover";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Lsi-RK-ScU"; */
+"Lsi-RK-ScU.title" = "Voltar";
+
+/* Class = "UILabel"; text = "Book Title"; ObjectID = "gaR-yq-ps8"; */
+"gaR-yq-ps8.text" = "Título do Livro";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "qP8-q0-al5"; */
+"qP8-q0-al5.title" = "Voltar";
+
+/* Class = "UITextView"; text = "Here goes the summary"; ObjectID = "sQY-mI-tD9"; */
+"sQY-mI-tD9.text" = "Aqui deve ser inserido o resumo";

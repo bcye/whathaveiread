@@ -1,0 +1,15 @@
+
+/* Class = "UITextField"; placeholder = "What's the title of the book?"; ObjectID = "3ho-zi-bO4"; */
+"3ho-zi-bO4.placeholder" = "Qual o título do livro?";
+
+/* Class = "UINavigationItem"; title = "Add a book"; ObjectID = "D6v-7n-ahZ"; */
+"D6v-7n-ahZ.title" = "Adicionar um livro";
+
+/* Class = "UILabel"; text = "Summary of the book:"; ObjectID = "J2A-Yq-lX1"; */
+"J2A-Yq-lX1.text" = "Resumo do livro:";
+
+/* Class = "UITextField"; placeholder = "What's the title of the book?"; ObjectID = "XN3-ga-Vwf"; */
+"XN3-ga-Vwf.placeholder" = "Qual o título do livro?";
+
+/* Class = "UILabel"; text = "Book Title:"; ObjectID = "oHN-En-f1E"; */
+"oHN-En-f1E.text" = "Título do Livro:";
