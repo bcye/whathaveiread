@@ -11,3 +11,6 @@
 /* AddViewController.swift*/
 /* Class = "KMPlaceholderTextView"; placeholder = "You have plenty of space to summarize the book here. Use it!"; */
 "summarizeBookPlaceholder" = "Você tem muito espaço para resumir o seu livro aqui. Use-o!";
+
+/* InfoViewController.swift */
+"attributionText" = "Feito por © 2018 Bruce Röttgers\n\nLogo by Zlatko Najdenovski on Flaticon. Licensiado sob a Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).\n Ícone de Barcode feito por Pixel perfect em Flaticon (https://www.flaticon.com/free-icon/barcode_726558). \nUsando CocoaPod KMPlaceholderTextView por MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensiado sob MIT license.\n\nObrigado por ler e usar este app ❤.\n\n Sinta-se livre para entrar em contato pelo meu e-mail de suporte (pode ser encontrado na página da App Store), se você encontrar bugs ou simplesmente para dizer oi. (br.apps@icloud.com) ";
