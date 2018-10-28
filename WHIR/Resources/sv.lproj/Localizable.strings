@@ -1,6 +1,6 @@
 
 /* TableViewController.swift */
-"addBook" = "Lägg Till en Bok";
+"addBook" = "Lägg Till Bok";
 
 /* DetailViewController.swift */
 "shareBookMessage" = "Jag har just läst den här boken och ville att dela den med dig. \n";

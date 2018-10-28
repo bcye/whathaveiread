@@ -12,7 +12,7 @@
 "AfO-mg-dmh.title" = "Scanna";
 
 /* Class = "UINavigationItem"; title = "Add a book"; ObjectID = "D6v-7n-ahZ"; */
-"D6v-7n-ahZ.title" = "Lägg till en bok";
+"D6v-7n-ahZ.title" = "Lägg till bok";
 
 /* Class = "UILabel"; text = "Summary of the book:"; ObjectID = "J2A-Yq-lX1"; */
 "J2A-Yq-lX1.text" = "Bokens sammanfattning:";
