@@ -1,12 +1,12 @@
 
 /* Class = "UIBarButtonItem"; title = "Scan"; ObjectID = "AfO-mg-dmh"; */
-"AfO-mg-dmh.title" = "Scannen";
+"AfO-mg-dmh.title" = "Scan";
 
 /* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "Sz4-8d-wza"; */
 "Sz4-8d-wza.title" = "Info";
 
 /* Class = "UINavigationItem"; title = "Books"; ObjectID = "hmL-qq-v7y"; */
-"hmL-qq-v7y.title" = "Bücher";
+"hmL-qq-v7y.title" = "Books";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "xCu-Jc-NWA"; */
-"xCu-Jc-NWA.text" = "Titel";
+"xCu-Jc-NWA.text" = "Title";
