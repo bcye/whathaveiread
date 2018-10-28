@@ -1,0 +1,6 @@
+framework module KMPlaceholderTextView {
+  umbrella header "KMPlaceholderTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}

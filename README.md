@@ -6,7 +6,7 @@ WHIR - What have I read? Is an iOS app that allows you to keep track of all book
 
 ## Installation
 
-Before working on the project, perform a `pod install` to make all dependencies available.
+This project uses CocoaPods, but the `Pods` directory is checked into this repo, so no `pod install` is necessary. However, be sure to do your work in `WHIR.xcworkspace` instead of `WHIR.xcodeproj`.
 
 ## Contributing
 
