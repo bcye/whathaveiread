@@ -32,6 +32,7 @@
 		4CC21B04218560C2001D80B7 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B02218560C2001D80B7 /* About.storyboard */; };
 		4CC21B0721856110001D80B7 /* Show summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0521856110001D80B7 /* Show summary.storyboard */; };
 		4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0821856163001D80B7 /* Search.storyboard */; };
+		ED2585A72185833C00745F8D /* WHIRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2585A62185833C00745F8D /* WHIRUITests.swift */; };
 		EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* OpenLibraryService.swift */; };
 		EDE2E914217F1AFB00306C53 /* OpenLibraryBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */; };
 		EDE2E925217F38FE00306C53 /* OpenLibraryBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* OpenLibraryBookTests.swift */; };
@@ -40,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		ED2585A92185833C00745F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320571012033B0F100FCA3B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 320571082033B0F100FCA3B1;
+			remoteInfo = WHIR;
+		};
 		EDE2E91E217F38B300306C53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 320571012033B0F100FCA3B1 /* Project object */;
@@ -130,6 +138,9 @@
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED2585A42185833C00745F8D /* WHIRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHIRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED2585A62185833C00745F8D /* WHIRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHIRUITests.swift; sourceTree = "<group>"; };
+		ED2585A82185833C00745F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDE2E908217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EDE2E90A217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDE2E90B217F0DC200306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -151,6 +162,13 @@
 				327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */,
 				324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */,
 				4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED2585A12185833C00745F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +196,7 @@
 			children = (
 				3205710B2033B0F100FCA3B1 /* WHIR */,
 				EDE2E91A217F38B300306C53 /* WHIRTests */,
+				ED2585A52185833C00745F8D /* WHIRUITests */,
 				3205710A2033B0F100FCA3B1 /* Products */,
 				A17471A2A88C6493E11E4E2F /* Frameworks */,
 				2E56D24BE9E3B9B4B7FF4C52 /* Pods */,
@@ -189,6 +208,7 @@
 			children = (
 				320571092033B0F100FCA3B1 /* WHIR.app */,
 				EDE2E919217F38B300306C53 /* WHIRTests.xctest */,
+				ED2585A42185833C00745F8D /* WHIRUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,13 +216,10 @@
 		3205710B2033B0F100FCA3B1 /* WHIR */ = {
 			isa = PBXGroup;
 			children = (
-				3262142A203737A200EA8A83 /* AlertableError.swift */,
 				3205710C2033B0F100FCA3B1 /* AppDelegate.swift */,
-				328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */,
-				3255E4DE20C151F700FA7FC3 /* CoreData */,
 				3205711B2033B0F100FCA3B1 /* Info.plist */,
 				04CBC5402177847D00D35604 /* InfoPlist.strings */,
-				32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */,
+				3255E4DE20C151F700FA7FC3 /* CoreData */,
 				EDE2E90E217F128B00306C53 /* Models */,
 				EDE2E92F217F50AF00306C53 /* Resources */,
 				EDE2E910217F175B00306C53 /* Services */,
@@ -247,6 +264,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED2585A52185833C00745F8D /* WHIRUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED2585A62185833C00745F8D /* WHIRUITests.swift */,
+				ED2585A82185833C00745F8D /* Info.plist */,
+			);
+			path = WHIRUITests;
+			sourceTree = "<group>";
+		};
 		EDE2E90E217F128B00306C53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +284,10 @@
 		EDE2E910217F175B00306C53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */,
 				EDE2E911217F176F00306C53 /* OpenLibraryService.swift */,
+				3262142A203737A200EA8A83 /* AlertableError.swift */,
+				32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,6 +372,24 @@
 			productReference = 320571092033B0F100FCA3B1 /* WHIR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ED2585A32185833C00745F8D /* WHIRUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED2585AB2185833C00745F8D /* Build configuration list for PBXNativeTarget "WHIRUITests" */;
+			buildPhases = (
+				ED2585A02185833C00745F8D /* Sources */,
+				ED2585A12185833C00745F8D /* Frameworks */,
+				ED2585A22185833C00745F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED2585AA2185833C00745F8D /* PBXTargetDependency */,
+			);
+			name = WHIRUITests;
+			productName = WHIRUITests;
+			productReference = ED2585A42185833C00745F8D /* WHIRUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		EDE2E918217F38B300306C53 /* WHIRTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDE2E920217F38B300306C53 /* Build configuration list for PBXNativeTarget "WHIRTests" */;
@@ -381,6 +428,11 @@
 							};
 						};
 					};
+					ED2585A32185833C00745F8D = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 320571082033B0F100FCA3B1;
+					};
 					EDE2E918217F38B300306C53 = {
 						CreatedOnToolsVersion = 10.0;
 						ProvisioningStyle = Automatic;
@@ -409,6 +461,7 @@
 			targets = (
 				320571082033B0F100FCA3B1 /* WHIR */,
 				EDE2E918217F38B300306C53 /* WHIRTests */,
+				ED2585A32185833C00745F8D /* WHIRUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,6 +480,13 @@
 				4CC21B0721856110001D80B7 /* Show summary.storyboard in Resources */,
 				320571122033B0F100FCA3B1 /* Main.storyboard in Resources */,
 				04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED2585A22185833C00745F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +582,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED2585A02185833C00745F8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED2585A72185833C00745F8D /* WHIRUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDE2E915217F38B300306C53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,6 +602,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		ED2585AA2185833C00745F8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 320571082033B0F100FCA3B1 /* WHIR */;
+			targetProxy = ED2585A92185833C00745F8D /* PBXContainerItemProxy */;
+		};
 		EDE2E91F217F38B300306C53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 320571082033B0F100FCA3B1 /* WHIR */;
@@ -782,7 +855,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -800,7 +873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -811,13 +884,50 @@
 			};
 			name = Release;
 		};
+		ED2585AC2185833C00745F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
+				INFOPLIST_FILE = WHIRUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dirkhulverscheidt.WHIRUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WHIR;
+			};
+			name = Debug;
+		};
+		ED2585AD2185833C00745F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
+				INFOPLIST_FILE = WHIRUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dirkhulverscheidt.WHIRUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WHIR;
+			};
+			name = Release;
+		};
 		EDE2E921217F38B300306C53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIRTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -837,7 +947,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIRTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -867,6 +977,15 @@
 			buildConfigurations = (
 				3205711F2033B0F100FCA3B1 /* Debug */,
 				320571202033B0F100FCA3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED2585AB2185833C00745F8D /* Build configuration list for PBXNativeTarget "WHIRUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED2585AC2185833C00745F8D /* Debug */,
+				ED2585AD2185833C00745F8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
