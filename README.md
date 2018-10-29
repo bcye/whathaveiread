@@ -21,3 +21,15 @@ Thanks, for wanting to contribute. At the moment please open an issue if you hav
 ## License
 
 The project is licensed under the GNU GPL v3 license, as declared in the [LICENSE file.](LICENSE)
+
+
+## Wiki
+![](https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/ab/a1/f5/aba1f585-0ee4-7d56-999a-6f9c6d17c85c/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/230x0w.jpg)
+
+**Description**
+WHIR - What have I read? is your personal book and article library.
+You write down the name and a quick summary of the book or article!
+It allows you to easily find information about the books and articles you've read!
+It's that easy!
+
+![](https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/5d/09/cf/5d09cf89-b0a6-b2a3-2187-1a27e58cb896/mzl.rhsbtjtt.png/230x0w.jpg)
