@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
+import KMPlaceholderTextView
 
 class DetailViewController: UIViewController, ManagedObjectContextSettable {
 
     // #warning: watch last part of CoreData course on Treehouse to understand how to show Detail stuff from TableView w/ Coredata (!!!)
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var summaryView: UITextView!
+    @IBOutlet weak var summaryView: KMPlaceholderTextView!
     var book: Book!
     var managedObjectContext: NSManagedObjectContext!
 
@@ -23,6 +24,7 @@ class DetailViewController: UIViewController, ManagedObjectContextSettable {
         //Display the book
         titleLabel.text = book.title
         summaryView.text = book.summary
+        summaryView.placeholder = NSLocalizedString("summarizeBookPlaceholder", comment: "You have plenty of space to summarize the book here. Use it!")
     }
 
     @IBAction func goBack(_ sender: Any) {
@@ -58,18 +60,9 @@ class DetailViewController: UIViewController, ManagedObjectContextSettable {
             // save changes
             book.summary = summaryView.text
             managedObjectContext.saveChanges(viewController: self)
-
-            // dismiss self after changes were made
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            // alert the user they haven't changed anything
-            let title = NSLocalizedString("noChangesAlertTitle", comment: "There are no changes!")
-            let message = NSLocalizedString("noChangesAlertMessage", comment: "Whoops! Looks like you tried to save without making changes. Go back or change text by clicking it before saving!")
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true, completion: nil)
         }
+
+        // dismiss self after changes were made
+        dismiss(animated: true, completion: nil)
     }
 }

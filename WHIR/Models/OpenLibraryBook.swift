@@ -19,12 +19,12 @@ struct OpenLibraryBook: Decodable {
 
     // MARK: - Properties
 
-    let infoURL: String
-    let bibKey: String
-    let previewURL: String
-    let thumbnailURL: String
+    let infoURL: String?
+    let bibKey: String?
+    let previewURL: String?
+    let thumbnailURL: String?
     let details: OpenLibraryBookDetails
-    let preview: String
+    let preview: String?
 }
 
 struct OpenLibraryBookDetails {
@@ -40,37 +40,37 @@ struct OpenLibraryBookDetails {
 
     // MARK: - Properties
 
-    let covers: [Int]
-    let latestRevision: UInt
-    let ocaid: String
-    let contributions: [String]
-    let sourceRecords: [String]
+    let covers: [Int]?
+    let latestRevision: UInt?
+    let ocaid: String?
+    let contributions: [String]?
+    let sourceRecords: [String]?
     let title: String
-    let workTitles: [String]
-    let languages: [[String: String]]
-    let subjects: [String]
-    let publishCountry: String
-    let byStatement: String
-    let oclcNumbers: [String]
-    let type: [String: String]
-    let revision: UInt
-    let publishers: [String]
-    let desc: String
-    let fullTitle: String
-    let lastModified: Date
-    let key: String
-    let authors: [[String: String]]
-    let publishPlaces: [String]
-    let pagination: String
-    let created: Date
-    let deweyDecimalClass: [String]
-    let notes: String
-    let numberOfPages: UInt
-    let isbn13: [String]
-    let subjectPlaces: [String]
-    let isbn10: [String]
-    let publishDate: String
-    let works: [[String: String]]
+    let workTitles: [String]?
+    let languages: [[String: String]]?
+    let subjects: [String]?
+    let publishCountry: String?
+    let byStatement: String?
+    let oclcNumbers: [String]?
+    let type: [String: String]?
+    let revision: UInt?
+    let publishers: [String]?
+    let desc: String?
+    let fullTitle: String?
+    let lastModified: Date?
+    let key: String?
+    let authors: [[String: String]]?
+    let publishPlaces: [String]?
+    let pagination: String?
+    let created: Date?
+    let deweyDecimalClass: [String]?
+    let notes: String?
+    let numberOfPages: UInt?
+    let isbn13: [String]?
+    let subjectPlaces: [String]?
+    let isbn10: [String]?
+    let publishDate: String?
+    let works: [[String: String]]?
 }
 
 extension OpenLibraryBookDetails: Decodable {
@@ -116,72 +116,64 @@ extension OpenLibraryBookDetails: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        covers = try container.decode([Int].self, forKey: OpenLibraryBookDetails.CodingKeys.covers)
-        latestRevision = try container.decode(UInt.self, forKey: OpenLibraryBookDetails.CodingKeys.latestRevision)
-        ocaid = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.ocaid)
-        contributions = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.contributions)
-        sourceRecords = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.sourceRecords)
-        title = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.title)
-        workTitles = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.workTitles)
-        languages = try container.decode([[String: String]].self, forKey: OpenLibraryBookDetails.CodingKeys.languages)
-        subjects = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.subjects)
-        publishCountry = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.publishCountry)
-        byStatement = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.byStatement)
-        oclcNumbers = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.oclcNumbers)
-        type = try container.decode([String: String].self, forKey: OpenLibraryBookDetails.CodingKeys.type)
-        revision = try container.decode(UInt.self, forKey: OpenLibraryBookDetails.CodingKeys.revision)
-        publishers = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.publishers)
+        covers = try container.decodeIfPresent([Int].self, forKey: .covers)
+        latestRevision = try container.decodeIfPresent(UInt.self, forKey: .latestRevision)
+        ocaid = try container.decodeIfPresent(String.self, forKey: .ocaid)
+        contributions = try container.decodeIfPresent([String].self, forKey: .contributions)
+        sourceRecords = try container.decodeIfPresent([String].self, forKey: .sourceRecords)
+        title = try container.decode(String.self, forKey: .title)
+        workTitles = try container.decodeIfPresent([String].self, forKey: .workTitles)
+        languages = try container.decodeIfPresent([[String: String]].self, forKey: .languages)
+        subjects = try container.decodeIfPresent([String].self, forKey: .subjects)
+        publishCountry = try container.decodeIfPresent(String.self, forKey: .publishCountry)
+        byStatement = try container.decodeIfPresent(String.self, forKey: .byStatement)
+        oclcNumbers = try container.decodeIfPresent([String].self, forKey: .oclcNumbers)
+        type = try container.decodeIfPresent([String: String].self, forKey: .type)
+        revision = try container.decodeIfPresent(UInt.self, forKey: .revision)
+        publishers = try container.decodeIfPresent([String].self, forKey: .publishers)
 
-        if let value = OpenLibraryBookDetails.value(from: container, key: OpenLibraryBookDetails.CodingKeys.desc) {
-            desc = value
-        } else {
-            desc = ""
-        }
+        desc = OpenLibraryBookDetails.value(from: container, key: .desc)
 
-        fullTitle = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.fullTitle)
+        fullTitle = try container.decodeIfPresent(String.self, forKey: .fullTitle)
 
         if
-            let value = OpenLibraryBookDetails.value(from: container, key: OpenLibraryBookDetails.CodingKeys.lastModified),
+            let value = OpenLibraryBookDetails.value(from: container, key: .lastModified),
             let date = OpenLibraryBookDetails.CustomDateFormatter.date(from: value) {
             lastModified = date
         } else {
             lastModified = Date()
         }
 
-        key = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.key)
-        authors = try container.decode([[String: String]].self, forKey: OpenLibraryBookDetails.CodingKeys.authors)
-        publishPlaces = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.publishPlaces)
-        pagination = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.pagination)
+        key = try container.decodeIfPresent(String.self, forKey: .key)
+        authors = try container.decodeIfPresent([[String: String]].self, forKey: .authors)
+        publishPlaces = try container.decodeIfPresent([String].self, forKey: .publishPlaces)
+        pagination = try container.decodeIfPresent(String.self, forKey: .pagination)
 
         if
-            let value = OpenLibraryBookDetails.value(from: container, key: OpenLibraryBookDetails.CodingKeys.created),
+            let value = OpenLibraryBookDetails.value(from: container, key: .created),
             let date = OpenLibraryBookDetails.CustomDateFormatter.date(from: value) {
             created = date
         } else {
             created = Date()
         }
 
-        deweyDecimalClass = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.deweyDecimalClass)
+        deweyDecimalClass = try container.decodeIfPresent([String].self, forKey: .deweyDecimalClass)
 
-        if let value = OpenLibraryBookDetails.value(from: container, key: OpenLibraryBookDetails.CodingKeys.notes) {
-            notes = value
-        } else {
-            notes = ""
-        }
+        notes = OpenLibraryBookDetails.value(from: container, key: .notes)
 
-        numberOfPages = try container.decode(UInt.self, forKey: OpenLibraryBookDetails.CodingKeys.numberOfPages)
-        isbn13 = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.isbn13)
-        subjectPlaces = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.subjectPlaces)
-        isbn10 = try container.decode([String].self, forKey: OpenLibraryBookDetails.CodingKeys.isbn10)
-        publishDate = try container.decode(String.self, forKey: OpenLibraryBookDetails.CodingKeys.publishDate)
-        works = try container.decode([[String: String]].self, forKey: OpenLibraryBookDetails.CodingKeys.works)
+        numberOfPages = try container.decodeIfPresent(UInt.self, forKey: .numberOfPages)
+        isbn13 = try container.decodeIfPresent([String].self, forKey: .isbn13)
+        subjectPlaces = try container.decodeIfPresent([String].self, forKey: .subjectPlaces)
+        isbn10 = try container.decodeIfPresent([String].self, forKey: .isbn10)
+        publishDate = try container.decodeIfPresent(String.self, forKey: .publishDate)
+        works = try container.decodeIfPresent([[String: String]].self, forKey: .works)
     }
 
     private static func value(from container: KeyedDecodingContainer<OpenLibraryBookDetails.CodingKeys>, key: OpenLibraryBookDetails.CodingKeys) -> String? {
-        guard let rootNode = try? container.decode([String: String].self, forKey: key), let value = rootNode["value"] else {
+        guard let rootNode = try? container.decodeIfPresent([String: String].self, forKey: key) else {
             return nil
         }
 
-        return value
+        return rootNode?["value"]
     }
 }

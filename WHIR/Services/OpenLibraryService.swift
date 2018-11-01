@@ -8,7 +8,7 @@ final class OpenLibraryService {
 
     /// If the supplied ISBN exists on **OpenLibrary**, returns an `OpenLibraryBook`, otherwise returns `nil`.
     static func search(ISBN: String, completionHandler: @escaping (OpenLibraryBook?, ErrorCases?) -> Void) {
-        guard let url = URL(string: "https://openlibrary.org/api/books?bibkeys=isbn:\(ISBN)&format=json&jscmd=details") else {
+        guard let url = URL(string: "https://openlibrary.org/api/books?bibkeys=isbn:\(dump(ISBN))&format=json&jscmd=details") else {
             completionHandler(nil, nil)
             return
         }
@@ -19,7 +19,7 @@ final class OpenLibraryService {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print(error)
-                completionHandler(nil, ErrorCases.other)
+                completionHandler(nil, .other)
                 return
             }
 
@@ -28,7 +28,7 @@ final class OpenLibraryService {
                     let bundle = try JSONDecoder().decode(([String: OpenLibraryBook]).self, from: data)
 
                     guard let firstBook = bundle.first?.value else {
-                        completionHandler(nil, ErrorCases.fetchFailed)
+                        completionHandler(nil, .fetchFailed)
                         return
                     }
 

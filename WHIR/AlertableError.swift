@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 //extending error to make it alertible
-extension Error {
+extension ErrorCases {
 
     //displays alert from given controller with option to crash or not
-    func alert(with controller: UIViewController, error: ErrorCases) {
-        let alertController = UIAlertController(title: "Oops", message: error.description, preferredStyle: .alert)
+    func alert(with controller: UIViewController) {
+        let alertController = UIAlertController(title: "Oops", message: localizedDescription, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(alertAction)
         controller.present(alertController, animated: true, completion: nil)
@@ -38,6 +38,10 @@ enum ErrorCases: Error, CustomStringConvertible {
     // MARK: - Properties
 
     var description: String {
+        return localizedDescription
+    }
+
+    var localizedDescription: String {
         switch self {
         case .fetchFailed, .frcFetchFailed: return "Error while fetching data"
         case .loadingPersistentStoresFailed: return "Error while loading necessary objects for data handling"
