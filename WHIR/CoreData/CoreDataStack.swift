@@ -36,7 +36,7 @@ extension NSManagedObjectContext {
             do {
                 try save()
             } catch {
-                error.alert(with: viewController, error: .saveFailed)
+                ErrorCases.saveFailed.alert(with: viewController)
                 print("Error: \(error.localizedDescription)")
             }
         }

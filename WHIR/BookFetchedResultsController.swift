@@ -32,7 +32,7 @@ class BookFetchedResultsController: NSFetchedResultsController<Book>, NSFetchedR
         do {
             try performFetch()
         } catch {
-            error.alert(with: tableVC, error: .frcFetchFailed)
+            ErrorCases.frcFetchFailed.alert(with: tableVC)
             print("Error: \(error)")
         }
     }
