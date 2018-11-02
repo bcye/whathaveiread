@@ -5,6 +5,7 @@
 # hide credentials
 */keys.plist
 WHIR/Resources/keys.plist
+keys.plist
 
 ## Build generated
 build/

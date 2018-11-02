@@ -9,9 +9,11 @@
 import Foundation
 
 class ApiKeyService {
-    let path = Bundle.main.path(forResource: "Resources/keys", ofType: "plist")
+    let path = Bundle.main.path(forResource: "keys", ofType: "plist")
     var key: String {
-        let dict = NSDictionary(contentsOfFile: path!)
-        return dict?["API_KEY"] as! String
+        if let dict = NSDictionary(contentsOfFile: path!) {
+            return dict["API_KEY"] as! String
+        }
+        return "hmmm"
     }
 }
