@@ -4,17 +4,19 @@
 
 import Foundation
 
-final class OpenLibraryService {
+final class ISBNDBService {
 
-    /// If the supplied ISBN exists on **OpenLibrary**, returns an `OpenLibraryBook`, otherwise returns `nil`.
-    static func search(ISBN: String, completionHandler: @escaping (OpenLibraryBook?, ErrorCases?) -> Void) {
-        guard let url = URL(string: "https://openlibrary.org/api/books?bibkeys=isbn:\(ISBN)&format=json&jscmd=details") else {
+    /// If the supplied ISBN exists on **ISBNDB**, returns an `ISBNDBBook`, otherwise returns `nil`.
+    static func search(isbn: String, completionHandler: @escaping (ISBNDBBook?, ErrorCases?) -> Void) {
+        guard let url = URL(string: "https://api.isbndb.com/book/\(isbn)") else {
             completionHandler(nil, nil)
             return
         }
+        let key = ApiKeyService().key
 
-        var request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
+        var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(key, forHTTPHeaderField: "X-API-KEY")
 
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
@@ -24,21 +26,17 @@ final class OpenLibraryService {
             }
 
             if let data = data {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
                 do {
-                    let bundle = try JSONDecoder().decode(([String: OpenLibraryBook]).self, from: data)
-
-                    guard let firstBook = bundle.first?.value else {
-                        completionHandler(nil, ErrorCases.fetchFailed)
-                        return
-                    }
-
-                    completionHandler(firstBook, nil)
+                    let book = try decoder.decode(ISBNDBBook.self, from: data)
+                    completionHandler(book, nil)
                 } catch {
-                    print(error)
-                    print(data.description)
-                    print(data.stringDescription)
-                    completionHandler(nil, ErrorCases.parseFailed)
+                    completionHandler(nil, .other)
+                    return
                 }
+                
             }
         }.resume()
     }

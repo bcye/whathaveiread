@@ -32,6 +32,9 @@
 		4CC21B04218560C2001D80B7 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B02218560C2001D80B7 /* About.storyboard */; };
 		4CC21B0721856110001D80B7 /* Show summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0521856110001D80B7 /* Show summary.storyboard */; };
 		4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0821856163001D80B7 /* Search.storyboard */; };
+		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
+		EDB583C4218AC31D005D24D5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB583C3218AC31D005D24D5 /* keys.plist */; };
+		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
 		EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* OpenLibraryService.swift */; };
 		EDE2E914217F1AFB00306C53 /* OpenLibraryBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */; };
 		EDE2E925217F38FE00306C53 /* OpenLibraryBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* OpenLibraryBookTests.swift */; };
@@ -130,6 +133,9 @@
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
+		EDB583C3218AC31D005D24D5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
 		EDE2E908217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EDE2E90A217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDE2E90B217F0DC200306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE2E911217F176F00306C53 /* OpenLibraryService.swift */,
+				EDB583C5218AC340005D24D5 /* ApiKeyService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -315,7 +322,9 @@
 			isa = PBXGroup;
 			children = (
 				320571162033B0F100FCA3B1 /* Assets.xcassets */,
+				ED4E7EEA218CCC3400B56288 /* barcode-2.png */,
 				04CBC5472177878800D35604 /* Localizable.strings */,
+				EDB583C3218AC31D005D24D5 /* keys.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -423,9 +432,11 @@
 				4CC21B0121856081001D80B7 /* Add a book.storyboard in Resources */,
 				3205711A2033B0F100FCA3B1 /* LaunchScreen.storyboard in Resources */,
 				4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */,
+				ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */,
 				320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */,
 				4CC21B0721856110001D80B7 /* Show summary.storyboard in Resources */,
 				320571122033B0F100FCA3B1 /* Main.storyboard in Resources */,
+				EDB583C4218AC31D005D24D5 /* keys.plist in Resources */,
 				04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +520,7 @@
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
 				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
 				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
+				EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
 				32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */,
@@ -817,7 +829,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIRTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -837,7 +849,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIRTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
