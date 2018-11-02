@@ -10,6 +10,6 @@ env:
 
 before_install:
   - gem install xcpretty
-
+  - openssl aes-256-cbc -K $encrypted_fb2b8d187e4d_key -iv $encrypted_fb2b8d187e4d_iv -in keys.plist.enc -out WHIR/keys.plist -d
 script:
   - set -o pipefail && xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" | xcpretty
