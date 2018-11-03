@@ -18,7 +18,7 @@ Thanks, for wanting to contribute. At the moment please open an issue if you hav
 
 [Please join our Slack,](https://join.slack.com/t/iosmaintainers/shared_invite/enQtNDY1ODk2NTYxNjM2LTU5MzM2ODY2MWE4MjVmNjE4ZWU3ZjMxNzc0YTYxN2QwM2ZkMjY4N2U0ZTUxNGRkNmQ2NGRkNjEzZmRiNjkyNjY) which is open to anyone searching for projects to contribute too, searching for contributors, or just wanting to chat with other (upcoming) iOS developers.
 
-All contributors will be thanked for their work with a promotional code (please PM me on slack for it).
+**All contributors** will be thanked for their work with a **promotional code** (please PM me on slack for it).
 Obviously, this only works until I run out of them. I will remove this notice, should this happen.
 
 ## License
