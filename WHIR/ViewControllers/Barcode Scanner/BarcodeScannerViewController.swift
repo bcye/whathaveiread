@@ -18,8 +18,18 @@ class BarcodeScannerViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var settingsButton: UIButton!
+
     @IBAction func cancelScanning(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func openSettings() {
+        guard let settings = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        UIApplication.shared.open(settings, options: [:], completionHandler: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,11 +44,21 @@ class BarcodeScannerViewController: UIViewController {
     }
 
     private func layoutForCurrentVideoAccess() {
+        var errorLabelText: String?
+        var shouldHideSettingsButton = false
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             viewport.isHidden = false
             viewport.videoSession?.startRunning()
-        case .denied, .restricted:
+        case .restricted:
+            // TODO: Localize these messages
+            errorLabelText = "Camera access has been restricted on this device by a parent or MDM administrator"
+            shouldHideSettingsButton = true
+            fallthrough
+        case .denied:
+            errorLabelText = errorLabelText ?? "You must grant WHIR camera access to scan barcodes"
+            errorLabel.text = errorLabelText
+            settingsButton.isHidden = shouldHideSettingsButton
             viewport.isHidden = true
             viewport.videoSession?.stopRunning()
         default:

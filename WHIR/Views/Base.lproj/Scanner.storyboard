@@ -34,6 +34,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Nhn-Vv-AAu">
+                                <rect key="frame" x="0.0" y="298" width="375" height="71"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must authorize WHIR to access the camera" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOI-1L-89A">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx5-ou-OY1">
+                                        <rect key="frame" x="8" y="41" width="359" height="30"/>
+                                        <state key="normal" title="Open Settings"/>
+                                        <connections>
+                                            <action selector="openSettings" destination="4w6-XN-fpW" eventType="touchUpInside" id="McW-CY-MMH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJk-Fx-99x" customClass="CameraView" customModule="WHIR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,7 +61,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uJk-Fx-99x" firstAttribute="bottom" secondItem="GEn-5I-YkE" secondAttribute="bottom" id="5MB-R1-DtQ"/>
+                            <constraint firstItem="GEn-5I-YkE" firstAttribute="trailing" secondItem="Nhn-Vv-AAu" secondAttribute="trailing" id="5dH-Ri-19y"/>
+                            <constraint firstItem="Nhn-Vv-AAu" firstAttribute="centerY" secondItem="ROq-53-vk8" secondAttribute="centerY" id="9Ek-fq-wSl"/>
                             <constraint firstItem="uJk-Fx-99x" firstAttribute="top" secondItem="ROq-53-vk8" secondAttribute="top" id="E7d-fL-jhx"/>
+                            <constraint firstItem="Nhn-Vv-AAu" firstAttribute="leading" secondItem="GEn-5I-YkE" secondAttribute="leading" id="hDC-cM-0Tl"/>
                             <constraint firstItem="uJk-Fx-99x" firstAttribute="trailing" secondItem="GEn-5I-YkE" secondAttribute="trailing" id="ia3-yx-Ga2"/>
                             <constraint firstItem="uJk-Fx-99x" firstAttribute="leading" secondItem="GEn-5I-YkE" secondAttribute="leading" id="jk2-cI-Ntc"/>
                         </constraints>
@@ -56,6 +78,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="errorLabel" destination="sOI-1L-89A" id="Q4X-R5-7hR"/>
+                        <outlet property="settingsButton" destination="Wx5-ou-OY1" id="GGP-br-4ii"/>
                         <outlet property="viewport" destination="uJk-Fx-99x" id="vMQ-dS-57h"/>
                     </connections>
                 </viewController>
