@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import BarcodeScanner
 
 class TableViewController: UITableViewController {
 
@@ -112,9 +111,9 @@ class TableViewController: UITableViewController {
     @IBAction func addByBarcode(_ sender: Any) {
         // creates the scanner view controller, sets delegates and presents it.
         let scanner = BarcodeScannerViewController()
-        scanner.dismissalDelegate = self
-        scanner.codeDelegate = self
-        scanner.errorDelegate = self
+//        scanner.dismissalDelegate = self
+//        scanner.codeDelegate = self
+//        scanner.errorDelegate = self
 
         present(scanner, animated: true, completion: nil)
     }
@@ -150,21 +149,21 @@ class TableViewController: UITableViewController {
 
 // MARK: - BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate
 
-extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-
-    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        searchBookForCode(code: code)
-
-        // return to the previous ViewController
-        controller.reset()
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-        print(error)
-    }
-}
+//extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+//
+//    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+//        searchBookForCode(code: code)
+//
+//        // return to the previous ViewController
+//        controller.reset()
+//        controller.dismiss(animated: true, completion: nil)
+//    }
+//
+//    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
+//        controller.dismiss(animated: true, completion: nil)
+//    }
+//
+//    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
+//        print(error)
+//    }
+//}
