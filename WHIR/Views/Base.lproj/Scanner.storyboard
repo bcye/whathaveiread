@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="849" y="1422"/>
         </scene>
-        <!--Barcode Scanner View Controller-->
+        <!--Scan a Barcode-->
         <scene sceneID="bxx-FC-EC4">
             <objects>
                 <viewController id="4w6-XN-fpW" customClass="BarcodeScannerViewController" customModule="WHIR" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,39 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJk-Fx-99x" customClass="CameraView" customModule="WHIR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8N-3k-Dw8">
+                                        <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dIa-VK-9bz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point your camera at a book's barcode to scan it" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wL-Iu-IAr">
+                                                    <rect key="frame" x="8" y="8" width="359" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6wL-Iu-IAr" firstAttribute="trailing" secondItem="dIa-VK-9bz" secondAttribute="trailingMargin" id="33a-5D-hqB"/>
+                                                <constraint firstItem="6wL-Iu-IAr" firstAttribute="leading" secondItem="dIa-VK-9bz" secondAttribute="leadingMargin" id="6hu-Je-jTQ"/>
+                                                <constraint firstItem="6wL-Iu-IAr" firstAttribute="bottom" secondItem="dIa-VK-9bz" secondAttribute="bottomMargin" id="mik-JF-V5I"/>
+                                                <constraint firstItem="6wL-Iu-IAr" firstAttribute="top" secondItem="dIa-VK-9bz" secondAttribute="topMargin" id="x4I-jt-JYh"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Ilb-2M-00w"/>
+                                        </constraints>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="D8N-3k-Dw8" firstAttribute="leading" secondItem="uJk-Fx-99x" secondAttribute="leading" id="Aee-Oc-iDc"/>
+                                    <constraint firstAttribute="trailing" secondItem="D8N-3k-Dw8" secondAttribute="trailing" id="dPD-mY-qD0"/>
+                                    <constraint firstAttribute="bottom" secondItem="D8N-3k-Dw8" secondAttribute="bottom" id="mRw-x2-eRV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,7 +102,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GEn-5I-YkE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mTV-oM-j9H">
+                    <navigationItem key="navigationItem" title="Scan a Barcode" id="mTV-oM-j9H">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PJw-fl-stl">
                             <connections>
                                 <action selector="cancelScanning:" destination="4w6-XN-fpW" id="8Ax-cd-mlK"/>
