@@ -14,13 +14,18 @@ class BarcodeScannerViewController: UIViewController {
     @IBOutlet weak var viewport: CameraView! {
         didSet {
             viewport.videoSession = AVCaptureSession()
+            viewport.delegate = self
         }
+    }
+
+    @IBAction func cancelScanning(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if case .notDetermined = AVCaptureDevice.authorizationStatus(for: viewport.mediaType) {
-            AVCaptureDevice.requestAccess(for: viewport.mediaType) { (_) in
+        if case .notDetermined = AVCaptureDevice.authorizationStatus(for: .video) {
+            AVCaptureDevice.requestAccess(for: .video) { (_) in
                 self.layoutForCurrentVideoAccess()
             }
         } else {
@@ -29,14 +34,26 @@ class BarcodeScannerViewController: UIViewController {
     }
 
     private func layoutForCurrentVideoAccess() {
-        switch AVCaptureDevice.authorizationStatus(for: viewport.mediaType) {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             viewport.isHidden = false
             viewport.videoSession?.startRunning()
         case .denied, .restricted:
             viewport.isHidden = true
+            viewport.videoSession?.stopRunning()
         default:
             return
+        }
+    }
+}
+
+extension BarcodeScannerViewController: CameraViewDelegate {
+    func cameraView(_ cameraView: CameraView, didFailWithError error: CameraError) {
+        switch error {
+        case .accessDenied, .restricted:
+            layoutForCurrentVideoAccess()
+        case .unknown:
+            break // TODO: Display error on default label
         }
     }
 }

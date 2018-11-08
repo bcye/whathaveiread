@@ -49,7 +49,11 @@
                         <viewLayoutGuide key="safeArea" id="GEn-5I-YkE"/>
                     </view>
                     <navigationItem key="navigationItem" id="mTV-oM-j9H">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PJw-fl-stl"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PJw-fl-stl">
+                            <connections>
+                                <action selector="cancelScanning:" destination="4w6-XN-fpW" id="8Ax-cd-mlK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="viewport" destination="uJk-Fx-99x" id="vMQ-dS-57h"/>

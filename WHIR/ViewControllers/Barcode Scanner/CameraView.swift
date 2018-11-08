@@ -19,13 +19,17 @@ enum CameraError: Error {
     case unknown(underlyingError: Error?)
 
     var localizedDescription: String {
+        // TODO: Localize these errors
         switch self {
         case .restricted:
             return "Camera access has been restricted on this device by a parent or MDM administrator"
         case .accessDenied:
             return "You have denied WHIR access to your device's camera, but you must enable it to use this feature"
-        case .unknown:
-            return "WHIR cannot access the camera for an unknown reason"
+        case .unknown(let underlying):
+            guard let under = underlying else {
+                return "WHIR cannot access the camera for an unknown reason"
+            }
+            return under.localizedDescription
         }
     }
 }
@@ -33,8 +37,6 @@ enum CameraError: Error {
 class CameraView: UIView {
 
     weak var delegate: CameraViewDelegate?
-
-    let mediaType = AVMediaType.video
 
     private typealias RenderingLayerClass = AVCaptureVideoPreviewLayer
     override class var layerClass: AnyClass {
@@ -46,25 +48,29 @@ class CameraView: UIView {
             return (layer as? RenderingLayerClass)?.session
         }
         set {
+            videoSession?.stopRunning()
+
             (layer as? RenderingLayerClass)?.session = newValue
 
-            if let session = newValue, let camera = AVCaptureDevice.default(for: mediaType) {
+            if let session = newValue, let camera = AVCaptureDevice.default(for: .video) {
                 do {
                     let input = try AVCaptureDeviceInput(device: camera)
 
                     session.beginConfiguration()
+
                     for oldInput in session.inputs {
                         session.removeInput(oldInput)
                     }
                     session.addInput(input)
 
                     session.commitConfiguration()
+                    session.startRunning()
                 } catch let error as NSError where error.code == -11852 {
                     delegate?.cameraView(self, didFailWithError: .accessDenied)
                 } catch {
                     delegate?.cameraView(self, didFailWithError: .unknown(underlyingError: error))
                 }
-            } else if case .restricted = AVCaptureDevice.authorizationStatus(for: mediaType), newValue != nil {
+            } else if case .restricted = AVCaptureDevice.authorizationStatus(for: .video), newValue != nil {
                 delegate?.cameraView(self, didFailWithError: .restricted)
             } else if newValue != nil {
                 delegate?.cameraView(self, didFailWithError: .unknown(underlyingError: nil))
