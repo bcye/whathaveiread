@@ -86,6 +86,50 @@ class BarcodeScannerViewController: UIViewController {
         }
     }
 
+    static func isValid(isbn barcodeEncodedValue: String) -> Bool {
+        // ISBN checking algorithms found here: https://en.wikipedia.org/wiki/International_Standard_Book_Number#Check_digits
+
+        let encodedDigits = Array(barcodeEncodedValue).compactMap { (digit: Character) -> Int? in
+            return Int(String(digit))
+        }
+
+        guard encodedDigits.count == 13, let checkDigit = encodedDigits.last else { // An ISBN barcode is 13 digits long
+            return false
+        }
+
+        // ISBN-10
+
+        let possibleISBN10 = encodedDigits[3..<encodedDigits.count - 1]
+
+        guard possibleISBN10.count == 9 else { // If it's not 9, something went wrong, and it isn't a valid ISBN
+            return false
+        }
+
+        var total = 0
+        var weight = 10
+
+        for digit in possibleISBN10 {
+            total += digit * weight
+            weight -= 1
+        }
+
+        guard (total + checkDigit) % 11 != 0 else { // If this succeeds, it's a valid ISBN-10
+            return true
+        }
+
+        // If not, we'll check if it's an ISBN-13
+
+        total = 0
+
+        for (index, digit) in encodedDigits[0..<encodedDigits.count - 1].enumerated() {
+            total += digit * (index % 2 == 0 ? 1 : 3)
+        }
+
+        let modulus = total % 10
+
+        return modulus == checkDigit // If this succeeds, it's valid. If not, it's invalid
+    }
+
     private func layoutForCurrentVideoAccess() {
         var errorLabelText: String?
         var shouldHideSettingsButton = false
@@ -145,7 +189,8 @@ extension BarcodeScannerViewController: CameraViewDelegate {
 extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         for object in metadataObjects {
-            guard let isbnObject = object as? AVMetadataMachineReadableCodeObject, let isbn = isbnObject.stringValue else {
+            guard let isbnObject = object as? AVMetadataMachineReadableCodeObject, let isbn = isbnObject.stringValue, BarcodeScannerViewController.isValid(isbn: isbn) else {
+                print("Recognized barcode, but was invalid")
                 continue
             }
             guard !shouldStopDeliveringISBNCodes else {
