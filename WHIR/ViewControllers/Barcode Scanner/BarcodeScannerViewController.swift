@@ -15,6 +15,17 @@ class BarcodeScannerViewController: UIViewController {
         didSet {
             viewport.videoSession = AVCaptureSession()
             viewport.delegate = self
+
+            let output = AVCaptureMetadataOutput()
+            viewport.videoSession?.addOutput(output)
+            output.setMetadataObjectsDelegate(self,
+                                              queue: DispatchQueue(
+                                                label: "dirkhulverscheidt.WHIR.scanningQueue",
+                                                qos: .userInteractive,
+                                                attributes: .concurrent,
+                                                autoreleaseFrequency: .workItem,
+                                                target: DispatchQueue.global()))
+            output.metadataObjectTypes = [.ean13]
         }
     }
 
@@ -74,6 +85,14 @@ extension BarcodeScannerViewController: CameraViewDelegate {
             layoutForCurrentVideoAccess()
         case .unknown:
             break // TODO: Display error on default label
+        }
+    }
+}
+
+extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        for object in metadataObjects {
+            print(object)
         }
     }
 }
