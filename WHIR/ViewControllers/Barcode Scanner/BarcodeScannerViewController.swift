@@ -57,6 +57,9 @@ class BarcodeScannerViewController: UIViewController {
                                             autoreleaseFrequency: .workItem,
                                             target: DispatchQueue.global()))
         output.metadataObjectTypes = [.ean13]
+
+        setTorch(to: .on)
+
         isScanning = true
     }
 
@@ -64,8 +67,10 @@ class BarcodeScannerViewController: UIViewController {
         guard isScanning else {
             return
         }
+
         DispatchQueue.main.async {
             self.viewport.videoSession?.stopRunning()
+            self.setTorch(to: .off)
             self.isScanning = false
         }
     }
@@ -101,6 +106,27 @@ class BarcodeScannerViewController: UIViewController {
             viewport.videoSession?.stopRunning()
         default:
             return
+        }
+    }
+
+    private func setTorch(to mode: AVCaptureDevice.TorchMode) {
+        guard
+            let camera = viewport.camera,
+            camera.hasTorch,
+            camera.isTorchModeSupported(mode) else {
+                return
+        }
+
+        DispatchQueue.main.async {
+            do {
+                try camera.lockForConfiguration()
+                if case .on = mode {
+                    try camera.setTorchModeOn(level: AVCaptureDevice.maxAvailableTorchLevel)
+                } else {
+                    camera.torchMode = .off
+                }
+                camera.unlockForConfiguration()
+            } catch {}
         }
     }
 }

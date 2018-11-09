@@ -56,14 +56,12 @@ class TableViewController: UITableViewController {
 
             addTransactionController.managedObjectContext = self.managedObjectContext
         case "presentScanner":
-            print("Performing scanner transition")
             guard
                 let navigator = segue.destination as? UINavigationController,
                 let scanner = navigator.topViewController as? BarcodeScannerViewController else {
                 return
             }
             scanner.delegate = self
-            print("Set scanner delegate")
         default:
             print("Another identifier was used: \(String(describing: segue.identifier))")
         }

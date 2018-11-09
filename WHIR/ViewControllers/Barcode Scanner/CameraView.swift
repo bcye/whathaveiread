@@ -43,6 +43,10 @@ class CameraView: UIView {
         return RenderingLayerClass.self
     }
 
+    var camera: AVCaptureDevice? {
+        return AVCaptureDevice.default(for: .video)
+    }
+
     var videoSession: AVCaptureSession? {
         get {
             return (layer as? RenderingLayerClass)?.session
@@ -52,7 +56,7 @@ class CameraView: UIView {
 
             (layer as? RenderingLayerClass)?.session = newValue
 
-            if let session = newValue, let camera = AVCaptureDevice.default(for: .video) {
+            if let session = newValue, let camera = camera {
                 do {
                     let input = try AVCaptureDeviceInput(device: camera)
 
@@ -65,7 +69,6 @@ class CameraView: UIView {
 
                     session.commitConfiguration()
                     DispatchQueue.main.async {
-
                         session.startRunning()
                     }
                 } catch let error as NSError where error.code == -11852 {
