@@ -64,7 +64,10 @@ class CameraView: UIView {
                     session.addInput(input)
 
                     session.commitConfiguration()
-                    session.startRunning()
+                    DispatchQueue.main.async {
+
+                        session.startRunning()
+                    }
                 } catch let error as NSError where error.code == -11852 {
                     delegate?.cameraView(self, didFailWithError: .accessDenied)
                 } catch {

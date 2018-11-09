@@ -45,6 +45,7 @@ class TableViewController: UITableViewController {
 
     //passes moc through to addviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         switch segue.identifier {
         case "addItem", "showSummary", "showSearch":
             guard
@@ -54,6 +55,15 @@ class TableViewController: UITableViewController {
             }
 
             addTransactionController.managedObjectContext = self.managedObjectContext
+        case "presentScanner":
+            print("Performing scanner transition")
+            guard
+                let navigator = segue.destination as? UINavigationController,
+                let scanner = navigator.topViewController as? BarcodeScannerViewController else {
+                return
+            }
+            scanner.delegate = self
+            print("Set scanner delegate")
         default:
             print("Another identifier was used: \(String(describing: segue.identifier))")
         }
@@ -107,17 +117,6 @@ class TableViewController: UITableViewController {
         return .delete
     }
 
-    // MARK: Barcode
-    @IBAction func addByBarcode(_ sender: Any) {
-        // creates the scanner view controller, sets delegates and presents it.
-        let scanner = BarcodeScannerViewController()
-//        scanner.dismissalDelegate = self
-//        scanner.codeDelegate = self
-//        scanner.errorDelegate = self
-
-        present(scanner, animated: true, completion: nil)
-    }
-
     func searchBookForCode(code: String) {
         OpenLibraryService.search(ISBN: code) { [weak self] (openLibraryBook, error) in
             DispatchQueue.main.async {
@@ -134,7 +133,7 @@ class TableViewController: UITableViewController {
 
                 let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
                 item?.title = book.details.title
-                item?.summary = dump(book.details.desc)
+                item?.summary = book.details.desc
                 item?.date = NSDate()
 
                 // save to core data
@@ -148,6 +147,17 @@ class TableViewController: UITableViewController {
 }
 
 // MARK: - BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate
+
+extension TableViewController: ISBNScannerDelegate {
+    func scanner(_ scanner: BarcodeScannerViewController, didCaptureISBN isbn: String) {
+        searchBookForCode(code: isbn)
+
+        DispatchQueue.main.async {
+            scanner.stopScanning()
+            scanner.dismiss(animated: true, completion: nil)
+        }
+    }
+}
 
 //extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
 //

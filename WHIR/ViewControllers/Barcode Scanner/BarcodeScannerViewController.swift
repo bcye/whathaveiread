@@ -9,28 +9,23 @@
 import UIKit
 import AVFoundation
 
+protocol ISBNScannerDelegate: class {
+    func scanner(_ scanner: BarcodeScannerViewController, didCaptureISBN isbn: String)
+}
+
 class BarcodeScannerViewController: UIViewController {
 
     @IBOutlet weak var viewport: CameraView! {
         didSet {
-            viewport.videoSession = AVCaptureSession()
-            viewport.delegate = self
-
-            let output = AVCaptureMetadataOutput()
-            viewport.videoSession?.addOutput(output)
-            output.setMetadataObjectsDelegate(self,
-                                              queue: DispatchQueue(
-                                                label: "dirkhulverscheidt.WHIR.scanningQueue",
-                                                qos: .userInteractive,
-                                                attributes: .concurrent,
-                                                autoreleaseFrequency: .workItem,
-                                                target: DispatchQueue.global()))
-            output.metadataObjectTypes = [.ean13]
+            startScanning()
         }
     }
 
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
+
+    private(set) var isScanning = false
+    private var shouldStopDeliveringISBNCodes = false
 
     @IBAction func cancelScanning(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -41,6 +36,38 @@ class BarcodeScannerViewController: UIViewController {
             return
         }
         UIApplication.shared.open(settings, options: [:], completionHandler: nil)
+    }
+
+    weak var delegate: ISBNScannerDelegate?
+
+    func startScanning() {
+        guard !isScanning else {
+            return
+        }
+        viewport.videoSession = AVCaptureSession()
+        viewport.delegate = self
+
+        let output = AVCaptureMetadataOutput()
+        viewport.videoSession?.addOutput(output)
+        output.setMetadataObjectsDelegate(self,
+                                          queue: DispatchQueue(
+                                            label: "dirkhulverscheidt.WHIR.scanningQueue",
+                                            qos: .userInteractive,
+                                            attributes: .concurrent,
+                                            autoreleaseFrequency: .workItem,
+                                            target: DispatchQueue.global()))
+        output.metadataObjectTypes = [.ean13]
+        isScanning = true
+    }
+
+    func stopScanning() {
+        guard isScanning else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.viewport.videoSession?.stopRunning()
+            self.isScanning = false
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -92,7 +119,14 @@ extension BarcodeScannerViewController: CameraViewDelegate {
 extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         for object in metadataObjects {
-            print(object)
+            guard let isbnObject = object as? AVMetadataMachineReadableCodeObject, let isbn = isbnObject.stringValue else {
+                continue
+            }
+            guard !shouldStopDeliveringISBNCodes else {
+                shouldStopDeliveringISBNCodes = false
+                return
+            }
+            delegate?.scanner(self, didCaptureISBN: isbn)
         }
     }
 }
