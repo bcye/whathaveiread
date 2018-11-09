@@ -146,34 +146,20 @@ class TableViewController: UITableViewController {
     }
 }
 
-// MARK: - BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate
+// MARK: - ISBNScannerDelegate
 
 extension TableViewController: ISBNScannerDelegate {
     func scanner(_ scanner: BarcodeScannerViewController, didCaptureISBN isbn: String) {
+        let hapticFeedback = UINotificationFeedbackGenerator()
+        DispatchQueue.main.async {
+            hapticFeedback.prepare()
+        }
         searchBookForCode(code: isbn)
 
         DispatchQueue.main.async {
             scanner.stopScanning()
             scanner.dismiss(animated: true, completion: nil)
+            hapticFeedback.notificationOccurred(.success)
         }
     }
 }
-
-//extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-//
-//    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-//        searchBookForCode(code: code)
-//
-//        // return to the previous ViewController
-//        controller.reset()
-//        controller.dismiss(animated: true, completion: nil)
-//    }
-//
-//    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-//        controller.dismiss(animated: true, completion: nil)
-//    }
-//
-//    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-//        print(error)
-//    }
-//}
