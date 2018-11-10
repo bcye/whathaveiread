@@ -120,8 +120,8 @@ class TableViewController: UITableViewController {
     }
 
     func searchBookForCode(code: String) {
-        OpenLibraryService.search(ISBN: code) { [weak self] (openLibraryBook, error) in
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            ISBNDBService.search(isbn: code) { [weak self] (openLibraryBook, error) in
                 guard let strongSelf = self else { return }
 
                 // Manage error
@@ -134,8 +134,8 @@ class TableViewController: UITableViewController {
                 guard let book = openLibraryBook else { return }
 
                 let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
-                item?.title = book.details.title
-                item?.summary = dump(book.details.desc)
+                item?.title = book.title
+                item?.summary = book.overview
                 item?.date = NSDate()
 
                 // save to core data
