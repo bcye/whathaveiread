@@ -153,7 +153,7 @@ extension TableViewController: ISBNScannerDelegate {
                 // Manage error
                 if error == nil {
                     // create item
-                    guard let book = openLibraryBook else { return }
+                    guard let book = isbndbBook else { return }
 
                 let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
                 item?.title = book.title
