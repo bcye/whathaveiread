@@ -35,8 +35,8 @@
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
 		ED9967ED219763DD00292DA0 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9967EC219763DD00292DA0 /* keys.plist */; };
 		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
-		EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* OpenLibraryService.swift */; };
-		EDE2E914217F1AFB00306C53 /* OpenLibraryBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */; };
+		EDE2E912217F176F00306C53 /* ISBNDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* ISBNDBService.swift */; };
+		EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */; };
 		EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */; };
 		EDE2E928217F398F00306C53 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */; };
 		EDE2E92B217F39B800306C53 /* Payloads.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EDE2E92A217F39B800306C53 /* Payloads.bundle */; };
@@ -139,8 +139,8 @@
 		EDE2E908217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EDE2E90A217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDE2E90B217F0DC200306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EDE2E911217F176F00306C53 /* OpenLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryService.swift; sourceTree = "<group>"; };
-		EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryBook.swift; sourceTree = "<group>"; };
+		EDE2E911217F176F00306C53 /* ISBNDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBService.swift; sourceTree = "<group>"; };
+		EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBBook.swift; sourceTree = "<group>"; };
 		EDE2E919217F38B300306C53 /* WHIRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHIRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE2E91D217F38B300306C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBBookTests.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		EDE2E90E217F128B00306C53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */,
+				EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 		EDE2E910217F175B00306C53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EDE2E911217F176F00306C53 /* OpenLibraryService.swift */,
+				EDE2E911217F176F00306C53 /* ISBNDBService.swift */,
 				EDB583C5218AC340005D24D5 /* ApiKeyService.swift */,
 			);
 			path = Services;
@@ -516,7 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
-				EDE2E914217F1AFB00306C53 /* OpenLibraryBook.swift in Sources */,
+				EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
 				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
 				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
@@ -527,7 +527,7 @@
 				32BDE543203421E300247FC0 /* TableViewController.swift in Sources */,
 				328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */,
 				326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */,
-				EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */,
+				EDE2E912217F176F00306C53 /* ISBNDBService.swift in Sources */,
 				3213C19C2111E5E100D88142 /* Book+CoreDataClass.swift in Sources */,
 				3262142B203737A200EA8A83 /* AlertableError.swift in Sources */,
 				32BDE54120341FEF00247FC0 /* CoreDataStack.swift in Sources */,
