@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
-import BarcodeScanner
+import AVFoundation
 
 class TableViewController: UITableViewController {
 
     // MARK: Variables, IBOutlets, etc.
     @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet var barcodeScannerButton: UIBarButtonItem!
     let managedObjectContext = CoreDataStack().managedObjectContext
     lazy var fetchedResultsController: BookFetchedResultsController = {
          return BookFetchedResultsController(moc: self.managedObjectContext, tableViewController: self)
@@ -24,6 +25,20 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupIntents()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        renderBarcodeScannerButton()
+    }
+
+    func renderBarcodeScannerButton() {
+        if case .restricted = AVCaptureDevice.authorizationStatus(for: .video), let index = navBar.rightBarButtonItems?.firstIndex(of: barcodeScannerButton) {
+            navBar.rightBarButtonItems?.remove(at: index)
+        } else if let rightItems = navBar.rightBarButtonItems, !rightItems.contains(barcodeScannerButton) {
+            navBar.rightBarButtonItems?.insert(barcodeScannerButton, at: rightItems.startIndex)
+        }
     }
 
     func setupIntents() {
@@ -46,6 +61,7 @@ class TableViewController: UITableViewController {
 
     //passes moc through to addviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         switch segue.identifier {
         case "addItem", "showSummary", "showSearch":
             guard
@@ -55,6 +71,13 @@ class TableViewController: UITableViewController {
             }
 
             addTransactionController.managedObjectContext = self.managedObjectContext
+        case "presentScanner":
+            guard
+                let navigator = segue.destination as? UINavigationController,
+                let scanner = navigator.topViewController as? BarcodeScannerViewController else {
+                return
+            }
+            scanner.delegate = self
         default:
             print("Another identifier was used: \(String(describing: segue.identifier))")
         }
@@ -107,64 +130,52 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
+}
 
-    // MARK: Barcode
-    @IBAction func addByBarcode(_ sender: Any) {
-        // creates the scanner view controller, sets delegates and presents it.
-        let scanner = BarcodeScannerViewController()
-        scanner.dismissalDelegate = self
-        scanner.codeDelegate = self
-        scanner.errorDelegate = self
+// MARK: - ISBNScannerDelegate
 
-        present(scanner, animated: true, completion: nil)
-    }
-
-    func searchBookForCode(code: String) {
+extension TableViewController: ISBNScannerDelegate {
+    func scanner(_ scanner: BarcodeScannerViewController, didCaptureISBN isbn: String) {
+        scanner.stopScanning()
+        let hapticFeedback = UINotificationFeedbackGenerator()
         DispatchQueue.main.async {
-            ISBNDBService.search(isbn: code) { [weak self] (openLibraryBook, error) in
+            hapticFeedback.prepare()
+            hapticFeedback.notificationOccurred(.success)
+        }
+
+        let animationTime = DispatchTime.now() + 1
+
+        ISBNDBService.search(isbn: isbn) { [weak self] (isbndbBook, error) in
+            DispatchQueue.main.async {
+
                 guard let strongSelf = self else { return }
 
                 // Manage error
-                if let error = error {
-                    error.alert(with: strongSelf)
-                    return
-                }
-
-                // create item
-                guard let book = openLibraryBook else { return }
+                if error == nil {
+                    // create item
+                    guard let book = isbndbBook else { return }
 
                 let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
                 item?.title = book.title
                 item?.summary = book.overview
                 item?.date = NSDate()
 
-                // save to core data
-                strongSelf.managedObjectContext.saveChanges(viewController: strongSelf)
+                    // save to core data
+                    strongSelf.managedObjectContext.saveChanges(viewController: strongSelf)
+                }
 
-                // try to display review prompt
-                MarketingAlertHelper().tryToDisplayPrompts(with: strongSelf)
+                DispatchQueue.main.asyncAfter(deadline: animationTime, execute: { // Wait at least a second for dramatic effect
+                    scanner.dismiss(animated: true, completion: {
+                        // Display error if necessary
+                        if let error = error {
+                            error.alert(with: strongSelf)
+                        } else {
+                            // try to display review prompt
+                            MarketingAlertHelper().tryToDisplayPrompts(with: strongSelf)
+                        }
+                    })
+                })
             }
         }
-    }
-}
-
-// MARK: - BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate
-
-extension TableViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-
-    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        searchBookForCode(code: code)
-
-        // return to the previous ViewController
-        controller.reset()
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-        print(error)
     }
 }

@@ -8,7 +8,7 @@ final class OpenLibraryService {
 
     /// If the supplied ISBN exists on **OpenLibrary**, returns an `OpenLibraryBook`, otherwise returns `nil`.
     static func search(ISBN: String, completionHandler: @escaping (OpenLibraryBook?, ErrorCases?) -> Void) {
-        guard let url = URL(string: "https://openlibrary.org/api/books?bibkeys=isbn:\(dump(ISBN))&format=json&jscmd=details") else {
+        guard let url = URL(string: "https://openlibrary.org/api/books?bibkeys=isbn:\(ISBN)&format=json&jscmd=details") else {
             completionHandler(nil, nil)
             return
         }

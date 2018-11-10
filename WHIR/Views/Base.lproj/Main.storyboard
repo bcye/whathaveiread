@@ -53,7 +53,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Scan" image="barcode-2.png" id="AfO-mg-dmh">
                                 <connections>
-                                    <action selector="addByBarcode:" destination="eR0-JD-562" id="lPE-hx-axA"/>
+                                    <segue destination="XDy-UA-3Ah" kind="presentation" identifier="presentScanner" id="bua-Lj-csE"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="R9d-wr-wSN">
@@ -69,6 +69,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="barcodeScannerButton" destination="AfO-mg-dmh" id="Wah-Rf-O33"/>
                         <outlet property="navBar" destination="hmL-qq-v7y" id="Htz-vJ-Gmm"/>
                     </connections>
                 </tableViewController>
@@ -100,7 +101,7 @@
                 <viewControllerPlaceholder storyboardName="Add a book" id="KAe-iN-n79" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6h3-5l-u0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="632"/>
+            <point key="canvasLocation" x="1626" y="611"/>
         </scene>
         <!--About-->
         <scene sceneID="liF-Bv-i4N">
@@ -108,7 +109,7 @@
                 <viewControllerPlaceholder storyboardName="About" id="XZM-Tf-i7S" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBA-6i-TUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="723"/>
+            <point key="canvasLocation" x="1650" y="746"/>
         </scene>
         <!--Show summary-->
         <scene sceneID="QL8-pi-bW8">
@@ -116,7 +117,7 @@
                 <viewControllerPlaceholder storyboardName="Show summary" id="KI9-Wb-mG8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBI-dn-kHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="587"/>
+            <point key="canvasLocation" x="1606" y="567"/>
         </scene>
         <!--Search-->
         <scene sceneID="0cq-eL-O7P">
@@ -124,7 +125,15 @@
                 <viewControllerPlaceholder storyboardName="Search" id="M2L-2a-TtG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVf-9C-g7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="678"/>
+            <point key="canvasLocation" x="1646" y="700"/>
+        </scene>
+        <!--Scanner-->
+        <scene sceneID="Iug-hE-olD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Scanner" id="XDy-UA-3Ah" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSO-7F-Dgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="655"/>
         </scene>
     </scenes>
     <resources>
