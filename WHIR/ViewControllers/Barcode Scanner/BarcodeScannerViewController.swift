@@ -186,7 +186,8 @@ extension BarcodeScannerViewController: CameraViewDelegate {
         case .accessDenied, .restricted:
             layoutForCurrentVideoAccess()
         case .unknown:
-            break // TODO: Display error on default label
+            errorLabel.text = error.localizedDescription
+            settingsButton.isHidden = true
         }
     }
 }

@@ -13,6 +13,7 @@ class ISBNTests: XCTestCase {
 
     func testValidatesISBN10() {
         XCTAssertTrue(BarcodeScannerViewController.isValid(isbn: "9780312204280"))
+        XCTAssertTrue(BarcodeScannerViewController.isValid(isbn: "9781576833346"))
     }
 
     func testValidatesISBN13() {
@@ -21,11 +22,13 @@ class ISBNTests: XCTestCase {
     }
 
     func testInvalidatesUnrelatedEAN13Code() {
-        XCTAssertFalse(BarcodeScannerViewController.isValid(isbn: "1234567891234")) // Correct check digit in this case would be 1
+        XCTAssertFalse(BarcodeScannerViewController.isValid(isbn: "1234567891234"))
+        XCTAssertFalse(BarcodeScannerViewController.isValid(isbn: "5901234123457"))
     }
 
-    func textInvalidatesUnrelatedData() {
+    func testInvalidatesUnrelatedData() {
         XCTAssertFalse(BarcodeScannerViewController.isValid(isbn: "123"))
         XCTAssertFalse(BarcodeScannerViewController.isValid(isbn: "Unrelated"))
+        XCTAssertFalse(BarcodeScannerViewController.isValid(isbn: ""))
     }
 }

@@ -120,10 +120,10 @@ class TableViewController: UITableViewController {
 
 extension TableViewController: ISBNScannerDelegate {
     func scanner(_ scanner: BarcodeScannerViewController, didCaptureISBN isbn: String) {
+        scanner.stopScanning()
         let hapticFeedback = UINotificationFeedbackGenerator()
         DispatchQueue.main.async {
             hapticFeedback.prepare()
-            scanner.stopScanning()
             hapticFeedback.notificationOccurred(.success)
         }
 

@@ -56,7 +56,6 @@ class BarcodeHighlightView: UIView {
             return
         }
 
-        renderingLayer.fillColor = UIColor.red.cgColor
         renderingLayer.lineWidth = 1
     }
 }
