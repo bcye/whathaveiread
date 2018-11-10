@@ -1,18 +1,23 @@
 os: osx
 language: objective-c
 osx_image: xcode10
-
 env:
   global:
-    - WORKSPACE="WHIR.xcworkspace"
+  - WORKSPACE="WHIR.xcworkspace"
+  - secure: sIOmv2wx9brr5eWJIQzvZieiM47PYQN70ypX6fKsynNYGVHK957GBLJT5mo95g/HwEKmRn2ZPIbWodr2qMyz4LH8fg5jdjeZxqxTdsQvs2GLqtQesjg5wV0flOoHzVKSqo+7lx/JtRPssrkzeZMQjaXz+l+ijnbhq0vc2OnSNfHo38xAV0An3lIVq7PpFydkD+3ylDItVu85qAv7aNUwbaN5Xzy/I3xIIbtKf8lfOTdcvuOMgKH8BRmuRb5CgZtIbqMVY1pNub7fiYmhkLviKzrfS+Yl3zAECEQCj6GAM6HEmhD0TkFmQl+3oJUZeiWvDgDA4Kw6ahrh/Q1+/4SM1otggaksPShE0zPnLyU93VBwAfGSGqnumr+ll/MYr5xOVgWci/ClP599Ja1psWeFrsqEPDJk8XS2lAN3/55VzTcuvK7lsqf+sO3+XprIwgzZMiawSg4rEI+NsBTQIbbKh+PkUL9P+ixofyUQXDU4A+USIK2CUIuzb4N45pW9l4V4GRcvc9RBDGosLpGB0AtBqx0ErlRE6WVZeYMTZAeAFIO/czXiBRvw8WjRVzWdn5tli9Ngfjy/tyu1bsvLd7B2R5bo8f40VNiAoAmSLKm6fFCzDlzeIX67E5ukBDSmV+/PmdUZPYmEc7YFFKo2IuCLqCpQigCYtkxUfLO5y4YlYZ8=
   matrix:
-    - PLATFORM="iOS" SCHEME="WHIR" DESTINATION='platform=iOS Simulator,name=iPhone 8'
-
+  - PLATFORM="iOS" SCHEME="WHIR" DESTINATION='platform=iOS Simulator,name=iPhone 8'
 before_install:
-  - gem install xcpretty
-
+- openssl aes-256-cbc -K $encrypted_fb2b8d187e4d_key -iv $encrypted_fb2b8d187e4d_iv
+  -in keys.plist.enc -out WHIR/Resources/keys.plist -d
+- openssl aes-256-cbc -K $encrypted_fb2b8d187e4d_key -iv $encrypted_fb2b8d187e4d_iv
+  -in keys.plist.enc -out WHIR/keys.plist -d
+- gem install xcpretty
 before_script:
   - pod install
-
 script:
-  - set -o pipefail && xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" | xcpretty
+- set -o pipefail && xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME"
+  -destination "$DESTINATION" | xcpretty
+WHIR/keys:
+  plist:
+    secure: bKQ/AdNysZ4GsZ7L2rs4RYefQHBrsBxCciPcRI06qGDYNXEXtuLGTPnj8qERyfREDyTThNzfn/JyLtUyWBASYYLaIYf7/kNJv/fqSxf4+jnJ5Fowg2iq2XPYsQseFAKt+QYYZYIYfsnjoargAryNIioEnQ//NECol1L/VPDSNgStOW64OTbOUcol0Gt9554mN/zVNAWfFUEgN32Sfovs6YuzA8qyLyMW4J0qS8xHLRmIkvHWEa/IjtQZN8U/+Ge/CJl7ahxiLPrv+uxCBXcjvxOPMHV8KSUOzcY6He/INf6PP1VEFAP7EMC8MBnqRlTHPa4+uwttn+Zsp/3koSgk1k8ohDGP7w7CFzJ6q5lUcY70jPQ7RmqAC3Zo+hCnsayCeJTD6/FEFPxUjFEyzvirvylnj48MzWUEs3quJvw8JNlO5fCKgsnRdO/Flnw0QGSJX0YgSTVloxcR1rxae3Q65sb41AA78KOtXLbQJ2Mal6d1BWULHqr+ph4Lzf3PTelAcYTiaep0aVx/0NOym8wiBzKMAEITr8N8EGzCzjFMbS5+tt3S6g33u6/D/WiOeHFTM1KgGRzyqiIGYPn7qjberqU/hs8btyOylSm/+2ybYj3DLTn74zpfd3GAMpFnZ2pqKQIAVz6LeUvulWPXMWb5zMqhe+A9TDG7fx3Rn55VOc4=

@@ -38,9 +38,12 @@
 		4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0821856163001D80B7 /* Search.storyboard */; };
 		4CE625A3218D2F160091FA89 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE625A2218D2F160091FA89 /* CameraView.swift */; };
 		4CFD94182196C20D000D2BD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFD94172196C20D000D2BD6 /* AVFoundation.framework */; };
-		EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* OpenLibraryService.swift */; };
-		EDE2E914217F1AFB00306C53 /* OpenLibraryBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */; };
-		EDE2E925217F38FE00306C53 /* OpenLibraryBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* OpenLibraryBookTests.swift */; };
+		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
+		ED9967ED219763DD00292DA0 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9967EC219763DD00292DA0 /* keys.plist */; };
+		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
+		EDE2E912217F176F00306C53 /* ISBNDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* ISBNDBService.swift */; };
+		EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */; };
+		EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */; };
 		EDE2E928217F398F00306C53 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */; };
 		EDE2E92B217F39B800306C53 /* Payloads.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EDE2E92A217F39B800306C53 /* Payloads.bundle */; };
 /* End PBXBuildFile section */
@@ -149,14 +152,17 @@
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
+		ED9967EC219763DD00292DA0 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
 		EDE2E908217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EDE2E90A217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDE2E90B217F0DC200306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EDE2E911217F176F00306C53 /* OpenLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryService.swift; sourceTree = "<group>"; };
-		EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryBook.swift; sourceTree = "<group>"; };
+		EDE2E911217F176F00306C53 /* ISBNDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBService.swift; sourceTree = "<group>"; };
+		EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBBook.swift; sourceTree = "<group>"; };
 		EDE2E919217F38B300306C53 /* WHIRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHIRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE2E91D217F38B300306C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDE2E924217F38FE00306C53 /* OpenLibraryBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryBookTests.swift; sourceTree = "<group>"; };
+		EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBBookTests.swift; sourceTree = "<group>"; };
 		EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		EDE2E92A217F39B800306C53 /* Payloads.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Payloads.bundle; sourceTree = "<group>"; };
 		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,7 +288,7 @@
 		EDE2E90E217F128B00306C53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EDE2E913217F1AFB00306C53 /* OpenLibraryBook.swift */,
+				EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,7 +296,8 @@
 		EDE2E910217F175B00306C53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EDE2E911217F176F00306C53 /* OpenLibraryService.swift */,
+				EDE2E911217F176F00306C53 /* ISBNDBService.swift */,
+				EDB583C5218AC340005D24D5 /* ApiKeyService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -309,8 +316,8 @@
 		EDE2E923217F38EF00306C53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EDE2E924217F38FE00306C53 /* OpenLibraryBookTests.swift */,
 				4C6694F1219580C8004A1B7E /* ISBNTests.swift */,
+				EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,7 +355,9 @@
 		EDE2E92F217F50AF00306C53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED9967EC219763DD00292DA0 /* keys.plist */,
 				320571162033B0F100FCA3B1 /* Assets.xcassets */,
+				ED4E7EEA218CCC3400B56288 /* barcode-2.png */,
 				04CBC5472177878800D35604 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -458,7 +467,9 @@
 				4CB8A78C218ACDD10088BD3C /* Scanner.storyboard in Resources */,
 				3205711A2033B0F100FCA3B1 /* LaunchScreen.storyboard in Resources */,
 				4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */,
+				ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */,
 				320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */,
+				ED9967ED219763DD00292DA0 /* keys.plist in Resources */,
 				4CC21B0721856110001D80B7 /* Show summary.storyboard in Resources */,
 				320571122033B0F100FCA3B1 /* Main.storyboard in Resources */,
 				04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */,
@@ -538,10 +549,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
-				EDE2E914217F1AFB00306C53 /* OpenLibraryBook.swift in Sources */,
+				EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
 				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
 				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
+				EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
 				32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */,
@@ -549,8 +561,8 @@
 				4C6694F4219586A7004A1B7E /* BarcodeHighlightView.swift in Sources */,
 				328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */,
 				326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */,
-				EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */,
 				4CE625A3218D2F160091FA89 /* CameraView.swift in Sources */,
+				EDE2E912217F176F00306C53 /* ISBNDBService.swift in Sources */,
 				3213C19C2111E5E100D88142 /* Book+CoreDataClass.swift in Sources */,
 				3262142B203737A200EA8A83 /* AlertableError.swift in Sources */,
 				4CB8A789218ACC510088BD3C /* BarcodeScannerViewController.swift in Sources */,
@@ -563,8 +575,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE2E928217F398F00306C53 /* XCTestCaseExtensions.swift in Sources */,
-				EDE2E925217F38FE00306C53 /* OpenLibraryBookTests.swift in Sources */,
 				4C6694F2219580C8004A1B7E /* ISBNTests.swift in Sources */,
+
+				EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,7 +847,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -852,7 +865,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -869,7 +882,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIRTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -889,7 +902,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQGF24BYJ7;
 				INFOPLIST_FILE = WHIRTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

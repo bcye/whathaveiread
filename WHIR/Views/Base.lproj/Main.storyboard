@@ -51,19 +51,19 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Scan" image="barcode" id="AfO-mg-dmh">
+                            <barButtonItem title="Scan" image="barcode-2.png" id="AfO-mg-dmh">
                                 <connections>
                                     <segue destination="XDy-UA-3Ah" kind="presentation" identifier="presentScanner" id="bua-Lj-csE"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="compose" id="EAs-WI-FDF">
-                                <connections>
-                                    <segue destination="KAe-iN-n79" kind="presentation" identifier="addItem" id="SHF-qA-gRx"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="R9d-wr-wSN">
                                 <connections>
                                     <segue destination="M2L-2a-TtG" kind="presentation" identifier="showSearch" id="S5G-zY-Efu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="compose" id="EAs-WI-FDF">
+                                <connections>
+                                    <segue destination="KAe-iN-n79" kind="presentation" identifier="addItem" id="SHF-qA-gRx"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -137,6 +137,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barcode" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="barcode-2.png" width="25" height="25"/>
     </resources>
 </document>

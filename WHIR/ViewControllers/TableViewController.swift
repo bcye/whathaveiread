@@ -145,8 +145,9 @@ extension TableViewController: ISBNScannerDelegate {
 
         let animationTime = DispatchTime.now() + 1
 
-        OpenLibraryService.search(ISBN: isbn) { [weak self] (openLibraryBook, error) in
+        ISBNDBService.search(isbn: isbn) { [weak self] (isbndbBook, error) in
             DispatchQueue.main.async {
+
                 guard let strongSelf = self else { return }
 
                 // Manage error
@@ -154,10 +155,10 @@ extension TableViewController: ISBNScannerDelegate {
                     // create item
                     guard let book = openLibraryBook else { return }
 
-                    let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
-                    item?.title = book.details.title
-                    item?.summary = book.details.desc
-                    item?.date = NSDate()
+                let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
+                item?.title = book.title
+                item?.summary = book.overview
+                item?.date = NSDate()
 
                     // save to core data
                     strongSelf.managedObjectContext.saveChanges(viewController: strongSelf)
