@@ -41,7 +41,7 @@ class BarcodeScannerViewController: UIViewController {
     weak var delegate: ISBNScannerDelegate?
 
     func startScanning() {
-        guard !isScanning else {
+        guard case .authorized = AVCaptureDevice.authorizationStatus(for: .video), !isScanning else {
             return
         }
         viewport.videoSession = AVCaptureSession()
@@ -143,12 +143,11 @@ class BarcodeScannerViewController: UIViewController {
             viewport.isHidden = false
             viewport.videoSession?.startRunning()
         case .restricted:
-            // TODO: Localize these messages
-            errorLabelText = "Camera access has been restricted on this device by a parent or MDM administrator"
+            errorLabelText = NSLocalizedString("errorCameraAccessRestricted", value: "Camera access has been restricted on this device by a parent or MDM administrator", comment: "Camera restricted")
             shouldHideSettingsButton = true
             fallthrough
         case .denied:
-            errorLabelText = errorLabelText ?? "You must grant WHIR camera access to scan barcodes"
+            errorLabelText = errorLabelText ?? NSLocalizedString("errorCameraAccessDenied", value: "You must grant WHIR camera access to scan barcodes", comment: "Camera denied")
             errorLabel.text = errorLabelText
             settingsButton.isHidden = shouldHideSettingsButton
             viewport.isHidden = true

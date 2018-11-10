@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class TableViewController: UITableViewController {
 
     // MARK: Variables, IBOutlets, etc.
     @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet var barcodeScannerButton: UIBarButtonItem!
     let managedObjectContext = CoreDataStack().managedObjectContext
     lazy var fetchedResultsController: BookFetchedResultsController = {
          return BookFetchedResultsController(moc: self.managedObjectContext, tableViewController: self)
@@ -23,6 +25,20 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupIntents()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        renderBarcodeScannerButton()
+    }
+
+    func renderBarcodeScannerButton() {
+        if case .restricted = AVCaptureDevice.authorizationStatus(for: .video), let index = navBar.rightBarButtonItems?.firstIndex(of: barcodeScannerButton) {
+            navBar.rightBarButtonItems?.remove(at: index)
+        } else if let rightItems = navBar.rightBarButtonItems, !rightItems.contains(barcodeScannerButton) {
+            navBar.rightBarButtonItems?.insert(barcodeScannerButton, at: rightItems.startIndex)
+        }
     }
 
     func setupIntents() {

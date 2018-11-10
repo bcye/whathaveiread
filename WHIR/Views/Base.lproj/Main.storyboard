@@ -69,6 +69,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="barcodeScannerButton" destination="AfO-mg-dmh" id="Wah-Rf-O33"/>
                         <outlet property="navBar" destination="hmL-qq-v7y" id="Htz-vJ-Gmm"/>
                     </connections>
                 </tableViewController>

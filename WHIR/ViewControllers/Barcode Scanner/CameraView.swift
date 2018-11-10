@@ -19,15 +19,14 @@ enum CameraError: Error {
     case unknown(underlyingError: Error?)
 
     var localizedDescription: String {
-        // TODO: Localize these errors
         switch self {
         case .restricted:
-            return "Camera access has been restricted on this device by a parent or MDM administrator"
+            return NSLocalizedString("errorCameraAccessRestricted", value: "Camera access has been restricted on this device by a parent or MDM administrator", comment: "Camera restricted")
         case .accessDenied:
-            return "You have denied WHIR access to your device's camera, but you must enable it to use this feature"
+            return NSLocalizedString("errorCameraAccessDenied", value: "You must grant WHIR camera access to scan barcodes", comment: "Camera denied")
         case .unknown(let underlying):
             guard let under = underlying else {
-                return "WHIR cannot access the camera for an unknown reason"
+                return NSLocalizedString("errorCameraAccessFailedUnknownReason", value: "WHIR cannot access the camera for an unknown reason", comment: "Camera access failed for an unknown reason")
             }
             return under.localizedDescription
         }
