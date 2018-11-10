@@ -114,34 +114,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-
-    func searchBookForCode(code: String) {
-        OpenLibraryService.search(ISBN: code) { [weak self] (openLibraryBook, error) in
-            DispatchQueue.main.async {
-                guard let strongSelf = self else { return }
-
-                // Manage error
-                if let error = error {
-                    error.alert(with: strongSelf)
-                    return
-                }
-
-                // create item
-                guard let book = openLibraryBook else { return }
-
-                let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
-                item?.title = book.details.title
-                item?.summary = book.details.desc
-                item?.date = NSDate()
-
-                // save to core data
-                strongSelf.managedObjectContext.saveChanges(viewController: strongSelf)
-
-                // try to display review prompt
-                MarketingAlertHelper().tryToDisplayPrompts(with: strongSelf)
-            }
-        }
-    }
 }
 
 // MARK: - ISBNScannerDelegate
@@ -151,13 +123,42 @@ extension TableViewController: ISBNScannerDelegate {
         let hapticFeedback = UINotificationFeedbackGenerator()
         DispatchQueue.main.async {
             hapticFeedback.prepare()
-        }
-        searchBookForCode(code: isbn)
-
-        DispatchQueue.main.async {
             scanner.stopScanning()
-            scanner.dismiss(animated: true, completion: nil)
             hapticFeedback.notificationOccurred(.success)
+        }
+
+        let animationTime = DispatchTime.now() + 1
+
+        OpenLibraryService.search(ISBN: isbn) { [weak self] (openLibraryBook, error) in
+            DispatchQueue.main.async {
+                guard let strongSelf = self else { return }
+
+                // Manage error
+                if error == nil {
+                    // create item
+                    guard let book = openLibraryBook else { return }
+
+                    let item = NSEntityDescription.insertNewObject(forEntityName: "Book", into: strongSelf.managedObjectContext) as? Book
+                    item?.title = book.details.title
+                    item?.summary = book.details.desc
+                    item?.date = NSDate()
+
+                    // save to core data
+                    strongSelf.managedObjectContext.saveChanges(viewController: strongSelf)
+                }
+
+                DispatchQueue.main.asyncAfter(deadline: animationTime, execute: { // Wait at least a second for dramatic effect
+                    scanner.dismiss(animated: true, completion: {
+                        // Display error if necessary
+                        if let error = error {
+                            error.alert(with: strongSelf)
+                        } else {
+                            // try to display review prompt
+                            MarketingAlertHelper().tryToDisplayPrompts(with: strongSelf)
+                        }
+                    })
+                })
+            }
         }
     }
 }

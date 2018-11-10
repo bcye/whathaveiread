@@ -97,6 +97,10 @@ class BarcodeScannerViewController: UIViewController {
             return false
         }
 
+        guard encodedDigits[0] == 9, encodedDigits[1] == 7, encodedDigits[2] == 8 || encodedDigits[2] == 9 else { // ISBNs are prefixed with 978 or 979
+            return false
+        }
+
         // ISBN-10
 
         let possibleISBN10 = encodedDigits[3..<encodedDigits.count - 1]
@@ -121,13 +125,14 @@ class BarcodeScannerViewController: UIViewController {
 
         total = 0
 
-        for (index, digit) in encodedDigits[0..<encodedDigits.count - 1].enumerated() {
-            total += digit * (index % 2 == 0 ? 1 : 3)
+        let range = encodedDigits[0..<encodedDigits.count - 1]
+        for (index, digit) in range.enumerated() {
+            let factor = index % 2 == 0 ? 1 : 3
+            total += digit * factor
         }
 
         let modulus = total % 10
-
-        return modulus == checkDigit // If this succeeds, it's valid. If not, it's invalid
+        return modulus == 0 ? checkDigit == 0 : 10 - modulus == checkDigit // If this succeeds, it's valid. If not, it's invalid
     }
 
     private func layoutForCurrentVideoAccess() {
@@ -188,11 +193,37 @@ extension BarcodeScannerViewController: CameraViewDelegate {
 
 extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+
+        DispatchQueue.main.async {
+            for subview in self.view.subviews where subview is BarcodeHighlightView {
+                subview.removeFromSuperview()
+            }
+        }
+
         for object in metadataObjects {
-            guard let isbnObject = object as? AVMetadataMachineReadableCodeObject, let isbn = isbnObject.stringValue, BarcodeScannerViewController.isValid(isbn: isbn) else {
-                print("Recognized barcode, but was invalid")
+            guard let isbnObject = object as? AVMetadataMachineReadableCodeObject, let isbn = isbnObject.stringValue else {
                 continue
             }
+
+            let isValidCode = BarcodeScannerViewController.isValid(isbn: isbn)
+
+            DispatchQueue.main.async {
+                if
+                    let videoLayer = self.viewport.layer as? AVCaptureVideoPreviewLayer,
+                    let transformed = videoLayer.transformedMetadataObject(for: object) as? AVMetadataMachineReadableCodeObject {
+                    let outline = BarcodeHighlightView(frame: transformed.bounds)
+                    outline.corners = transformed.corners.map({ (point: CGPoint) -> CGPoint in
+                        return self.view.convert(point, to: outline)
+                    })
+                    outline.color = isValidCode ? .green : .red
+                    self.view.addSubview(outline)
+                }
+            }
+
+            guard isValidCode else {
+                return
+            }
+
             guard !shouldStopDeliveringISBNCodes else {
                 shouldStopDeliveringISBNCodes = false
                 return
