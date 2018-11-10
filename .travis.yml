@@ -9,6 +9,8 @@ env:
   - PLATFORM="iOS" SCHEME="WHIR" DESTINATION='platform=iOS Simulator,name=iPhone 8'
 before_install:
 - openssl aes-256-cbc -K $encrypted_fb2b8d187e4d_key -iv $encrypted_fb2b8d187e4d_iv
+  -in keys.plist.enc -out WHIR/Resources/keys.plist -d
+- openssl aes-256-cbc -K $encrypted_fb2b8d187e4d_key -iv $encrypted_fb2b8d187e4d_iv
   -in keys.plist.enc -out WHIR/keys.plist -d
 - gem install xcpretty
 script:
