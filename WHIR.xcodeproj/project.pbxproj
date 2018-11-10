@@ -28,6 +28,8 @@
 		32CB0E562075728600B1215C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB0E552075728600B1215C /* InfoViewController.swift */; };
 		32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */; };
 		4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */; };
+		4C6694F2219580C8004A1B7E /* ISBNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6694F1219580C8004A1B7E /* ISBNTests.swift */; };
+		4C6694F4219586A7004A1B7E /* BarcodeHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6694F3219586A7004A1B7E /* BarcodeHighlightView.swift */; };
 		4CB8A789218ACC510088BD3C /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8A788218ACC510088BD3C /* BarcodeScannerViewController.swift */; };
 		4CB8A78C218ACDD10088BD3C /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8A78A218ACDD10088BD3C /* Scanner.storyboard */; };
 		4CC21B0121856081001D80B7 /* Add a book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21AFF21856081001D80B7 /* Add a book.storyboard */; };
@@ -87,6 +89,8 @@
 		32BDE544203425C400247FC0 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		32CB0E552075728600B1215C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		32D2545320BD9AA200B5234F /* MarketingAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingAlertHelper.swift; sourceTree = "<group>"; };
+		4C6694F1219580C8004A1B7E /* ISBNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNTests.swift; sourceTree = "<group>"; };
+		4C6694F3219586A7004A1B7E /* BarcodeHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeHighlightView.swift; sourceTree = "<group>"; };
 		4C700A5F218526B600D6E535 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4C700A60218526B600D6E535 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
 		4C700A61218526B600D6E535 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -131,6 +135,13 @@
 		4CC21B4921857742001D80B7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CC21B4A21857744001D80B7 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CE625A2218D2F160091FA89 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		4CFD94052196B0AF000D2BD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Scanner.strings; sourceTree = "<group>"; };
+		4CFD94072196B0B1000D2BD6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Scanner.strings; sourceTree = "<group>"; };
+		4CFD94092196B0B3000D2BD6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Scanner.strings; sourceTree = "<group>"; };
+		4CFD940B2196B0B4000D2BD6 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Scanner.strings"; sourceTree = "<group>"; };
+		4CFD940D2196B0B5000D2BD6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Scanner.strings; sourceTree = "<group>"; };
+		4CFD940F2196B0B6000D2BD6 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Scanner.strings; sourceTree = "<group>"; };
+		4CFD94112196B0B7000D2BD6 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Scanner.strings; sourceTree = "<group>"; };
 		84472E42217767D50002669E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		84472E43217767D50002669E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -246,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				4CB8A788218ACC510088BD3C /* BarcodeScannerViewController.swift */,
+				4C6694F3219586A7004A1B7E /* BarcodeHighlightView.swift */,
 				4CE625A2218D2F160091FA89 /* CameraView.swift */,
 			);
 			path = "Barcode Scanner";
@@ -294,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE2E924217F38FE00306C53 /* OpenLibraryBookTests.swift */,
+				4C6694F1219580C8004A1B7E /* ISBNTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -529,6 +542,7 @@
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
 				32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */,
 				32BDE543203421E300247FC0 /* TableViewController.swift in Sources */,
+				4C6694F4219586A7004A1B7E /* BarcodeHighlightView.swift in Sources */,
 				328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */,
 				326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */,
 				EDE2E912217F176F00306C53 /* OpenLibraryService.swift in Sources */,
@@ -546,6 +560,7 @@
 			files = (
 				EDE2E928217F398F00306C53 /* XCTestCaseExtensions.swift in Sources */,
 				EDE2E925217F38FE00306C53 /* OpenLibraryBookTests.swift in Sources */,
+				4C6694F2219580C8004A1B7E /* ISBNTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +636,13 @@
 			isa = PBXVariantGroup;
 			children = (
 				4CB8A78B218ACDD10088BD3C /* Base */,
+				4CFD94052196B0AF000D2BD6 /* en */,
+				4CFD94072196B0B1000D2BD6 /* de */,
+				4CFD94092196B0B3000D2BD6 /* ru */,
+				4CFD940B2196B0B4000D2BD6 /* pt-BR */,
+				4CFD940D2196B0B5000D2BD6 /* fr */,
+				4CFD940F2196B0B6000D2BD6 /* sv */,
+				4CFD94112196B0B7000D2BD6 /* tr */,
 			);
 			name = Scanner.storyboard;
 			sourceTree = "<group>";
