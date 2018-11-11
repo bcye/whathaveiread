@@ -14,3 +14,7 @@
 
 /* InfoViewController.swift */
 "attributionText" = "Handcrafted by © 2018 Bruce Röttgers\n\nLogo by Zlatko Najdenovski on Flaticon. Licensed under the Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).\n Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). \nUsing CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensed under the MIT license.\n\nThanks for reading and using this App ❤.\n\nFeel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) ";
+
+"errorCameraAccessRestricted" = "Camera access has been restricted on this device by a parent or MDM administrator";
+"errorCameraAccessDenied" = "You must grant WHIR camera access to scan barcodes";
+"errorCameraAccessFailedUnknownReason" = "WHIR cannot access the camera for an unknown reason";

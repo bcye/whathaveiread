@@ -37,7 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) { }
 
-    func applicationDidBecomeActive(_ application: UIApplication) { }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        guard
+            let navVC: UINavigationController = window?.rootViewController as? UINavigationController,
+            let viewController: TableViewController = navVC.topViewController as? TableViewController
+            else {
+                return
+        }
+
+        viewController.renderBarcodeScannerButton()
+    }
 
     func applicationWillTerminate(_ application: UIApplication) {
         saveContext()

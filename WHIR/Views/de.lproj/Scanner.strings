@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Point your camera at a book's barcode to scan it"; ObjectID = "6wL-Iu-IAr"; */
+"6wL-Iu-IAr.text" = "Point your camera at a book's barcode to scan it";
+
+/* Class = "UIButton"; normalTitle = "Open Settings"; ObjectID = "Wx5-ou-OY1"; */
+"Wx5-ou-OY1.normalTitle" = "Open Settings";
+
+/* Class = "UINavigationItem"; title = "Scan a Barcode"; ObjectID = "mTV-oM-j9H"; */
+"mTV-oM-j9H.title" = "Scan a Barcode";
+
+/* Class = "UILabel"; text = "You must authorize WHIR to access the camera"; ObjectID = "sOI-1L-89A"; */
+"sOI-1L-89A.text" = "You must authorize WHIR to access the camera";

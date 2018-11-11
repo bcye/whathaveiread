@@ -14,3 +14,7 @@
 
 /* InfoViewController.swift */
 "attributionText" = "Handgjord av © 2018 Bruce Röttgers och flera andra på GitHub\n\nLogo av Zlatko Najdenovski på Flaticon. Licensierad enligt Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).\n Streckkod ikon gjord av Pixel perfect på Flaticon (https://www.flaticon.com/free-icon/barcode_726558). \nAnvänder CocoaPod KMPlaceholderTextView av MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensierad enligt MIT license.\n\nTack för att du läste och använde den här appen ❤.\n\nKänna sig fri att kontakta mig med min support e-postadress (kan hittas på den App Store sida), om du hittar buggar eller bara att säga hej. (br.apps@icloud.com) ";
+
+"errorCameraAccessRestricted" = "Kameraåtkomst har begränsats av en förälder eller MDM-administratör";
+"errorCameraAccessDenied" = "Du måste godkänna VHJL att använda kameran för att skanna streckkoder";
+"errorCameraAccessFailedUnknownReason" = "VHJL kan inte använda kameran av en okänd anledning";

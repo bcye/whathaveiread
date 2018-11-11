@@ -1,1 +1,4 @@
 
+"NSCameraUsageDescription" = "The camera is used to scan barcodes. Nothing more.";
+
+"CFBundleDisplayName" = "WHIR";
