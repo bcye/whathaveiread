@@ -8,6 +8,7 @@ target 'WHIR' do
   pod 'KMPlaceholderTextView', :git => "https://github.com/MoZhouqi/KMPlaceholderTextView.git" # Current pod has build errors that are fixed on master
   pod 'SwiftLint'
 
+
 post_install do |installer|
    installer.pods_project.build_configurations.each do |config|
     config.build_settings.delete('CODE_SIGNING_ALLOWED') 

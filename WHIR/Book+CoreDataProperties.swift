@@ -17,7 +17,7 @@ extension Book {
         return request
     }
 
-    @NSManaged public var date: NSDate?
+    @NSManaged public var date: NSDate
     @NSManaged public var summary: String?
-    @NSManaged public var title: String?
+    @NSManaged public var title: String
 }
