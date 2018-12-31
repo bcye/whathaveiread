@@ -18,4 +18,12 @@ class ApiKeyService {
         }
         return nil
     }
+    var googleKey: String? {
+        if let path = path {
+            if let dict = NSDictionary(contentsOfFile: path) {
+                return dict["G_API_DEV"] as? String
+            }
+        }
+        return nil
+    }
 }
