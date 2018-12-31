@@ -42,6 +42,8 @@
 		ED493498219778E100DF009F /* APIKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493497219778E100DF009F /* APIKeyTests.swift */; };
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
 		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
+		EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74421D9C640007CEE7B /* GBook.swift */; };
+		EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74621D9C64C007CEE7B /* GBooksService.swift */; };
 		EDE2E912217F176F00306C53 /* ISBNDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E911217F176F00306C53 /* ISBNDBService.swift */; };
 		EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */; };
 		EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */; };
@@ -157,6 +159,8 @@
 		ED493497219778E100DF009F /* APIKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyTests.swift; sourceTree = "<group>"; };
 		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
 		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
+		EDBEF74421D9C640007CEE7B /* GBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBook.swift; sourceTree = "<group>"; };
+		EDBEF74621D9C64C007CEE7B /* GBooksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBooksService.swift; sourceTree = "<group>"; };
 		EDE2E908217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EDE2E90A217F0DBE00306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDE2E90B217F0DC200306C53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 		EDE2E90E217F128B00306C53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDBEF74421D9C640007CEE7B /* GBook.swift */,
 				EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */,
 			);
 			path = Models;
@@ -298,6 +303,7 @@
 		EDE2E910217F175B00306C53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EDBEF74621D9C64C007CEE7B /* GBooksService.swift */,
 				EDE2E911217F176F00306C53 /* ISBNDBService.swift */,
 				EDB583C5218AC340005D24D5 /* ApiKeyService.swift */,
 			);
@@ -551,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */,
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
 				EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
@@ -559,6 +566,7 @@
 				EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
+				EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */,
 				32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */,
 				32BDE543203421E300247FC0 /* TableViewController.swift in Sources */,
 				4C6694F4219586A7004A1B7E /* BarcodeHighlightView.swift in Sources */,
