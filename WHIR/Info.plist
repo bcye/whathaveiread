@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Bree Serif regular.ttf</string>
-		<string>New Rocker regular.ttf</string>
-		<string>Pridi regular.ttf</string>
-	</array>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -25,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>2.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
@@ -34,6 +28,12 @@
 	<array>
 		<string>AddBookIntent</string>
 		<string>dirkhulverscheidt.WHIR.addBook</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Bree Serif regular.ttf</string>
+		<string>New Rocker regular.ttf</string>
+		<string>Pridi regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

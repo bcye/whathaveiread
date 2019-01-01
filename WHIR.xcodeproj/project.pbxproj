@@ -38,6 +38,9 @@
 		4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0821856163001D80B7 /* Search.storyboard */; };
 		4CE625A3218D2F160091FA89 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE625A2218D2F160091FA89 /* CameraView.swift */; };
 		4CFD94182196C20D000D2BD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFD94172196C20D000D2BD6 /* AVFoundation.framework */; };
+		ED2D9AAB21DC2B83001F60C1 /* Bree Serif regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED2D9AA821DC2B83001F60C1 /* Bree Serif regular.ttf */; };
+		ED2D9AAC21DC2B83001F60C1 /* Pridi regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED2D9AA921DC2B83001F60C1 /* Pridi regular.ttf */; };
+		ED2D9AAD21DC2B83001F60C1 /* New Rocker regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED2D9AAA21DC2B83001F60C1 /* New Rocker regular.ttf */; };
 		ED4934962197783E00DF009F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4934952197783E00DF009F /* keys.plist */; };
 		ED493498219778E100DF009F /* APIKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493497219778E100DF009F /* APIKeyTests.swift */; };
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
@@ -155,6 +158,9 @@
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED2D9AA821DC2B83001F60C1 /* Bree Serif regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree Serif regular.ttf"; sourceTree = "<group>"; };
+		ED2D9AA921DC2B83001F60C1 /* Pridi regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pridi regular.ttf"; sourceTree = "<group>"; };
+		ED2D9AAA21DC2B83001F60C1 /* New Rocker regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Rocker regular.ttf"; sourceTree = "<group>"; };
 		ED4934952197783E00DF009F /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = keys.plist; path = WHIR/Resources/keys.plist; sourceTree = SOURCE_ROOT; };
 		ED493497219778E100DF009F /* APIKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyTests.swift; sourceTree = "<group>"; };
 		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
@@ -291,6 +297,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED2D9AA721DC2B83001F60C1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ED2D9AA821DC2B83001F60C1 /* Bree Serif regular.ttf */,
+				ED2D9AA921DC2B83001F60C1 /* Pridi regular.ttf */,
+				ED2D9AAA21DC2B83001F60C1 /* New Rocker regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		EDE2E90E217F128B00306C53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +380,7 @@
 		EDE2E92F217F50AF00306C53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED2D9AA721DC2B83001F60C1 /* Fonts */,
 				320571162033B0F100FCA3B1 /* Assets.xcassets */,
 				ED4934952197783E00DF009F /* keys.plist */,
 				ED4E7EEA218CCC3400B56288 /* barcode-2.png */,
@@ -475,12 +492,15 @@
 				4CC21B0121856081001D80B7 /* Add a book.storyboard in Resources */,
 				4CB8A78C218ACDD10088BD3C /* Scanner.storyboard in Resources */,
 				3205711A2033B0F100FCA3B1 /* LaunchScreen.storyboard in Resources */,
+				ED2D9AAD21DC2B83001F60C1 /* New Rocker regular.ttf in Resources */,
 				4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */,
 				ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */,
 				320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */,
 				ED4934962197783E00DF009F /* keys.plist in Resources */,
 				4CC21B0721856110001D80B7 /* Show summary.storyboard in Resources */,
 				320571122033B0F100FCA3B1 /* Main.storyboard in Resources */,
+				ED2D9AAC21DC2B83001F60C1 /* Pridi regular.ttf in Resources */,
+				ED2D9AAB21DC2B83001F60C1 /* Bree Serif regular.ttf in Resources */,
 				04CBC53E2177847D00D35604 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
