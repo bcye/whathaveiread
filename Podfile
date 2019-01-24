@@ -7,6 +7,8 @@ target 'WHIR' do
   # Vendors
   pod 'KMPlaceholderTextView', :git => "https://github.com/MoZhouqi/KMPlaceholderTextView.git" # Current pod has build errors that are fixed on master
   pod 'SwiftLint'
+  pod 'Seam3'
+  pod 'Sentry'
 
 post_install do |installer|
    installer.pods_project.build_configurations.each do |config|

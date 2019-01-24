@@ -44,6 +44,8 @@
 		ED4934962197783E00DF009F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4934952197783E00DF009F /* keys.plist */; };
 		ED493498219778E100DF009F /* APIKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493497219778E100DF009F /* APIKeyTests.swift */; };
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
+		EDA885B421F9401A000C0AF2 /* WHIRSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA885B321F9401A000C0AF2 /* WHIRSnapshotUITests.swift */; };
+		EDA885B621F94037000C0AF2 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA885B521F94037000C0AF2 /* SnapshotHelper.swift */; };
 		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
 		EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74421D9C640007CEE7B /* GBook.swift */; };
 		EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74621D9C64C007CEE7B /* GBooksService.swift */; };
@@ -55,6 +57,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EDA885AE21F93F3B000C0AF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320571012033B0F100FCA3B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 320571082033B0F100FCA3B1;
+			remoteInfo = WHIR;
+		};
 		EDE2E91E217F38B300306C53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 320571012033B0F100FCA3B1 /* Project object */;
@@ -164,6 +173,10 @@
 		ED4934952197783E00DF009F /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = keys.plist; path = WHIR/Resources/keys.plist; sourceTree = SOURCE_ROOT; };
 		ED493497219778E100DF009F /* APIKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyTests.swift; sourceTree = "<group>"; };
 		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
+		EDA885A921F93F3B000C0AF2 /* WHIRSnapshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHIRSnapshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA885AD21F93F3B000C0AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA885B321F9401A000C0AF2 /* WHIRSnapshotUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHIRSnapshotUITests.swift; sourceTree = "<group>"; };
+		EDA885B521F94037000C0AF2 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
 		EDBEF74421D9C640007CEE7B /* GBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBook.swift; sourceTree = "<group>"; };
 		EDBEF74621D9C64C007CEE7B /* GBooksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBooksService.swift; sourceTree = "<group>"; };
@@ -192,6 +205,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDA885A621F93F3B000C0AF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDE2E916217F38B300306C53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +236,7 @@
 			children = (
 				3205710B2033B0F100FCA3B1 /* WHIR */,
 				EDE2E91A217F38B300306C53 /* WHIRTests */,
+				EDA885AA21F93F3B000C0AF2 /* WHIRSnapshotUITests */,
 				3205710A2033B0F100FCA3B1 /* Products */,
 				A17471A2A88C6493E11E4E2F /* Frameworks */,
 				2E56D24BE9E3B9B4B7FF4C52 /* Pods */,
@@ -227,6 +248,7 @@
 			children = (
 				320571092033B0F100FCA3B1 /* WHIR.app */,
 				EDE2E919217F38B300306C53 /* WHIRTests.xctest */,
+				EDA885A921F93F3B000C0AF2 /* WHIRSnapshotUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -305,6 +327,16 @@
 				ED2D9AAA21DC2B83001F60C1 /* New Rocker regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EDA885AA21F93F3B000C0AF2 /* WHIRSnapshotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA885B521F94037000C0AF2 /* SnapshotHelper.swift */,
+				EDA885B321F9401A000C0AF2 /* WHIRSnapshotUITests.swift */,
+				EDA885AD21F93F3B000C0AF2 /* Info.plist */,
+			);
+			path = WHIRSnapshotUITests;
 			sourceTree = "<group>";
 		};
 		EDE2E90E217F128B00306C53 /* Models */ = {
@@ -402,6 +434,7 @@
 				320571072033B0F100FCA3B1 /* Resources */,
 				4C949E8E7942394015C37C5E /* [CP] Embed Pods Frameworks */,
 				EDE2E90F217F16C400306C53 /* SwiftLint */,
+				EDA885B721F9446E000C0AF2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -411,6 +444,24 @@
 			productName = WHIR;
 			productReference = 320571092033B0F100FCA3B1 /* WHIR.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EDA885A821F93F3B000C0AF2 /* WHIRSnapshotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA885B221F93F3C000C0AF2 /* Build configuration list for PBXNativeTarget "WHIRSnapshotUITests" */;
+			buildPhases = (
+				EDA885A521F93F3B000C0AF2 /* Sources */,
+				EDA885A621F93F3B000C0AF2 /* Frameworks */,
+				EDA885A721F93F3B000C0AF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDA885AF21F93F3B000C0AF2 /* PBXTargetDependency */,
+			);
+			name = WHIRSnapshotUITests;
+			productName = WHIRSnapshotUITests;
+			productReference = EDA885A921F93F3B000C0AF2 /* WHIRSnapshotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		EDE2E918217F38B300306C53 /* WHIRTests */ = {
 			isa = PBXNativeTarget;
@@ -436,7 +487,7 @@
 		320571012033B0F100FCA3B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Dirk Hulverscheidt";
 				TargetAttributes = {
@@ -449,6 +500,11 @@
 								enabled = 1;
 							};
 						};
+					};
+					EDA885A821F93F3B000C0AF2 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 320571082033B0F100FCA3B1;
 					};
 					EDE2E918217F38B300306C53 = {
 						CreatedOnToolsVersion = 10.0;
@@ -478,6 +534,7 @@
 			targets = (
 				320571082033B0F100FCA3B1 /* WHIR */,
 				EDE2E918217F38B300306C53 /* WHIRTests */,
+				EDA885A821F93F3B000C0AF2 /* WHIRSnapshotUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -505,6 +562,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDA885A721F93F3B000C0AF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDE2E917217F38B300306C53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,10 +588,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Seam3/Seam3.framework",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Seam3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -552,7 +620,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EDE2E90F217F16C400306C53 /* SwiftLint */ = {
+		EDA885B721F9446E000C0AF2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -561,9 +629,22 @@
 			);
 			inputPaths = (
 			);
-			name = SwiftLint;
 			outputFileListPaths = (
 			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which sentry-cli >/dev/null; then\nexport SENTRY_ORG=dirkhulverscheidt\nexport SENTRY_PROJECT=whathaveiread\nexport SENTRY_AUTH_TOKEN=95c92e7e7fe444dea79c53480f73d025fd8e83d2a5954039a2017d7393962681\nERROR=$(sentry-cli upload-dsym 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+		EDE2E90F217F16C400306C53 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +682,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDA885A521F93F3B000C0AF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA885B421F9401A000C0AF2 /* WHIRSnapshotUITests.swift in Sources */,
+				EDA885B621F94037000C0AF2 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDE2E915217F38B300306C53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,6 +705,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EDA885AF21F93F3B000C0AF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 320571082033B0F100FCA3B1 /* WHIR */;
+			targetProxy = EDA885AE21F93F3B000C0AF2 /* PBXContainerItemProxy */;
+		};
 		EDE2E91F217F38B300306C53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 320571082033B0F100FCA3B1 /* WHIR */;
@@ -878,11 +973,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PQGF24BYJ7;
+				DEVELOPMENT_TEAM = BN988BU552;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dirkhulverscheidt.WHIR;
+				PRODUCT_BUNDLE_IDENTIFIER = hulverscheidtdirk.WHIR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -896,14 +991,51 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PQGF24BYJ7;
+				DEVELOPMENT_TEAM = BN988BU552;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dirkhulverscheidt.WHIR;
+				PRODUCT_BUNDLE_IDENTIFIER = hulverscheidtdirk.WHIR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDA885B021F93F3C000C0AF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BN988BU552;
+				INFOPLIST_FILE = WHIRSnapshotUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = hulverscheidtdirk.WHIRSnapshotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WHIR;
+			};
+			name = Debug;
+		};
+		EDA885B121F93F3C000C0AF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BN988BU552;
+				INFOPLIST_FILE = WHIRSnapshotUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = hulverscheidtdirk.WHIRSnapshotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WHIR;
 			};
 			name = Release;
 		};
@@ -963,6 +1095,15 @@
 			buildConfigurations = (
 				3205711F2033B0F100FCA3B1 /* Debug */,
 				320571202033B0F100FCA3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA885B221F93F3C000C0AF2 /* Build configuration list for PBXNativeTarget "WHIRSnapshotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA885B021F93F3C000C0AF2 /* Debug */,
+				EDA885B121F93F3C000C0AF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

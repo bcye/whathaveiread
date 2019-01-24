@@ -1,0 +1,32 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+end
+
+lane :upload_symbols do
+  download_dsyms
+  upload_symbols_to_sentry(
+    auth_token: '95c92e7e7fe444dea79c53480f73d025fd8e83d2a5954039a2017d7393962681',
+    org_slug: 'dirkhulverscheidt',
+    project_slug: 'whathaveiread',
+  )
+end
