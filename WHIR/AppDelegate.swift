@@ -16,14 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         do {
             Client.shared = try Client(dsn: "https://0a96c698b97d45f4a2bca61da92725c6@sentry.io/1375024")
             try Client.shared?.startCrashHandler()
         } catch let error {
             print("\(error)")
         }
-        
         return true
+ 
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -89,6 +90,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
 
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        CoreDataStack().smStore?.handlePush(userInfo: userInfo) { (result) in
+            completionHandler(result.uiBackgroundFetchResult)
+        }
+    }
+    
     // MARK: - Core Data Saving support
 
     func saveContext () {

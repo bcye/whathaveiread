@@ -11,7 +11,7 @@
 		04CBC5452177878800D35604 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC5472177878800D35604 /* Localizable.strings */; };
 		3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3205710C2033B0F100FCA3B1 /* AppDelegate.swift */; };
 		320571122033B0F100FCA3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320571102033B0F100FCA3B1 /* Main.storyboard */; };
-		320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 320571132033B0F100FCA3B1 /* WHIR.xcdatamodeld */; };
+		320571152033B0F100FCA3B1 /* WHIR-Seam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 320571132033B0F100FCA3B1 /* WHIR-Seam.xcdatamodeld */; };
 		320571172033B0F100FCA3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320571162033B0F100FCA3B1 /* Assets.xcassets */; };
 		3205711A2033B0F100FCA3B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320571182033B0F100FCA3B1 /* LaunchScreen.storyboard */; };
 		3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3213C1992111E5E100D88142 /* Book+CoreDataProperties.swift */; };
@@ -20,7 +20,6 @@
 		326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326102B420751D8D00AB0BE8 /* DetailViewController.swift */; };
 		3262142B203737A200EA8A83 /* AlertableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3262142A203737A200EA8A83 /* AlertableError.swift */; };
 		327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327A11EF20BDCBDF008B635F /* StoreKit.framework */; };
-		328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */; };
 		32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B06B20763A870048E8DD /* SearchViewController.swift */; };
 		32BDE54120341FEF00247FC0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDE54020341FEF00247FC0 /* CoreDataStack.swift */; };
 		32BDE543203421E300247FC0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDE542203421E300247FC0 /* TableViewController.swift */; };
@@ -46,6 +45,8 @@
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
 		EDA885B421F9401A000C0AF2 /* WHIRSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA885B321F9401A000C0AF2 /* WHIRSnapshotUITests.swift */; };
 		EDA885B621F94037000C0AF2 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA885B521F94037000C0AF2 /* SnapshotHelper.swift */; };
+		EDA885BC21F94A42000C0AF2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA885BB21F94A42000C0AF2 /* CloudKit.framework */; };
+		EDA885BE21F95DE3000C0AF2 /* BookFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA885BD21F95DE3000C0AF2 /* BookFetchedResultsController.swift */; };
 		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
 		EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74421D9C640007CEE7B /* GBook.swift */; };
 		EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74621D9C64C007CEE7B /* GBooksService.swift */; };
@@ -101,7 +102,6 @@
 		326102B420751D8D00AB0BE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3262142A203737A200EA8A83 /* AlertableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertableError.swift; sourceTree = "<group>"; };
 		327A11EF20BDCBDF008B635F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookFetchedResultsController.swift; sourceTree = "<group>"; };
 		32B0B06B20763A870048E8DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		32BDE54020341FEF00247FC0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		32BDE542203421E300247FC0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +177,9 @@
 		EDA885AD21F93F3B000C0AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDA885B321F9401A000C0AF2 /* WHIRSnapshotUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHIRSnapshotUITests.swift; sourceTree = "<group>"; };
 		EDA885B521F94037000C0AF2 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		EDA885BA21F94A36000C0AF2 /* WHIR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WHIR.entitlements; sourceTree = "<group>"; };
+		EDA885BB21F94A42000C0AF2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		EDA885BD21F95DE3000C0AF2 /* BookFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookFetchedResultsController.swift; sourceTree = "<group>"; };
 		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
 		EDBEF74421D9C640007CEE7B /* GBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBook.swift; sourceTree = "<group>"; };
 		EDBEF74621D9C64C007CEE7B /* GBooksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBooksService.swift; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA885BC21F94A42000C0AF2 /* CloudKit.framework in Frameworks */,
 				4CFD94182196C20D000D2BD6 /* AVFoundation.framework in Frameworks */,
 				327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */,
 				324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */,
@@ -256,9 +260,9 @@
 		3205710B2033B0F100FCA3B1 /* WHIR */ = {
 			isa = PBXGroup;
 			children = (
+				EDA885BA21F94A36000C0AF2 /* WHIR.entitlements */,
 				3262142A203737A200EA8A83 /* AlertableError.swift */,
 				3205710C2033B0F100FCA3B1 /* AppDelegate.swift */,
-				328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */,
 				3255E4DE20C151F700FA7FC3 /* CoreData */,
 				3205711B2033B0F100FCA3B1 /* Info.plist */,
 				04CBC5402177847D00D35604 /* InfoPlist.strings */,
@@ -288,10 +292,11 @@
 		3255E4DE20C151F700FA7FC3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				320571132033B0F100FCA3B1 /* WHIR.xcdatamodeld */,
+				320571132033B0F100FCA3B1 /* WHIR-Seam.xcdatamodeld */,
 				3213C19A2111E5E100D88142 /* Book+CoreDataClass.swift */,
 				3213C1992111E5E100D88142 /* Book+CoreDataProperties.swift */,
 				32BDE54020341FEF00247FC0 /* CoreDataStack.swift */,
+				EDA885BD21F95DE3000C0AF2 /* BookFetchedResultsController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 		A17471A2A88C6493E11E4E2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDA885BB21F94A42000C0AF2 /* CloudKit.framework */,
 				4CFD94172196C20D000D2BD6 /* AVFoundation.framework */,
 				32214C5C20BE600400C4ECEF /* KMPlaceholderTextView.framework */,
 				32214C5E20BE600400C4ECEF /* SwiftyStoreKit.framework */,
@@ -499,6 +505,12 @@
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					EDA885A821F93F3B000C0AF2 = {
@@ -663,15 +675,15 @@
 				EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
 				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
-				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
+				320571152033B0F100FCA3B1 /* WHIR-Seam.xcdatamodeld in Sources */,
 				EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */,
+				EDA885BE21F95DE3000C0AF2 /* BookFetchedResultsController.swift in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
 				EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */,
 				32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */,
 				32BDE543203421E300247FC0 /* TableViewController.swift in Sources */,
 				4C6694F4219586A7004A1B7E /* BarcodeHighlightView.swift in Sources */,
-				328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */,
 				326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */,
 				4CE625A3218D2F160091FA89 /* CameraView.swift in Sources */,
 				EDE2E912217F176F00306C53 /* ISBNDBService.swift in Sources */,
@@ -971,6 +983,7 @@
 			baseConfigurationReference = 2119D20A574449EBD3DB65D1 /* Pods-WHIR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WHIR/WHIR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BN988BU552;
@@ -989,6 +1002,7 @@
 			baseConfigurationReference = 2BF5B6DD9D0F2D934E55481F /* Pods-WHIR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WHIR/WHIR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BN988BU552;
@@ -1120,13 +1134,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		320571132033B0F100FCA3B1 /* WHIR.xcdatamodeld */ = {
+		320571132033B0F100FCA3B1 /* WHIR-Seam.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				320571142033B0F100FCA3B1 /* WHIR.xcdatamodel */,
 			);
 			currentVersion = 320571142033B0F100FCA3B1 /* WHIR.xcdatamodel */;
-			path = WHIR.xcdatamodeld;
+			path = "WHIR-Seam.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
