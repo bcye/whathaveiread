@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Intents
 import KMPlaceholderTextView
+import Sentry
 
 class AddViewController: UIViewController, ManagedObjectContextSettable {
 

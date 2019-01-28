@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AVFoundation
+import Sentry
 
 class TableViewController: UITableViewController {
 
@@ -121,8 +122,14 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let book = fetchedResultsController.object(at: indexPath)
-        managedObjectContext.delete(book)
-        managedObjectContext.saveChanges(viewController: self)
+        //managedObjectContext.delete(book)
+        //managedObjectContext.saveChanges(viewController: self)
+        Client.shared?.snapshotStacktrace {
+            let event = Event(level: .debug)
+            event.message = "Test Message"
+            Client.shared?.appendStacktrace(to: event)
+            Client.shared?.send(event: event)
+        }
     }
 
     // MARK: UITableViewDelegate
