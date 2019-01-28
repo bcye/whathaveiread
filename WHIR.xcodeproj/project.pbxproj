@@ -550,7 +550,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which sentry-cli >/dev/null; then\nexport SENTRY_ORG=dirkhulverscheidt\nexport SENTRY_PROJECT=whathaveiread\nexport SENTRY_AUTH_TOKEN=95c92e7e7fe444dea79c53480f73d025fd8e83d2a5954039a2017d7393962681\nERROR=$(sentry-cli upload-dsym 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/Users/bruceroettgers/Programming/Xcode/whathaveiread/sentry-upload.sh\n";
 		};
 		EDE2E90F217F16C400306C53 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
