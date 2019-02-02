@@ -64,4 +64,5 @@ struct MarketingAlertHelper {
             defaults.set(0, forKey: "PromptCount")
         }
     }
+    
 }
