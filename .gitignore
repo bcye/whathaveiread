@@ -6,6 +6,7 @@
 */keys.plist
 WHIR/Resources/keys.plist
 keys.plist
+sentry-upload.sh
 
 ## Build generated
 build/

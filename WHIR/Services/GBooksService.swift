@@ -26,7 +26,7 @@ class GBooksService {
         return result
     }
     
-    static func searchFor(isbn: String, completion: @escaping (GBook?, ErrorCases?) -> Void) {
+    static func search(isbn: String, completion: @escaping (GBook?, ErrorCases?) -> Void) {
         // create url object used for the get request
         //        let key = getApiKey()
         guard let key = ApiKeyService().googleKey, let requestURL = URL(string: "https://www.googleapis.com/books/v1/volumes?maxResults=1&q=isbn:\(isbn)&key=\(key)") else {

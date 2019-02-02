@@ -9,9 +9,12 @@
 import UIKit
 import CoreData
 import AVFoundation
+import Sentry
 
 class TableViewController: UITableViewController {
 
+    let defaults = UserDefaults.standard
+    
     // MARK: Variables, IBOutlets, etc.
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet var barcodeScannerButton: UIBarButtonItem!
@@ -23,8 +26,12 @@ class TableViewController: UITableViewController {
     //Shows count of books in the nav bar
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupIntents()
+        
+        if !defaults.bool(forKey: "sentryAsked") {
+            self.performSegue(withIdentifier: "askForSentryPermission", sender: nil)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -145,7 +152,7 @@ extension TableViewController: ISBNScannerDelegate {
 
         let animationTime = DispatchTime.now() + 1
 
-        GBooksService.searchFor(isbn: isbn) { [weak self] (book, error) in
+        GBooksService.search(isbn: isbn) { [weak self] (book, error) in
             DispatchQueue.main.async {
 
                 guard let strongSelf = self else { return }

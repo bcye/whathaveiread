@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -71,6 +72,7 @@
                     <connections>
                         <outlet property="barcodeScannerButton" destination="AfO-mg-dmh" id="Wah-Rf-O33"/>
                         <outlet property="navBar" destination="hmL-qq-v7y" id="Htz-vJ-Gmm"/>
+                        <segue destination="PjW-Vi-76i" kind="presentation" identifier="askForSentryPermission" id="NCZ-Md-9Yb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="164-rE-oMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,6 +136,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSO-7F-Dgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1638" y="655"/>
+        </scene>
+        <!--Sentry View Controller-->
+        <scene sceneID="UBN-Rn-k8L">
+            <objects>
+                <viewController id="PjW-Vi-76i" customClass="SentryViewController" customModule="WHIR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QRM-gU-Xcc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's improve this app! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o02-M0-S3Q">
+                                <rect key="frame" x="32" y="84" width="311" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBJ-2p-o74">
+                                <rect key="frame" x="32" y="435.5" width="311" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Awesome, let's improve this app!"/>
+                                <connections>
+                                    <action selector="enableSentry:" destination="PjW-Vi-76i" eventType="touchUpInside" id="qWm-Gn-PFl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbS-QS-e7n">
+                                <rect key="frame" x="32" y="506.5" width="311" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Please don't collect debug information">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="disableSentry:" destination="PjW-Vi-76i" eventType="touchUpInside" id="bgN-Ku-K7L"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ahe-JV-V39">
+                                <rect key="frame" x="32" y="181.5" width="311" height="190"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="lB7-gH-GLl"/>
+                                </constraints>
+                                <string key="text">If you accept, your phone will send me information should this app crash, with helpful information on what happened and how to solve it.
+
+I do not want to collect personal information, I just want to debug crashes and make the app better.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pBJ-2p-o74" firstAttribute="top" secondItem="ahe-JV-V39" secondAttribute="bottom" constant="64" id="BRL-cg-AKF"/>
+                            <constraint firstItem="pBJ-2p-o74" firstAttribute="top" secondItem="ahe-JV-V39" secondAttribute="bottom" constant="64" id="Dlm-tA-Fn2"/>
+                            <constraint firstItem="bbS-QS-e7n" firstAttribute="leading" secondItem="6ly-vc-8oo" secondAttribute="leading" constant="32" id="NsL-xM-lwX"/>
+                            <constraint firstItem="6ly-vc-8oo" firstAttribute="trailing" secondItem="bbS-QS-e7n" secondAttribute="trailing" constant="32" id="SxD-hD-4ir"/>
+                            <constraint firstItem="pBJ-2p-o74" firstAttribute="leading" secondItem="6ly-vc-8oo" secondAttribute="leading" constant="32" id="UPX-ZX-JLm"/>
+                            <constraint firstItem="6ly-vc-8oo" firstAttribute="trailing" secondItem="pBJ-2p-o74" secondAttribute="trailing" constant="32" id="XPw-Lg-mHa"/>
+                            <constraint firstItem="bbS-QS-e7n" firstAttribute="top" secondItem="pBJ-2p-o74" secondAttribute="bottom" constant="32" id="XiE-VG-cCw"/>
+                            <constraint firstItem="6ly-vc-8oo" firstAttribute="trailing" secondItem="o02-M0-S3Q" secondAttribute="trailing" constant="32" id="bt0-ja-Yfn"/>
+                            <constraint firstItem="o02-M0-S3Q" firstAttribute="top" secondItem="6ly-vc-8oo" secondAttribute="top" constant="64" id="dtV-br-EGy"/>
+                            <constraint firstItem="ahe-JV-V39" firstAttribute="top" secondItem="o02-M0-S3Q" secondAttribute="bottom" constant="64" id="ebO-RS-mfc"/>
+                            <constraint firstItem="o02-M0-S3Q" firstAttribute="leading" secondItem="6ly-vc-8oo" secondAttribute="leading" constant="32" id="kTG-gT-LfW"/>
+                            <constraint firstItem="ahe-JV-V39" firstAttribute="top" secondItem="o02-M0-S3Q" secondAttribute="bottom" constant="64" id="lKp-Gg-PTL"/>
+                            <constraint firstItem="6ly-vc-8oo" firstAttribute="trailing" secondItem="ahe-JV-V39" secondAttribute="trailing" constant="32" id="sMT-mS-xFR"/>
+                            <constraint firstItem="bbS-QS-e7n" firstAttribute="top" secondItem="pBJ-2p-o74" secondAttribute="bottom" constant="32" id="shq-OT-cgS"/>
+                            <constraint firstItem="ahe-JV-V39" firstAttribute="leading" secondItem="6ly-vc-8oo" secondAttribute="leading" constant="32" id="zw1-q4-mQs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6ly-vc-8oo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8b-P7-Ox3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2337" y="654"/>
         </scene>
     </scenes>
     <resources>

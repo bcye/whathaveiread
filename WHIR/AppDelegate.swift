@@ -8,13 +8,26 @@
 
 import UIKit
 import CoreData
+import Sentry
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let defaults = UserDefaults.standard
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        if defaults.bool(forKey: "sentryEnabled") {
+            // Create a Sentry client and start crash handler
+            do {
+                Client.shared = try Client(dsn: "https://0a96c698b97d45f4a2bca61da92725c6@sentry.io/1375024")
+                try Client.shared?.startCrashHandler()
+            } catch let error {
+                print("\(error)")
+            }
+        }
         return true
     }
 

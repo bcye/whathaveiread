@@ -19,7 +19,6 @@
 		324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324F2DCE2075877A006EFF74 /* CoreData.framework */; };
 		326102B520751D8E00AB0BE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326102B420751D8D00AB0BE8 /* DetailViewController.swift */; };
 		3262142B203737A200EA8A83 /* AlertableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3262142A203737A200EA8A83 /* AlertableError.swift */; };
-		327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327A11EF20BDCBDF008B635F /* StoreKit.framework */; };
 		328BC3282049952F0094B9DC /* BookFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */; };
 		32B0B06C20763A870048E8DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B06B20763A870048E8DD /* SearchViewController.swift */; };
 		32BDE54120341FEF00247FC0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDE54020341FEF00247FC0 /* CoreDataStack.swift */; };
@@ -41,6 +40,7 @@
 		ED4934962197783E00DF009F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4934952197783E00DF009F /* keys.plist */; };
 		ED493498219778E100DF009F /* APIKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493497219778E100DF009F /* APIKeyTests.swift */; };
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
+		ED6F473022062FA300216824 /* SentryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F472F22062FA300216824 /* SentryViewController.swift */; };
 		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
 		EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74421D9C640007CEE7B /* GBook.swift */; };
 		EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74621D9C64C007CEE7B /* GBooksService.swift */; };
@@ -88,7 +88,6 @@
 		324F2DCE2075877A006EFF74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		326102B420751D8D00AB0BE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3262142A203737A200EA8A83 /* AlertableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertableError.swift; sourceTree = "<group>"; };
-		327A11EF20BDCBDF008B635F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		328BC3272049952E0094B9DC /* BookFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookFetchedResultsController.swift; sourceTree = "<group>"; };
 		32B0B06B20763A870048E8DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		32BDE54020341FEF00247FC0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		ED4934952197783E00DF009F /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = keys.plist; path = WHIR/Resources/keys.plist; sourceTree = SOURCE_ROOT; };
 		ED493497219778E100DF009F /* APIKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyTests.swift; sourceTree = "<group>"; };
 		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
+		ED6F472F22062FA300216824 /* SentryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentryViewController.swift; sourceTree = "<group>"; };
 		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
 		EDBEF74421D9C640007CEE7B /* GBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBook.swift; sourceTree = "<group>"; };
 		EDBEF74621D9C64C007CEE7B /* GBooksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBooksService.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFD94182196C20D000D2BD6 /* AVFoundation.framework in Frameworks */,
-				327A11F020BDCBDF008B635F /* StoreKit.framework in Frameworks */,
 				324F2DCF2075877A006EFF74 /* CoreData.framework in Frameworks */,
 				4BAD8E4053D083DBE774C019 /* Pods_WHIR.framework in Frameworks */,
 			);
@@ -253,6 +252,7 @@
 				32BDE544203425C400247FC0 /* AddViewController.swift */,
 				326102B420751D8D00AB0BE8 /* DetailViewController.swift */,
 				32B0B06B20763A870048E8DD /* SearchViewController.swift */,
+				ED6F472F22062FA300216824 /* SentryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -284,7 +284,6 @@
 				4CFD94172196C20D000D2BD6 /* AVFoundation.framework */,
 				32214C5C20BE600400C4ECEF /* KMPlaceholderTextView.framework */,
 				32214C5E20BE600400C4ECEF /* SwiftyStoreKit.framework */,
-				327A11EF20BDCBDF008B635F /* StoreKit.framework */,
 				324F2DCE2075877A006EFF74 /* CoreData.framework */,
 				F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */,
 			);
@@ -354,9 +353,9 @@
 				4CC21B0821856163001D80B7 /* Search.storyboard */,
 				4CC21B0521856110001D80B7 /* Show summary.storyboard */,
 				4CC21B02218560C2001D80B7 /* About.storyboard */,
+				320571102033B0F100FCA3B1 /* Main.storyboard */,
 				4CC21AFF21856081001D80B7 /* Add a book.storyboard */,
 				320571182033B0F100FCA3B1 /* LaunchScreen.storyboard */,
-				320571102033B0F100FCA3B1 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +384,7 @@
 				320571072033B0F100FCA3B1 /* Resources */,
 				4C949E8E7942394015C37C5E /* [CP] Embed Pods Frameworks */,
 				EDE2E90F217F16C400306C53 /* SwiftLint */,
+				EDBBF7A721FEC61100597153 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -429,7 +429,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -504,10 +504,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -532,18 +534,31 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EDE2E90F217F16C400306C53 /* SwiftLint */ = {
+		EDBBF7A721FEC61100597153 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
 			);
-			name = SwiftLint;
 			outputFileListPaths = (
 			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/Users/bruceroettgers/Programming/Xcode/whathaveiread/sentry-upload.sh\n";
+		};
+		EDE2E90F217F16C400306C53 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */,
+				ED6F473022062FA300216824 /* SentryViewController.swift in Sources */,
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
 				EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */,
 				32CB0E562075728600B1215C /* InfoViewController.swift in Sources */,
@@ -858,7 +874,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PQGF24BYJ7;
+				DEVELOPMENT_TEAM = BN988BU552;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -876,7 +892,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PQGF24BYJ7;
+				DEVELOPMENT_TEAM = BN988BU552;
 				INFOPLIST_FILE = WHIR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
