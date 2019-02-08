@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/bcye/whathaveiread.svg?branch=master)](https://travis-ci.org/bcye/whathaveiread)
-[![Slack](https://img.shields.io/badge/chat-on%20slack-red.svg)](https://join.slack.com/t/iosmaintainers/shared_invite/enQtNDY1ODk2NTYxNjM2LTU5MzM2ODY2MWE4MjVmNjE4ZWU3ZjMxNzc0YTYxN2QwM2ZkMjY4N2U0ZTUxNGRkNmQ2NGRkNjEzZmRiNjkyNjY)
+[![codecov](https://codecov.io/gh/bcye/whathaveiread/branch/master/graph/badge.svg)](https://codecov.io/gh/bcye/whathaveiread)
 
 # whathaveiread
 
