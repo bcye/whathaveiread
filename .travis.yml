@@ -15,3 +15,5 @@ before_script:
 script:
 - set -o pipefail && xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME"
   -destination "$DESTINATION" | xcpretty
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
