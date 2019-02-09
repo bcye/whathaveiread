@@ -9,7 +9,7 @@ WHIR - What have I read? Is an iOS app that allows you to keep track of all book
 
 ## Contributing
 
-Please join our [Gitter chat room](https://gitter.im/whathaveiread/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link) this is where we discuss everything.
+Please join our [Gitter chat room](https://gitter.im/whathaveiread/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link) this is where we discuss everything. View the roadmap on [Trello](https://trello.com/b/yiVirTlX)
 
 ## Installation
 
