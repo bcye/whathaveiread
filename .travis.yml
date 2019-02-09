@@ -10,4 +10,4 @@ before_install:
   -d
 - pod install
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash) -t f3e1b970-eddf-4a5a-add3-267a5f5ec975
