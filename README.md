@@ -11,6 +11,8 @@ WHIR - What have I read? Is an iOS app that allows you to keep track of all book
 
 Please join our [Gitter chat room](https://gitter.im/whathaveiread/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link) this is where we discuss everything. View the roadmap on [Trello](https://trello.com/b/yiVirTlX)
 
+Please create an issue with a feature request before starting to work.
+
 ## Installation
 
 This project uses CocoaPods, but the `Pods` directory is checked into this repo, so no `pod install` is necessary. However, be sure to do your work in `WHIR.xcworkspace` instead of `WHIR.xcodeproj`.
