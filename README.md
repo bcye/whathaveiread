@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/bcye/whathaveiread.svg?branch=master)](https://travis-ci.org/bcye/whathaveiread)
 [![codecov](https://codecov.io/gh/bcye/whathaveiread/branch/master/graph/badge.svg)](https://codecov.io/gh/bcye/whathaveiread)
+[![Gitter](https://badges.gitter.im/cash-log/community.svg)](https://gitter.im/whathaveiread/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 # whathaveiread
 
