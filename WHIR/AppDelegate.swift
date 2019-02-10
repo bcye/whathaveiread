@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Sentry
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // initialize Sentry
         if defaults.bool(forKey: "sentryEnabled") {
             // Create a Sentry client and start crash handler
             do {
@@ -28,6 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("\(error)")
             }
         }
+        
+        // complete transactions
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // FIXME: Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
+        
         return true
     }
 
