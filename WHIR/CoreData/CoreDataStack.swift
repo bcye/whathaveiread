@@ -39,6 +39,10 @@ class CoreDataStack {
         }
         return container
     }()
+    
+    func enableCloudCore() {
+        CloudCore.enable(persistentContainer: persistentContainer)
+    }
 }
 
 //extension to saveChanges in managedObjectCOntext

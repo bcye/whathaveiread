@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Enable CloudCore syncing
-        CloudCore.enable(persistentContainer: persistentContainer)
+        CoreDataStack().enableCloudCore()
         
         return true
     }
