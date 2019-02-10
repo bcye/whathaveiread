@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Sentry
+import CloudCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // setup Sentry
         if defaults.bool(forKey: "sentryEnabled") {
             // Create a Sentry client and start crash handler
             do {
@@ -28,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("\(error)")
             }
         }
+        
+        // Enable CloudCore syncing
+        CloudCore.enable(persistentContainer: persistentContainer)
+        
         return true
     }
 

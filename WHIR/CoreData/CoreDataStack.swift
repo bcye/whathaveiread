@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import UIKit
+import CloudCore
 
 class CoreDataStack {
 
@@ -19,11 +20,22 @@ class CoreDataStack {
 
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "WHIR")
+        
+        // offline capabilities
+        let storeDescription = container.persistentStoreDescriptions.first
+        storeDescription?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        
         container.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 // TODO: Find way to alert the user from here
                 print(error)
             }
+        }
+        
+        container.performBackgroundTask { moc in
+            moc.name = CloudCore.config.pushContextName
+            // make changes to objects, properties, and relationships you want pushed via CloudCore
+            try? self.managedObjectContext.save()
         }
         return container
     }()
