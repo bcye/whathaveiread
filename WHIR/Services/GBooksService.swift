@@ -72,6 +72,17 @@ class GBooksService {
             }
         }.resume()
     }
+    
+    /*static func fetchImage(forBookTitle title: String) {
+        guard let key = ApiKeyService().googleKey, let requestURL = URL(string: "https://www.googleapis.com/books/v1/volumes?maxResults=1&q=isbn:\(isbn)&key=\(key)") else {
+            completion(nil, nil)
+            return
+        }
+        // create the request task
+        
+        var request = URLRequest(url: requestURL)
+        request.addValue("dirkhulverscheidt.WHIR", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
+    }*/
 }
 
 extension Data {

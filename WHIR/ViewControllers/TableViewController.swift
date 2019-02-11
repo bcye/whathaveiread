@@ -115,14 +115,17 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BookTableViewCell
         return configureCell(cell, at: indexPath)
     }
 
     // to configure cell, is called in tableView cellForRowAt
-    private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
+    private func configureCell(_ cell: BookTableViewCell, at indexPath: IndexPath) -> BookTableViewCell {
         let book = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = book.title
+        // cell.textLabel?.text = book.title
+        
+        cell.titleLabelView.text = book.title
+        cell.descriptionTextView.text = book.summary
         return cell
     }
 
