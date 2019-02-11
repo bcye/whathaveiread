@@ -116,3 +116,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
+
+// Notification from CloudKit about changes in remote database
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    // Check if it CloudKit's and CloudCore notification
+    if CloudCore.isCloudCoreNotification(withUserInfo: userInfo) {
+        // Fetch changed data from iCloud
+        CloudCore.pull(using: userInfo, to: CoreDataStack().persistentContainer, error: nil, completion: { (fetchResult) in
+            completionHandler(fetchResult.uiBackgroundFetchResult)
+        })
+    }
+}

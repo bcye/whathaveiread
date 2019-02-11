@@ -2,10 +2,26 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Book" representedClassName="Book" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="ownerName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateRecordData" optional="YES" attributeType="Binary" preserveAfterDeletion="YES" syncable="YES"/>
-        <attribute name="publicRecordData" optional="YES" attributeType="Binary" preserveAfterDeletion="YES" syncable="YES"/>
-        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ownerName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="CloudCoreType" value="ownerName"/>
+            </userInfo>
+        </attribute>
+        <attribute name="privateRecordData" optional="YES" attributeType="Binary" preserveAfterDeletion="YES" syncable="YES">
+            <userInfo>
+                <entry key="CloudCoreType" value="privateRecordData"/>
+            </userInfo>
+        </attribute>
+        <attribute name="publicRecordData" optional="YES" attributeType="Binary" preserveAfterDeletion="YES" syncable="YES">
+            <userInfo>
+                <entry key="CloudCoreType" value="publicRecordData"/>
+            </userInfo>
+        </attribute>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="key" value="recordName"/>
+            </userInfo>
+        </attribute>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <userInfo>

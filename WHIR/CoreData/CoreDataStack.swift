@@ -18,7 +18,7 @@ class CoreDataStack {
         return container.viewContext
     }()
 
-    private lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "WHIR")
         
         // offline capabilities

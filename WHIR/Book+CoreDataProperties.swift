@@ -20,4 +20,8 @@ extension Book {
     @NSManaged public var date: NSDate?
     @NSManaged public var summary: String?
     @NSManaged public var title: String?
+    @NSManaged public var privateRecordData: NSData?
+    @NSManaged public var publicRecordData: NSData?
+    @NSManaged public var ownerName: String?
+    @NSManaged public var recordName: String?
 }

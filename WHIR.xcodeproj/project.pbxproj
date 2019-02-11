@@ -62,6 +62,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EDE87AC4220FD4AE00712460 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		04CBC5372177761100D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		04CBC5382177761100D35604 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -390,6 +403,7 @@
 				320571072033B0F100FCA3B1 /* Resources */,
 				4C949E8E7942394015C37C5E /* [CP] Embed Pods Frameworks */,
 				EDE2E90F217F16C400306C53 /* SwiftLint */,
+				EDE87AC4220FD4AE00712460 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
