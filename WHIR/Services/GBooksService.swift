@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class GBooksService {
     
@@ -73,16 +74,22 @@ class GBooksService {
         }.resume()
     }
     
-    /*static func fetchImage(forBookTitle title: String) {
-        guard let key = ApiKeyService().googleKey, let requestURL = URL(string: "https://www.googleapis.com/books/v1/volumes?maxResults=1&q=isbn:\(isbn)&key=\(key)") else {
-            completion(nil, nil)
-            return
+    static func fetchImage(forBookTitle title: String) -> UIImage? {
+        guard let key = ApiKeyService().googleKey else {
+            return nil
         }
-        // create the request task
         
-        var request = URLRequest(url: requestURL)
-        request.addValue("dirkhulverscheidt.WHIR", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
-    }*/
+
+        Alamofire.request("https://www.googleapis.com/books/v1/volumes?maxResults=1&q=\(title)&key=\(key)").validate().responseJSON { (response) in
+            if let json = response.flatMap({ JSONSerialization.jsonObject(with: $0) }) {
+                
+            }
+        }
+        
+        // request.addValue("dirkhulverscheidt.WHIR", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
+        
+        return nil
+    }
 }
 
 extension Data {
