@@ -74,21 +74,32 @@ class GBooksService {
         }.resume()
     }
     
-    static func fetchImage(forBookTitle title: String) -> UIImage? {
+    static func fetchImage(forBookTitle title: String, completion: @escaping (UIImage?) -> Void) {
         guard let key = ApiKeyService().googleKey else {
-            return nil
+            return
         }
         
 
-        Alamofire.request("https://www.googleapis.com/books/v1/volumes?maxResults=1&q=\(title)&key=\(key)").validate().responseJSON { (response) in
-            if let json = response.flatMap({ JSONSerialization.jsonObject(with: $0) }) {
-                
+        Alamofire.request("https://www.googleapis.com/books/v1/volumes?maxResults=1&q=\(title)&key=\(key)", headers: ["X-Ios-Bundle-Identifier": "dirkhulverscheidt.WHIR"]).validate().responseJSON { (response) in
+            if let json = response.result.value as? NSDictionary {
+                let array = json["items"] as! NSArray
+                let firstItem = array[0] as! NSDictionary
+                let info = firstItem["volumeInfo"] as! NSDictionary
+                let pictureDict = info["imageLinks"] as! NSDictionary
+                let thumbnailURL = pictureDict["thumbnail"] as! String
+                Alamofire.request(thumbnailURL).responseData(completionHandler: { (response) in
+                    if let data = response.data {
+                        let image = UIImage(data: data)
+                        completion(image)
+                    }
+                })
+            } else {
+                print("no json")
             }
         }
         
         // request.addValue("dirkhulverscheidt.WHIR", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
         
-        return nil
     }
 }
 
