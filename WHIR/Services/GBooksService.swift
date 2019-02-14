@@ -110,7 +110,7 @@ class GBooksService {
 
 extension Data {
     public var stringDescription: String {
-        return String(data: self, encoding: .utf8)!
+        return String(data: self, encoding: .utf8) ?? "failed"
     }
 }
 
