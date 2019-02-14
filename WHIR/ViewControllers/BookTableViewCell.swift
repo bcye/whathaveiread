@@ -16,16 +16,6 @@ class BookTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        print(titleLabelView.text)
-        GBooksService.fetchImage(forBookTitle: titleLabelView.text!) { image in
-            if let image = image {
-                DispatchQueue.main.async {
-                    self.coverImageView.image = image
-                    print(image)
-                }
-            }
-        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
