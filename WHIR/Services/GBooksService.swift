@@ -74,28 +74,33 @@ class GBooksService {
         }.resume()
     }
     
-    static func fetchImage(forBookTitle title: String, completion: @escaping (UIImage?) -> Void) {
+    static func fetchImage(forBookTitle title: String, completion: @escaping (UIImage?, GBooksError?) -> Void) {
         guard let key = ApiKeyService().googleKey else {
+            completion(nil, GBooksError.apiKeyDoesNotExist)
             return
         }
-        
 
         Alamofire.request("https://www.googleapis.com/books/v1/volumes?maxResults=1&q=\(title)&key=\(key)", headers: ["X-Ios-Bundle-Identifier": "dirkhulverscheidt.WHIR"]).validate().responseJSON { (response) in
-            if let json = response.result.value as? NSDictionary {
-                let array = json["items"] as! NSArray
-                let firstItem = array[0] as! NSDictionary
-                let info = firstItem["volumeInfo"] as! NSDictionary
-                let pictureDict = info["imageLinks"] as! NSDictionary
-                let thumbnailURL = pictureDict["thumbnail"] as! String
-                Alamofire.request(thumbnailURL).responseData(completionHandler: { (response) in
-                    if let data = response.data {
-                        let image = UIImage(data: data)
-                        completion(image)
+            
+            guard let json = response.result.value as? NSDictionary,
+                let array = json["items"] as? NSArray,
+                let firstItem = array[0] as? NSDictionary,
+                let info = firstItem["volumeInfo"] as? NSDictionary,
+                let pictureDict = info["imageLinks"] as? NSDictionary,
+                let thumbnailURL = pictureDict["thumbnail"] as? String else {
+                    completion(nil, GBooksError.jsonInvalid)
+                    return
+                }
+            
+            
+            
+            Alamofire.request(thumbnailURL).responseData(completionHandler: { (response) in
+                if let data = response.data {
+                    let image = UIImage(data: data)
+                        completion(image, nil)
                     }
                 })
-            } else {
-                print("no json")
-            }
+
         }
         
         // request.addValue("dirkhulverscheidt.WHIR", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
@@ -106,5 +111,17 @@ class GBooksService {
 extension Data {
     public var stringDescription: String {
         return String(data: self, encoding: .utf8)!
+    }
+}
+
+enum GBooksError: Error {
+    case apiKeyDoesNotExist
+    case jsonInvalid
+    
+    var description: String {
+        switch self {
+        case .apiKeyDoesNotExist: return "There has been an error loading the API key"
+        case .jsonInvalid: return "The downloaded image data is invalid"
+        }
     }
 }

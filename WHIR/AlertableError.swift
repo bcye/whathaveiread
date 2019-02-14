@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //extending error to make it alertible
-extension ErrorCases {
+extension Error {
 
     //displays alert from given controller with option to crash or not
     func alert(with controller: UIViewController) {

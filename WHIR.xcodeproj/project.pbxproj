@@ -50,6 +50,7 @@
 		EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */; };
 		EDE2E928217F398F00306C53 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */; };
 		EDE2E92B217F39B800306C53 /* Payloads.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EDE2E92A217F39B800306C53 /* Payloads.bundle */; };
+		EDFC967522152E3700E71A3A /* GBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC967422152E3700E71A3A /* GBooksTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBBookTests.swift; sourceTree = "<group>"; };
 		EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		EDE2E92A217F39B800306C53 /* Payloads.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Payloads.bundle; sourceTree = "<group>"; };
+		EDFC967422152E3700E71A3A /* GBooksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBooksTests.swift; sourceTree = "<group>"; };
 		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -329,6 +331,7 @@
 				4C6694F1219580C8004A1B7E /* ISBNTests.swift */,
 				EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */,
 				ED493497219778E100DF009F /* APIKeyTests.swift */,
+				EDFC967422152E3700E71A3A /* GBooksTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				4C6694F2219580C8004A1B7E /* ISBNTests.swift in Sources */,
 				ED493498219778E100DF009F /* APIKeyTests.swift in Sources */,
 				EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */,
+				EDFC967522152E3700E71A3A /* GBooksTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

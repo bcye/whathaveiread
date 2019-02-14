@@ -127,9 +127,14 @@ class TableViewController: UITableViewController {
         cell.titleLabelView.text = book.title
         cell.descriptionTextView.text = book.summary
         
-        GBooksService.fetchImage(forBookTitle: book.title!) { image in
-            if let image = image {
-                DispatchQueue.main.async {
+        GBooksService.fetchImage(forBookTitle: book.title!) { image, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    error.alert(with: self)
+                }
+            
+                if let image = image {
+
                     cell.coverImageView.image = image
                     print(image)
                 }
