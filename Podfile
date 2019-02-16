@@ -8,6 +8,7 @@ target 'WHIR' do
   pod 'KMPlaceholderTextView', :git => "https://github.com/MoZhouqi/KMPlaceholderTextView.git" # Current pod has build errors that are fixed on master
   pod 'SwiftLint'
   pod 'Sentry'
+  pod 'Alamofire'
   # pod 'SPPermission'
   pod 'WhatsNewKit'
 

@@ -42,6 +42,7 @@
 		ED493498219778E100DF009F /* APIKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493497219778E100DF009F /* APIKeyTests.swift */; };
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
 		ED6F473022062FA300216824 /* SentryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F472F22062FA300216824 /* SentryViewController.swift */; };
+		ED8E027F221239FD00C9364A /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E027E221239FD00C9364A /* BookTableViewCell.swift */; };
 		EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB583C5218AC340005D24D5 /* ApiKeyService.swift */; };
 		EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74421D9C640007CEE7B /* GBook.swift */; };
 		EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEF74621D9C64C007CEE7B /* GBooksService.swift */; };
@@ -50,6 +51,7 @@
 		EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */; };
 		EDE2E928217F398F00306C53 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */; };
 		EDE2E92B217F39B800306C53 /* Payloads.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EDE2E92A217F39B800306C53 /* Payloads.bundle */; };
+		EDFC967522152E3700E71A3A /* GBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC967422152E3700E71A3A /* GBooksTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,7 @@
 		ED493497219778E100DF009F /* APIKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyTests.swift; sourceTree = "<group>"; };
 		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
 		ED6F472F22062FA300216824 /* SentryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentryViewController.swift; sourceTree = "<group>"; };
+		ED8E027E221239FD00C9364A /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		EDB583C5218AC340005D24D5 /* ApiKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyService.swift; sourceTree = "<group>"; };
 		EDBEF74421D9C640007CEE7B /* GBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBook.swift; sourceTree = "<group>"; };
 		EDBEF74621D9C64C007CEE7B /* GBooksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBooksService.swift; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDBBookTests.swift; sourceTree = "<group>"; };
 		EDE2E927217F398F00306C53 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		EDE2E92A217F39B800306C53 /* Payloads.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Payloads.bundle; sourceTree = "<group>"; };
+		EDFC967422152E3700E71A3A /* GBooksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBooksTests.swift; sourceTree = "<group>"; };
 		F48F58823F53CA0B603B31AF /* Pods_WHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -255,6 +259,7 @@
 				326102B420751D8D00AB0BE8 /* DetailViewController.swift */,
 				32B0B06B20763A870048E8DD /* SearchViewController.swift */,
 				ED6F472F22062FA300216824 /* SentryViewController.swift */,
+				ED8E027E221239FD00C9364A /* BookTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				4C6694F1219580C8004A1B7E /* ISBNTests.swift */,
 				EDE2E924217F38FE00306C53 /* ISBNDBBookTests.swift */,
 				ED493497219778E100DF009F /* APIKeyTests.swift */,
+				EDFC967422152E3700E71A3A /* GBooksTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,12 +511,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
 				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
@@ -560,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDBEF74721D9C64C007CEE7B /* GBooksService.swift in Sources */,
+				ED8E027F221239FD00C9364A /* BookTableViewCell.swift in Sources */,
 				ED6F473022062FA300216824 /* SentryViewController.swift in Sources */,
 				32BDE545203425C400247FC0 /* AddViewController.swift in Sources */,
 				EDE2E914217F1AFB00306C53 /* ISBNDBBook.swift in Sources */,
@@ -593,6 +602,7 @@
 				4C6694F2219580C8004A1B7E /* ISBNTests.swift in Sources */,
 				ED493498219778E100DF009F /* APIKeyTests.swift in Sources */,
 				EDE2E925217F38FE00306C53 /* ISBNDBBookTests.swift in Sources */,
+				EDFC967522152E3700E71A3A /* GBooksTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
