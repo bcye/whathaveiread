@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O75-Ci-ib5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O75-Ci-ib5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,15 +21,15 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-Ku-zCI">
                                 <rect key="frame" x="16" y="80" width="343" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Handcrafted by © 2018 Bruce Röttgers
+                                <mutableString key="text">Handcrafted by © 2018 Bruce Röttgers
 
 Logo by Zlatko Najdenovski on Flaticon. Licensed under the Flaticon Basic License (https://www.flaticon.com/authors/zlatko-najdenovski).
- Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). 
+ Barcode icon made by Pixel perfect on Flaticon (https://www.flaticon.com/free-icon/barcode_726558). Icons made by Dave Gandy from www.flaticon.com is licensed by CC 3.0 BY Icons made by Dave Gandy from www.flaticon.com is licensed by CC 3.0 BY 
 Using CocoaPod KMPlaceholderTextView by MoZhouqi (https://github.com/MoZhouqi/KMPlaceholderTextView). Licensed under the MIT license.
 
 Thanks for reading and using this App ❤.
 
-Feel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) </string>
+Feel free to contact me on my support email (can be found on the App Store page), if you find bugs or just to say hello. (br.apps@icloud.com) </mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
