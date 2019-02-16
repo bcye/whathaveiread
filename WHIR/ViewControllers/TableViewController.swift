@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import AVFoundation
 import Sentry
-// import SPPermission
 
 class TableViewController: UITableViewController {
 
@@ -33,18 +32,11 @@ class TableViewController: UITableViewController {
         if !defaults.bool(forKey: "sentryAsked") {
             self.performSegue(withIdentifier: "askForSentryPermission", sender: nil)
         }
-        
-        WhatsNewKitConfiguration.presentFeatures(with: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        /*
-        if SPPermission.isDenied(.camera) {
-            SPPermission.Dialog.request(with: [.camera], on: self)
-        }
-        */
         renderBarcodeScannerButton()
     }
 

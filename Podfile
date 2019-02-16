@@ -9,8 +9,6 @@ target 'WHIR' do
   pod 'SwiftLint'
   pod 'Sentry'
   pod 'Alamofire'
-  # pod 'SPPermission'
-  pod 'WhatsNewKit'
 
 post_install do |installer|
    installer.pods_project.build_configurations.each do |config|
