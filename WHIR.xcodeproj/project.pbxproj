@@ -37,6 +37,7 @@
 		4CC21B0A21856163001D80B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC21B0821856163001D80B7 /* Search.storyboard */; };
 		4CE625A3218D2F160091FA89 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE625A2218D2F160091FA89 /* CameraView.swift */; };
 		4CFD94182196C20D000D2BD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFD94172196C20D000D2BD6 /* AVFoundation.framework */; };
+		ED3F575A2217CC9000B6E8BF /* WhatsNewKitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F57592217CC9000B6E8BF /* WhatsNewKitConfiguration.swift */; };
 		ED4934962197783E00DF009F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4934952197783E00DF009F /* keys.plist */; };
 		ED493498219778E100DF009F /* APIKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493497219778E100DF009F /* APIKeyTests.swift */; };
 		ED4E7EEB218CCC3400B56288 /* barcode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4E7EEA218CCC3400B56288 /* barcode-2.png */; };
@@ -154,6 +155,7 @@
 		A8E3A4EC217306790069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A8E3A4ED2173067A0069EC24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED11A4A821783DAE00D34ABB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED3F57592217CC9000B6E8BF /* WhatsNewKitConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewKitConfiguration.swift; sourceTree = "<group>"; };
 		ED4934952197783E00DF009F /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = keys.plist; path = WHIR/Resources/keys.plist; sourceTree = SOURCE_ROOT; };
 		ED493497219778E100DF009F /* APIKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyTests.swift; sourceTree = "<group>"; };
 		ED4E7EEA218CCC3400B56288 /* barcode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcode-2.png"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				EDBEF74421D9C640007CEE7B /* GBook.swift */,
 				EDE2E913217F1AFB00306C53 /* ISBNDBBook.swift */,
+				ED3F57592217CC9000B6E8BF /* WhatsNewKitConfiguration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -503,14 +506,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WHIR/Pods-WHIR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
-				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
 				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
+				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -564,6 +567,7 @@
 				3213C19B2111E5E100D88142 /* Book+CoreDataProperties.swift in Sources */,
 				320571152033B0F100FCA3B1 /* WHIR.xcdatamodeld in Sources */,
 				EDB583C6218AC340005D24D5 /* ApiKeyService.swift in Sources */,
+				ED3F575A2217CC9000B6E8BF /* WhatsNewKitConfiguration.swift in Sources */,
 				32D2545420BD9AA200B5234F /* MarketingAlertHelper.swift in Sources */,
 				3205710D2033B0F100FCA3B1 /* AppDelegate.swift in Sources */,
 				EDBEF74521D9C640007CEE7B /* GBook.swift in Sources */,

@@ -3,20 +3,20 @@ PODS:
   - Sentry (4.1.0):
     - Sentry/Core (= 4.1.0)
   - Sentry/Core (4.1.0)
-  - SPPermission (3.0.1)
   - SwiftLint (0.27.0)
+  - WhatsNewKit (1.1.7)
 
 DEPENDENCIES:
   - KMPlaceholderTextView (from `https://github.com/MoZhouqi/KMPlaceholderTextView.git`)
   - Sentry
-  - SPPermission
   - SwiftLint
+  - WhatsNewKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Sentry
-    - SPPermission
     - SwiftLint
+    - WhatsNewKit
 
 EXTERNAL SOURCES:
   KMPlaceholderTextView:
@@ -30,9 +30,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
   Sentry: 44b85e768f435ede4d12ea279af588ff275c3939
-  SPPermission: c9336037b5e12890e2fdaf193c0dc4b7a2aceb6a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  WhatsNewKit: 3976120978db0089535f777cd1b442579418b6fa
 
-PODFILE CHECKSUM: 71cb8b1315be61338bac83209a4ac55b921061ea
+PODFILE CHECKSUM: 7c1651c33c761e7d89cb96ce8e46fc7c711aff58
 
 COCOAPODS: 1.5.2

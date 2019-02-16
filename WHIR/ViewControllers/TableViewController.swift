@@ -33,6 +33,8 @@ class TableViewController: UITableViewController {
         if !defaults.bool(forKey: "sentryAsked") {
             self.performSegue(withIdentifier: "askForSentryPermission", sender: nil)
         }
+        
+        WhatsNewKitConfiguration.presentFeatures(with: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {

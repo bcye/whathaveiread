@@ -144,13 +144,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
