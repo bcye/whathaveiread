@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Sentry
 
 class GBooksService {
     
@@ -119,6 +120,9 @@ enum GBooksError: Error {
     case jsonInvalid
     
     var description: String {
+        let event = Event(level: .error)
+        Client.shared?.send(event: event, completion: nil)
+        
         switch self {
         case .apiKeyDoesNotExist: return "There has been an error loading the API key"
         case .jsonInvalid: return "The downloaded image data is invalid"
