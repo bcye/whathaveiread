@@ -4,9 +4,13 @@
 
 # whathaveiread
 
+[![Buy Me A Pizza](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/bruceroet)
+
+**Support the development and donate a pizza to pay for the developer account.**
+
 WHIR - What have I read? Is an iOS app that allows you to keep track of all books you've read and keep a short summary about them.
 
-[App Store](https://itunes.apple.com/us/app/whir/id1368037703?ls=1&mt=8)
+**[App Store Link](https://itunes.apple.com/us/app/whir/id1368037703?ls=1&mt=8)**
 
 ## Contributing
 
