@@ -76,13 +76,12 @@ class GBooksService {
     }
     
     static func fetchImage(forBookTitle title: String, completion: @escaping (UIImage?, GBooksError?) -> Void) {
-        guard let key = ApiKeyService().googleKey else {
+        guard let key = ApiKeyService().googleKey, let escaped = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             completion(nil, GBooksError.apiKeyDoesNotExist)
             return
         }
 
-        Alamofire.request("https://www.googleapis.com/books/v1/volumes?maxResults=1&q=\(title)&key=\(key)", headers: ["X-Ios-Bundle-Identifier": "dirkhulverscheidt.WHIR"]).validate().responseJSON { (response) in
-            
+        Alamofire.request("https://www.googleapis.com/books/v1/volumes?maxResults=1&q=\(escaped)&key=\(key)", headers: ["X-Ios-Bundle-Identifier": "dirkhulverscheidt.WHIR"]).validate().responseJSON { (response) in
             guard let json = response.result.value as? NSDictionary,
                 let array = json["items"] as? NSArray,
                 let firstItem = array[0] as? NSDictionary,
